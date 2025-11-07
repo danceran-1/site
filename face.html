@@ -1,0 +1,638 @@
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+    #museum-about-block {
+        max-width: 2200px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 80px;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        text-align: center;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        margin-top: -70px;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #museum-about-block .head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    #museum-about-block .circle {
+        width: 18px;
+        height: 18px;
+        background-color: #e5c585;
+        border-radius: 50%;
+        margin: 0 15px;
+    }
+
+    #museum-about-block h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: #1565c0;
+        margin-top: 0px;
+    }
+
+    /* Карусель */
+    #museum-about-block .photo-carousel {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        
+        flex-wrap: nowrap;
+        gap: 20px;
+        margin-top: -30px;
+        width: 100%;
+    }
+
+    #museum-about-block .logo-container {
+        background-color: #fff;
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.4s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #museum-about-block .logo-container:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    #museum-about-block .logo {
+        width: 300px;
+        height: 400px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+        
+    }
+
+    #museum-about-block .logo-container:hover .logo {
+        transform: scale(1.05);
+    }
+
+  
+    #museum-about-block .info {
+        margin: 10px 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        max-width: 300px;
+        line-height: 1.4;
+        color: #333;
+    }
+
+ 
+    .caption {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #ffffff;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .logo-container:hover .caption {
+        opacity: 1;
+    }
+
+    #text {
+        max-width: 2200px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 30px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        color:black;
+        border-radius: 30px 30px 10px 10px;
+        text-align: left;
+        background-color: #f0f4fa   ;
+        box-sizing: border-box;
+        margin-top: -30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    #text .Highlight {
+        font-weight: 700;
+        color: #1565c0;
+    }
+    #text .names-list {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 65px;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        margin-right: 0px;
+        margin-left: 130px;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #1565c0;
+        transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+    #text .names-list span {
+        background: rgba(21, 101, 192, 0.1);
+        padding: 5px 10px;
+        border-radius: 10px;
+        white-space: nowrap;
+        transition: transform 0.4s ease; 
+        user-select: none;
+        
+    }
+    .names-list span.active-span {
+        color: #ff6363;
+        font-weight: 700;
+        transform: scale(1.05);
+        transition: all 0.2s ease;
+    }
+
+    #text .names-list span:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    .highlight-photo {
+        box-shadow: 0 0 20px 5px #ff6363;
+        transform: scale(1.05);
+        transition: 0.3s ease;
+    }
+
+    #text p {
+        opacity: 0;             
+        transition: opacity 0.5s ease; 
+        display: none;        
+    }
+    #text p.active {
+        display: block;           
+        opacity: 1;               
+    }
+        
+    .body{
+        background-color: #333;
+    }
+    
+    .carousel-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: 1700px;
+        margin: 0 auto;
+        z-index: 999;
+    
+    }
+
+   
+
+    .arrow {
+        background-color: #1565c0;
+        color: white;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 50%;
+        transition: background 0.3s ease;
+        z-index: 10;
+    }
+
+    .arrow:hover {
+        background-color: #0d47a1;
+    }
+
+    .carousel-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: 1700px;
+        margin: 0 auto;
+        z-index: 999;
+    }
+
+    .photo-carousel {
+        transition: transform 0.5s ease-in-out;
+        will-change: transform;
+    }
+
+    .carousel-viewport {
+   
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .carousel-page {
+        display: none; /* скрыта по умолчанию */
+        justify-content: center; /* центрируем карточки */
+        gap: 20px;
+    }
+
+    .carousel-page.active {
+        display: flex; 
+    }
+
+    .names-list-page {
+        display: none; 
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .names-list-page.active {
+        display: flex;
+    }
+
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ccc;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .dot.active {
+        background-color: #1565c0;
+    }    
+
+    #text p {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.9s ease, max-height 0.9s ease;
+        margin: 0;
+    }
+
+    #text p.active {
+        opacity: 1;
+        max-height: 500px; 
+    }
+
+    .temp {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        max-width: 1700px;
+        margin: 0 auto 5px auto;
+        padding: 0 20px;
+        width: 100%;
+    }
+    .header-with-title {
+        flex-grow: 1; 
+        text-align: center;
+    }
+    .temp .button_back {
+        background: none;          
+        border: none;
+        margin-top: -30px;
+        margin-left: -100px;        
+        font-size: 50px;          
+        color: #007BFF;           
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+    .temp .button_back:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    
+</style>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+
+<body>
+<div id="museum-about-block">
+
+    <div class="temp">
+        <a class="button_back" href="https://portal.mrsk-1.ru/pub/site/56/#b4733">&#8617;</a>
+        <div class="header-with-title">
+            <h1>Ветераны Великой Отечественной войны</h1>
+        </div>
+    </div>
+  
+    
+
+    <div class="carousel-wrapper">
+        <button class="arrow left" onclick="prevSlide()">&#8592;</button>
+
+        <div class="carousel-dots">
+
+        <div class="carousel-viewport">
+            <div class="photo-carousel">
+                <div class="logo-container">
+                    <img src="https://ireport.mrsk-1.ru/3d/ps/logo/photo/Орел2.jpg" id="id_1" class="logo" onclick="showDetails(id)" />
+                    <p class = "caption">Герой Велико Отечественной Войны</p>
+                    <p class="info">Иванов Иван Иванович<br>1943-1945 гг.</p>
+                </div>
+                <div class="logo-container">
+                    <img src="https://ireport.mrsk-1.ru/3d/ps/logo/photo/Орел2.jpg" id="id_2" class="logo" onclick="showDetails(id)"  />
+                    <p class="info">Петров Пётр Петрович<br>1941-1945 гг.</p>
+                </div>
+                <div class="logo-container">
+                    <img src="https://ireport.mrsk-1.ru/3d/ps/logo/photo/Орел2.jpg" id="id_3" class="logo" onclick="showDetails(id)" />
+                    <p class="info">Сидоров Сидор Сидорович<br>1944-1945 гг.</p>
+                </div>
+                <div class="logo-container">
+                    <img src="https://ireport.mrsk-1.ru/3d/ps/logo/photo/Орел2.jpg" id="id_4" class="logo" onclick="showDetails(id)"  />
+                    <p class="info">Николаев Николай Николаевич<br>1944-1945 гг.</p>
+                </div>
+                <div class="logo-container">
+                    <img src="https://ireport.mrsk-1.ru/3d/ps/logo/photo/Орел2.jpg" id="id_5" class="logo" onclick="showDetails(id)"  />
+                    <p class="info">Артемов Артем Артемович<br>1944-1945 гг.</p>
+                </div>
+                <div class="logo-container">
+                    <img src="https://ireport.mrsk-1.ru/3d/ps/logo/photo/Орел2.jpg" id="id_6" class="logo" onclick="showDetails(id)"  />
+                    <p class="info">Глебов Глеб Глебович<br>1944-1945 гг.</p>
+                </div>
+                <div class="logo-container">
+                    <img src="https://ireport.mrsk-1.ru/3d/ps/logo/photo/Орел2.jpg" id="id_7" class="logo" onclick="showDetails(id)"  />
+                    <p class="info">Смирнов Сергей Сергеевич<br>1943-1945 гг.</p>
+                </div>
+
+                <div class="logo-container">
+                    <img src="https://ireport.mrsk-1.ru/3d/ps/logo/photo/Орел2.jpg" id="id_8" class="logo" onclick="showDetails(id)"  />
+                    <p class="info">Алексеев Алексей Алексеевич<br>1943-1945 гг.</p>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <button class="arrow right" onclick="nextSlide()">&#8594;</button>
+    </div>
+    
+</div>
+
+ <div id="text">
+    <div class="names-list"></div>
+    <p id="id_1"> <span class="highlight">Иванов Иван Иванович</span> В феврале 1943 года его батальон атаковал опорный пункт фашистов, но угодил в ловушку, попав под плотный огонь, отрезавший путь к окопам. Стреляли из трех дзотов. Два вскоре замолчали, однако третий продолжал расстреливать красноармейцев, залегших в снегу.
+Видя, что единственный шанс выйти из-под огня, это подавить огонь соперника, Матросов с однополчанином дополз до дзота и бросил в его сторону два гранаты. Пулемет замолчал. Красноармейцы пошли в атаку, но смертельное оружие застрекотало опять. Напарника Александра убило, и Матросов остался перед дзотом один. Нужно было что-то делать.
+На принятие решения у него не было и нескольких секунд. Не желая подводить боевых товарищей, Александр своим телом закрыл амбразуру дзота. Атака увенчалась успехом. А Матросов посмертно получил звание Героя Советского Союза.<p>
+
+
+<p id="id_2"> <span class="highlight">Петров Пётр Петрович</span>Не желая подводить боевых товарищей, Александр своим телом закрыл амбразуру дзота. 
+    Атака увенчалась успехом. А Матросов посмертно получил звание Героя Советского Союза.<p>
+<p id = "id_3"><span class = "highlight">Сидоров Сидор Сидорович</span> Вместе с еще пятью товарищами он организовал небольшой партизанский отряд, 
+    который совершал диверсии против фашистов. Во время одной из операций было решено подорвать вражеский состав. Но боеприпасов в отряде было мало. 
+    Бомбу сделали из обычной гранаты. Взрывчатку должен был устанавливать сам Осипенко. Он подполз к железнодорожному мосту и, увидев приближение поезда, 
+    кинул ее перед составом. Взрыва не последовало. Тогда партизан сам ударил по гранате шестом от железнодорожного знака. Сработало! 
+    Под откос пошел длинный состав с продовольствием и танками. Командир отряда выжил, но полностью потерял зрение.</p>
+
+<p id = "id_4"><span class = "highlight">Николаев Николай Николаевич</span> Вместе с еще пятью товарищами он организовал небольшой партизанский отряд, 
+    который совершал диверсии против фашистов. Во время одной из операций было решено подорвать вражеский состав. Но боеприпасов в отряде было мало. 
+    Бомбу сделали из обычной гранаты. Взрывчатку должен был устанавливать сам Осипенко. Он подполз к железнодорожному мосту и, увидев приближение поезда, 
+    кинул ее перед составом. Взрыва не последовало. Тогда партизан сам ударил по гранате шестом от железнодорожного знака. Сработало! 
+    Под откос пошел длинный состав с продовольствием и танками. Командир отряда выжил, но полностью потерял зрение.</p>
+
+<p id = "id_5"><span class = "highlight">Артемов Артем Артемович</span> Вместе с еще пятью товарищами он организовал небольшой партизанский отряд, 
+    который совершал диверсии против фашистов. Во время одной из операций было решено подорвать вражеский состав. Но боеприпасов в отряде было мало. 
+    Бомбу сделали из обычной гранаты. Взрывчатку должен был устанавливать сам Осипенко. Он подполз к железнодорожному мосту и, увидев приближение поезда, 
+    кинул ее перед составом. Взрыва не последовало. Тогда партизан сам ударил по гранате шестом от железнодорожного знака. Сработало! 
+    Под откос пошел длинный состав с продовольствием и танками. Командир отряда выжил, но полностью потерял зрение.</p>
+
+<p id = "id_6"><span class = "highlight">Глебов Глеб Глебович</span> Вместе с еще пятью товарищами он организовал небольшой партизанский отряд, 
+    который совершал диверсии против фашистов. Во время одной из операций было решено подорвать вражеский состав. Но боеприпасов в отряде было мало. 
+    Бомбу сделали из обычной гранаты. Взрывчатку должен был устанавливать сам Осипенко. Он подполз к железнодорожному мосту и, увидев приближение поезда, 
+    кинул ее перед составом. Взрыва не последовало. Тогда партизан сам ударил по гранате шестом от железнодорожного знака. Сработало! 
+    Под откос пошел длинный состав с продовольствием и танками. Командир отряда выжил, но полностью потерял зрение.</p>
+
+<p id = "id_7"><span class = "highlight">Смирнов Сергей Сергеевич</span> Вместе с еще пятью товарищами он организовал небольшой партизанский отряд, 
+    который совершал диверсии против фашистов. Во время одной из операций было решено подорвать вражеский состав. Но боеприпасов в отряде было мало. 
+    Бомбу сделали из обычной гранаты. Взрывчатку должен был устанавливать сам Осипенко. Он подполз к железнодорожному мосту и, увидев приближение поезда, 
+    кинул ее перед составом. Взрыва не последовало. Тогда партизан сам ударил по гранате шестом от железнодорожного знака. Сработало! 
+    Под откос пошел длинный состав с продовольствием и танками. Командир отряда выжил, но полностью потерял зрение.</p>
+
+</div>
+
+</body>
+
+<script>
+    let currentPage = 0;
+
+    // не используется
+    function createDots() {
+        const dotsContainer = document.querySelector('.carousel-dots');
+        const pages = document.querySelectorAll('.carousel-page');
+        
+        dotsContainer.innerHTML = '';
+        
+        pages.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            
+            dot.addEventListener('click', () => showPage(index));
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    function buildPages() {
+
+        const photoCarousel = document.querySelector('.photo-carousel');
+        const cards = Array.from(photoCarousel.querySelectorAll('.logo-container'));
+        const perPage = 3;
+
+        const name_list = document.querySelector('.names-list');
+        const allSpans = Array.from(name_list.querySelectorAll('#text .names-list span'));
+      
+        photoCarousel.innerHTML = '';
+        name_list.innerHTML = '';
+
+        // создаём страницы по 5 карточек
+        for (let i = 0; i < cards.length; i += perPage) {
+
+            const page = document.createElement('div');
+            page.classList.add('carousel-page');
+            if (i === 0) page.classList.add('active'); // первая страница сразу видна
+
+            const spanPage  = document.createElement('div');
+            spanPage.classList.add('names-list-page');
+            if (i === 0) spanPage.classList.add('active'); 
+
+            cards.slice(i, i + perPage).forEach(card => page.appendChild(card));
+            allSpans.slice(i, i + perPage).forEach(span => spanPage.appendChild(span));
+
+            photoCarousel.appendChild(page);
+            name_list.appendChild(spanPage);
+        }
+    }
+
+    function showPage(index) {
+
+        const pages = document.querySelectorAll('.carousel-page');
+        const namePages  = document.querySelectorAll('.names-list-page');
+        const dots = document.querySelectorAll('.dot');
+
+        if (index < 0 || index >= pages.length) return;
+        pages.forEach((p, i) => p.classList.toggle('active', i === index));
+        namePages.forEach((np, i) => np.classList.toggle('active', i === index));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        currentPage = index;
+    }
+
+    function nextSlide() {
+        showPage(currentPage + 1);
+    }
+
+    function prevSlide() {
+        showPage(currentPage - 1);
+    }
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        buildPages();
+        
+
+        const paragraphs = document.querySelectorAll('#text p');
+     
+        showDetails('id_1')
+
+        paragraphs.forEach(p => {
+            if (p.id === "id_1") {
+                p.classList.add('active');
+            }
+        });
+
+       
+    });
+
+    let highlightedPhoto = null;
+   
+    function showDetails(photoId) {
+        console.log('Открываем подробности для:', photoId);
+
+        console.log('namesDict ->', namesDict);
+        
+        
+
+        Object.entries(namesDict).forEach(([id, name]) => {
+            if (id === photoId) {+
+                document.querySelectorAll(`span[data-id="${id}"]`).forEach(span => {
+                    const allSpans = document.querySelectorAll('#text .names-list span');
+                    allSpans.forEach(s => s.classList.remove('active-span'));
+                    span.classList.add('active-span');
+                });
+            }
+        });
+
+
+        
+
+        //подсветка
+        const photo = document.querySelector(`#museum-about-block .logo[id="${photoId}"]`);
+        if (!photo) return;
+        
+        if (highlightedPhoto && highlightedPhoto !== photo) {
+            highlightedPhoto.classList.remove('highlight-photo');
+        }
+        
+        photo.classList.add('highlight-photo');
+        highlightedPhoto = photo;
+        //адаптивный текст
+
+        
+        const paragraphs = document.querySelectorAll('#text p');
+
+        
+
+        paragraphs.forEach(p => {
+            if (p.id === photoId) {
+                p.classList.add('active');
+            } else {
+                p.classList.remove('active');
+            }
+        });
+
+    }
+   
+    // адпативыне кнопки и создание id 
+    const namesDict = {};
+    const infoElements = document.querySelectorAll('.info'); 
+
+    infoElements.forEach((el, index) => {
+        const name = el.textContent.split('1')[0].trim(); 
+        const id = `id_${index + 1}`; 
+        namesDict[id] = name; 
+    });
+
+    const container = document.querySelector('#text .names-list');
+
+    Object.entries(namesDict).forEach(([id, name]) => {
+        
+        const span = document.createElement('span');
+        span.textContent = name;
+        span.setAttribute('data-id', id);
+        span.onclick = () => {
+            showDetails(id);
+            const allSpans = document.querySelectorAll('#text .names-list span');
+            allSpans.forEach(s => s.classList.remove('active-span'));
+            span.classList.add('active-span'); 
+        };
+        container.appendChild(span);
+    });
+    
+
+
+</script>
+
+<style>
+    @media (max-width: 768px) {
+        #museum-about-block {
+            padding: 40px 20px;
+        }
+        #museum-about-block h1 {
+            font-size: 2rem;
+        }
+        #museum-about-block .photo-carousel {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        #museum-about-block .logo {
+            width: 220px;
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #museum-about-block h1 {
+            font-size: 1.6rem;
+        }
+        #museum-about-block .logo {
+            width: 180px;
+            height: 240px;
+        }
+        #museum-about-block .info {
+            font-size: 1rem;
+        }
+    }
+</style>
