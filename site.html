@@ -1060,22 +1060,209 @@
     .hero-actions .btn-gold:first-child {
         margin-right: 162px; 
     }
-    @media (max-width: 768px) {
+
+    @media (max-width: 1440px) {
+        /* 1. Центрируем и ограничиваем весь контент Hero */
+        .hero-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px; /* Отступы по бокам */
+        }
+        
+        /* 2. Делаем блок банок более гибким и уменьшаем его базовые размеры */
+        .bins {
+            /* Делаем его гибким, чтобы он занимал доступное место */
+            flex: 1 1 40%; 
+            /* Уменьшаем минимальную ширину и высоту для экономии места */
+            min-width: 400px; 
+            height: 600px;
+        }
+        
+        /* 3. Корректируем размеры и позицию банок */
+        .bins img:nth-child(1) { /* Самая большая */
+            width: 400px; /* Уменьшаем размер */
+            height: 300px;
+            top: 250px;
+            right: 100px;
+        }
+        .bins img:nth-child(2) { /* Средняя */
+            width: 280px;
+            height: 260px;
+            top: 150px;
+            right: 30px;
+        }
+        .bins img:nth-child(3) { /* Самая маленькая */
+            width: 220px;
+            height: 180px;
+            top: 100px;
+            right: 180px;
+        }
+
+        /* 4. Уменьшаем большие шрифты */
+        .hero h1 {
+            font-size: 40px;
+            line-height: 50px;
+        }
+        .hero p {
+            font-size: 20px;
+        }
+
+        /* 5. Корректируем позицию и отступы кнопок */
         .hero-actions {
-            /* При маленьких экранах меняем выравнивание */
-            flex-direction: column; /* Кнопки становятся вертикальными */
-            align-items: stretch; /* Растягиваем их по ширине */
-            
-            bottom: 20px; /* Уменьшаем отступ от низа */
+            /* Сдвигаем вверх, так как банки стали меньше */
+            bottom: 120px; 
+            max-width: 1120px; 
         }
-
-        .hero-actions .btn-gold {
-            width: 100%; /* Каждая кнопка занимает всю ширину контейнера */
-            margin-bottom: 15px !important; /* Добавляем отступ между вертикальными кнопками */
-        }
-
+        /* Уменьшаем расстояние между кнопками */
         .hero-actions .btn-gold:first-child {
-            margin-right: 0; /* Убираем горизонтальный отступ при вертикальном расположении */
+            margin-right: 80px; 
+        }
+    }
+
+    /* ============================================== */
+    /* === ПЛАНШЕТЫ (1024px и меньше) === */
+    /* ============================================== */
+    @media (max-width: 1024px) {
+        /* Основной контент Hero */
+        .hero {
+            min-height: 500px;
+        }
+        
+        .hero-main {
+            /* Дополнительное уменьшение ширины контейнера */
+            max-width: 960px;
+        }
+
+        /* Шрифты */
+        .hero h1 {
+            font-size: 36px;
+            line-height: 44px;
+        }
+        .hero p {
+            font-size: 18px;
+        }
+
+        /* Банки */
+        .bins {
+            min-width: 350px; 
+            height: 500px;
+        }
+
+        .bins img:nth-child(1) { 
+            width: 320px;
+            height: 250px;
+            top: 220px;
+            right: 80px;
+        }
+        .bins img:nth-child(2) {
+            width: 250px;
+            height: 230px;
+            top: 130px;
+            right: 10px;
+        }
+        .bins img:nth-child(3) { 
+            width: 180px;
+            height: 150px;
+            top: 80px;
+            right: 150px;
+        }
+        
+        /* Кнопки */
+        .btn-gold {
+            padding: 10px 20px;
+            font-size: 22px;
+        }
+        .hero-actions {
+            bottom: 80px;
+        }
+        .hero-actions .btn-gold:first-child {
+            margin-right: 60px; 
+        }
+    }
+
+    /* ============================================== */
+    /* === МОБИЛЬНЫЕ (768px и меньше) === */
+    /* ============================================== */
+    @media (max-width: 768px) {
+        /* Главная секция теперь вертикальная */
+        .hero-main {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+
+        /* Заголовок и текст - центрируем */
+        .hero-content {
+            text-align: center;
+            order: 2; /* Перемещаем под банки */
+            padding: 0 20px;
+        }
+        .hero h1, .hero p {
+            text-align: center;
+        }
+
+        /* Банки - перемещаем наверх, центрируем и делаем меньше */
+        .bins {
+            order: 1; /* Перемещаем наверх */
+            min-width: auto;
+            width: 100%;
+            height: 350px; 
+            position: relative; 
+            margin-bottom: 30px;
+        }
+
+        /* Уменьшаем размер и позицию банок для мобильных */
+        .bins img {
+            /* Сбрасываем абсолютное позиционирование для мобильных для более контролируемого размещения */
+            position: static; 
+            transform: none !important;
+            animation: none !important; 
+            display: none; /* Скрываем все, кроме одной, или перерисовываем */
+        }
+
+        /* Оставляем только одну центрированную банку для мобильных */
+        .bins img:nth-child(1) { 
+            display: block; 
+            position: absolute;
+            width: 250px;
+            height: 180px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Блок действий (кнопки) */
+        .hero-actions {
+            position: static; /* Убираем абсолютное позиционирование */
+            transform: none;
+            order: 3;
+            flex-direction: column;
+            gap: 15px; /* Увеличиваем вертикальный отступ между кнопками */
+            padding: 0 20px;
+            margin-top: 20px;
+        }
+        .hero-actions .btn-gold {
+            width: 100%;
+            margin-right: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .hero-actions .btn-gold:first-child {
+            margin-right: 0;
+        }
+        
+        /* Контакты */
+        .hero-contact {
+            position: static;
+            transform: none;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .hero-contact a {
+            font-size: 1.4rem;
+            justify-content: center;
         }
     }
 

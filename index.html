@@ -258,12 +258,19 @@
 
 </head>
 <body>
-    <div class="energy-header-container" style="position: relative; z-index: 1000;">
+<div class="energy-header-container" style="position: relative; z-index: 1000;">
     <div class="energy-header">
         <nav class="energy-nav content-wrapper">
             <a href="#b5147">
+                <!-- Внимание: вам нужно убедиться, что путь к вашему SVG корректен -->
                 <img src="Ресурс 21 1.svg" alt="Логотип" class="energy-logo" />
             </a>
+            
+            <!-- НОВАЯ КНОПКА ГАМБУРГЕРА -->
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
             <ul class="energy-menu">
                 <li><a href="#cotalog" class="energy-menu-link">Каталог <i class="fas fa-chevron-down"></i></a>
                     <ul class="energy-submenu">
@@ -276,7 +283,7 @@
                 <li><a href="#use-company" class="energy-menu-link">Сферы применения</a>
                 </li>
 
-                 <li><a href="#coloring" class="energy-menu-link">Колеровка</a>
+                <li><a href="#coloring" class="energy-menu-link">Колеровка</a>
                 </li>
 
                 <li><a href="#hero" class="energy-menu-link">О компании</a>
@@ -284,10 +291,8 @@
         
                 <li><a href="#contacts" class="energy-menu-link">Контакты</a>
                 </li>
-
             </ul>
         </nav>
-        
     </div>
 </div>
 
@@ -1060,22 +1065,209 @@
     .hero-actions .btn-gold:first-child {
         margin-right: 162px; 
     }
-    @media (max-width: 768px) {
+
+    @media (max-width: 1440px) {
+        /* 1. Центрируем и ограничиваем весь контент Hero */
+        .hero-main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px; /* Отступы по бокам */
+        }
+        
+        /* 2. Делаем блок банок более гибким и уменьшаем его базовые размеры */
+        .bins {
+            /* Делаем его гибким, чтобы он занимал доступное место */
+            flex: 1 1 40%; 
+            /* Уменьшаем минимальную ширину и высоту для экономии места */
+            min-width: 400px; 
+            height: 600px;
+        }
+        
+        /* 3. Корректируем размеры и позицию банок */
+        .bins img:nth-child(1) { /* Самая большая */
+            width: 400px; /* Уменьшаем размер */
+            height: 300px;
+            top: 250px;
+            right: 100px;
+        }
+        .bins img:nth-child(2) { /* Средняя */
+            width: 280px;
+            height: 260px;
+            top: 150px;
+            right: 30px;
+        }
+        .bins img:nth-child(3) { /* Самая маленькая */
+            width: 220px;
+            height: 180px;
+            top: 100px;
+            right: 180px;
+        }
+
+        /* 4. Уменьшаем большие шрифты */
+        .hero h1 {
+            font-size: 40px;
+            line-height: 50px;
+        }
+        .hero p {
+            font-size: 20px;
+        }
+
+        /* 5. Корректируем позицию и отступы кнопок */
         .hero-actions {
-            /* При маленьких экранах меняем выравнивание */
-            flex-direction: column; /* Кнопки становятся вертикальными */
-            align-items: stretch; /* Растягиваем их по ширине */
-            
-            bottom: 20px; /* Уменьшаем отступ от низа */
+            /* Сдвигаем вверх, так как банки стали меньше */
+            bottom: 120px; 
+            max-width: 1120px; 
         }
-
-        .hero-actions .btn-gold {
-            width: 100%; /* Каждая кнопка занимает всю ширину контейнера */
-            margin-bottom: 15px !important; /* Добавляем отступ между вертикальными кнопками */
-        }
-
+        /* Уменьшаем расстояние между кнопками */
         .hero-actions .btn-gold:first-child {
-            margin-right: 0; /* Убираем горизонтальный отступ при вертикальном расположении */
+            margin-right: 80px; 
+        }
+    }
+
+    /* ============================================== */
+    /* === ПЛАНШЕТЫ (1024px и меньше) === */
+    /* ============================================== */
+    @media (max-width: 1024px) {
+        /* Основной контент Hero */
+        .hero {
+            min-height: 500px;
+        }
+        
+        .hero-main {
+            /* Дополнительное уменьшение ширины контейнера */
+            max-width: 960px;
+        }
+
+        /* Шрифты */
+        .hero h1 {
+            font-size: 36px;
+            line-height: 44px;
+        }
+        .hero p {
+            font-size: 18px;
+        }
+
+        /* Банки */
+        .bins {
+            min-width: 350px; 
+            height: 500px;
+        }
+
+        .bins img:nth-child(1) { 
+            width: 320px;
+            height: 250px;
+            top: 220px;
+            right: 80px;
+        }
+        .bins img:nth-child(2) {
+            width: 250px;
+            height: 230px;
+            top: 130px;
+            right: 10px;
+        }
+        .bins img:nth-child(3) { 
+            width: 180px;
+            height: 150px;
+            top: 80px;
+            right: 150px;
+        }
+        
+        /* Кнопки */
+        .btn-gold {
+            padding: 10px 20px;
+            font-size: 22px;
+        }
+        .hero-actions {
+            bottom: 80px;
+        }
+        .hero-actions .btn-gold:first-child {
+            margin-right: 60px; 
+        }
+    }
+
+    /* ============================================== */
+    /* === МОБИЛЬНЫЕ (768px и меньше) === */
+    /* ============================================== */
+    @media (max-width: 768px) {
+        /* Главная секция теперь вертикальная */
+        .hero-main {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+
+        /* Заголовок и текст - центрируем */
+        .hero-content {
+            text-align: center;
+            order: 2; /* Перемещаем под банки */
+            padding: 0 20px;
+        }
+        .hero h1, .hero p {
+            text-align: center;
+        }
+
+        /* Банки - перемещаем наверх, центрируем и делаем меньше */
+        .bins {
+            order: 1; /* Перемещаем наверх */
+            min-width: auto;
+            width: 100%;
+            height: 350px; 
+            position: relative; 
+            margin-bottom: 30px;
+        }
+
+        /* Уменьшаем размер и позицию банок для мобильных */
+        .bins img {
+            /* Сбрасываем абсолютное позиционирование для мобильных для более контролируемого размещения */
+            position: static; 
+            transform: none !important;
+            animation: none !important; 
+            display: none; /* Скрываем все, кроме одной, или перерисовываем */
+        }
+
+        /* Оставляем только одну центрированную банку для мобильных */
+        .bins img:nth-child(1) { 
+            display: block; 
+            position: absolute;
+            width: 250px;
+            height: 180px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Блок действий (кнопки) */
+        .hero-actions {
+            position: static; /* Убираем абсолютное позиционирование */
+            transform: none;
+            order: 3;
+            flex-direction: column;
+            gap: 15px; /* Увеличиваем вертикальный отступ между кнопками */
+            padding: 0 20px;
+            margin-top: 20px;
+        }
+        .hero-actions .btn-gold {
+            width: 100%;
+            margin-right: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .hero-actions .btn-gold:first-child {
+            margin-right: 0;
+        }
+        
+        /* Контакты */
+        .hero-contact {
+            position: static;
+            transform: none;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .hero-contact a {
+            font-size: 1.4rem;
+            justify-content: center;
         }
     }
 
@@ -1279,6 +1471,97 @@
         /* Сбрасываем стандартные margin h2, чтобы Flexbox центрировал его */
         margin: 0; 
         padding: 0;
+    }
+
+    @media (max-width: 1024px) {
+       
+        .cotalog {
+            padding: 60px 0 40px;
+        }
+        
+        /* Заголовок H1 */
+        .cotalog-text h1 {
+            font-size: 36px;
+        }
+
+        /* Заголовок H2 */
+        .category-title-bar h2 {
+            font-size: 28px;
+        }
+
+        /* Карусель: 2 карточки в ряд */
+        .photo-carousel {
+            gap: 20px; /* Уменьшаем расстояние между карточками */
+        }
+        
+        .product-card {
+            /* 2 колонки: 50% - половина gap */
+            flex: 0 0 calc(50% - 10px); 
+            max-width: none; /* Убираем жесткое ограничение ширины */
+        }
+
+        /* Подробности кнопки */
+        .btn-detail {
+            font-size: 16px;
+            padding: 8px 20px;
+        }
+    }
+
+
+    /* ================================================================= */
+    /* === Адаптация для МОБИЛЬНЫХ (max-width: 768px) - 1 колонка === */
+    /* ================================================================= */
+    @media (max-width: 768px) {
+        /* Общие отступы */
+        .cotalog {
+            padding: 40px 0 30px;
+        }
+        
+        /* Заголовок H1 */
+        .cotalog-text h1 {
+            font-size: 30px;
+        }
+        
+        /* Заголовок H2 */
+        .category-title-bar h2 {
+            font-size: 22px;
+        }
+
+        /* Отступы карусели */
+        .carousel-viewport {
+            padding: 10px; 
+        }
+        
+        /* Карусель: 1 карточка в ряд */
+        .photo-carousel {
+            gap: 15px; 
+        }
+
+        .product-card {
+            /* 1 колонка: 100% ширины */
+            flex: 0 0 100%; 
+            max-width: 100%;
+        }
+        
+        /* Сдвиг инфо-карточки меньше, т.к. высота карточки меньше */
+        .product-info-card {
+            margin-top: -20px; 
+            padding: 12px;
+        }
+        
+        /* Изображение */
+        .product-image {
+            height: 200px;
+        }
+
+        /* Заголовки продуктов */
+        .product-title {
+            font-size: 1rem;
+        }
+
+        .product-summary {
+            font-size: 0.85rem;
+        }
     }
 
     .about-company {
@@ -2018,13 +2301,7 @@
         z-index: 10000 !important;
     }
     
-    /* .energy-header-container,
-    .energy-header,
-    .energy-nav {
-        background: white !important;
-        background-color: transparent !important;
-        background-image: none !important;
-    } */
+   
     
     .energy-header {
         position: fixed;
@@ -2060,8 +2337,10 @@
         align-items: center;
         justify-content: space-between; 
         gap: 30px;
-        padding: 0; 
+        padding: 0 40px;
+        max-width: 1300px;
         height: 80px;
+        margin: 0 auto;
         position: relative;
         z-index: 1001;
     }
@@ -2127,7 +2406,21 @@
     }
     
 
-    
+    .mobile-menu-toggle {
+        display: none; 
+        cursor: pointer;
+        font-size: 28px; 
+        color: #000000;
+        transition: transform 0.3s ease;
+        padding: 5px;
+    }
+
+    .mobile-menu-toggle:hover {
+        color: #E4A836;
+        transform: scale(1.1);
+    }
+
+
     .energy-menu-link::after {
         content: '';
         position: absolute;
@@ -2254,50 +2547,121 @@
     /* Адаптивность */
     
     @media (max-width: 1024px) {
-        .energy-menu {
-            gap: 15px;
-        }
-        .energy-menu-link {
-            padding: 20px 10px;
-            font-size: 12px;
-        }
-        .energy-nav {
-            gap: 20px;
-        }
+    /* Тут уже были ваши стили для сжатия меню. Оставляем их. */
+    .energy-nav {
+        padding: 0 20px; /* Уменьшаем горизонтальный отступ */
+        height: 70px; /* Чуть уменьшаем высоту шапки */
     }
-    
+    .energy-menu {
+        gap: 15px;
+    }
+    .energy-menu-link {
+        padding: 20px 10px;
+        font-size: 14px; /* Чуть увеличил для читаемости, было 12px */
+    }
+    .energy-logo {
+        width: 200px; /* Чуть уменьшаем логотип */
+        height: auto;
+    }
+}
+
+
+
     @media (max-width: 768px) {
-        .energy-nav {
-            flex-direction: column;
-            gap: 15px;
+        /* Скрываем фиксированный header, чтобы он не мешал на маленьких экранах */
+        .energy-header {
+            position: static; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             height: auto;
-            padding: 15px 20px;
         }
+        
+        .energy-nav {
+            flex-direction: row; /* Навигация теперь Лого + Гамбургер */
+            justify-content: space-between;
+            align-items: center;
+            height: 60px; /* Уменьшаем высоту */
+            padding: 10px 20px; /* Отступы */
+            gap: 0;
+        }
+        
+        /* 1. Отображаем кнопку Гамбургер */
+        .mobile-menu-toggle {
+            display: block; 
+        }
+
+        /* 2. Скрываем основное меню по умолчанию */
         .energy-menu {
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+            display: none; 
+            position: absolute;
+            top: 60px; /* Высота .energy-nav */
+            left: 0;
+            width: 100%;
+            background: #FFF2D9;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            flex-direction: column; 
+            align-items: flex-start;
+            padding: 10px 0;
+            z-index: 1000;
         }
-        .energy-menu>li {
-            margin-bottom: 10px;
+        
+        /* 3. Когда класс .menu-open добавлен к energy-menu, показываем его */
+        .energy-menu.menu-open {
+            display: flex;
+        }
+
+        /* 4. Стиль для элементов мобильного меню */
+        .energy-menu > li {
+            width: 100%;
+            margin-bottom: 0;
         }
         .energy-menu-link {
-            padding: 15px 10px;
-            font-size: 11px;
+            padding: 10px 20px;
+            font-size: 16px; /* Чуть увеличиваем шрифт */
+            font-weight: 500;
+            color: #000000;
+            text-transform: none; /* Убираем uppercase */
         }
+        .energy-menu-link::after {
+            content: none;
+        }
+        
+        /* 5. Подменю в мобильном режиме */
         .energy-submenu {
             position: static;
             opacity: 1;
             transform: none;
             visibility: visible;
-            display: none;
+            display: none; /* Скрываем по умолчанию, открываем через JS */
             min-width: 100%;
-            margin-top: 5px;
-            z-index: 9999 !important;
+            margin-top: 0;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+            background: rgba(0, 0, 0, 0.85);
+            
         }
-        .energy-menu>li:hover .energy-submenu {
-            display: block;
+        .energy-submenu a {
+            padding-left: 40px; /* Отступ для вложенности */
+            font-size: 14px;
+        }
+
+        /* Убираем hover-эффекты, которые конфликтуют с мобильным JS */
+        .energy-menu > li:hover .energy-submenu,
+        .energy-menu > li:hover .energy-submenu li {
+            opacity: 1;
             transform: none;
+            transition: none;
+            transition-delay: 0s;
+            display: none; /* Управляется JS */
+        }
+        
+        /* Иконка-стрелка для подменю */
+        .energy-menu-link .fa-chevron-down {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+        .energy-menu-link.active-submenu .fa-chevron-down {
+            transform: rotate(180deg);
         }
     }
 /* 2 пробных варианта */   
@@ -3625,6 +3989,84 @@
 
         sections.forEach(section => {
             observer.observe(section);
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const menu = document.querySelector('.energy-menu');
+        const submenuLinks = document.querySelectorAll('.energy-menu > li');
+        
+        // Функция проверки, является ли экран мобильным
+        const isMobile = () => window.innerWidth <= 768;
+
+        // --- Логика открытия/закрытия главного меню (Гамбургер) ---
+        menuToggle.addEventListener('click', () => {
+            if (isMobile()) {
+                menu.classList.toggle('menu-open');
+                
+                // Меняем иконку Гамбургера на Крестик
+                const icon = menuToggle.querySelector('.fas');
+                if (menu.classList.contains('menu-open')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // --- Логика открытия/закрытия подменю (только на мобильных) ---
+        submenuLinks.forEach(li => {
+            const link = li.querySelector('.energy-menu-link');
+            const submenu = li.querySelector('.energy-submenu');
+
+            // Проверяем, есть ли подменю
+            if (submenu) {
+                link.addEventListener('click', (e) => {
+                    // Если мы на мобильном устройстве (768px и меньше)
+                    if (isMobile()) {
+                        // Предотвращаем переход по ссылке
+                        e.preventDefault(); 
+
+                        // Переключаем класс для подменю
+                        // Toggle visibility of the submenu
+                        const isSubmenuOpen = submenu.style.display === 'block';
+                        submenu.style.display = isSubmenuOpen ? 'none' : 'block';
+                        link.classList.toggle('active-submenu');
+                        
+                        // Закрываем другие подменю
+                        submenuLinks.forEach(otherLi => {
+                            const otherLink = otherLi.querySelector('.energy-menu-link');
+                            const otherSubmenu = otherLi.querySelector('.energy-submenu');
+                            
+                            if (otherSubmenu && otherSubmenu !== submenu) {
+                                otherSubmenu.style.display = 'none';
+                                otherLink.classList.remove('active-submenu');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+        // --- Закрытие меню при изменении размера экрана (с мобильного на десктоп) ---
+        window.addEventListener('resize', () => {
+            if (!isMobile() && menu.classList.contains('menu-open')) {
+                menu.classList.remove('menu-open');
+                // Возвращаем иконку Гамбургера
+                menuToggle.querySelector('.fas').classList.remove('fa-times');
+                menuToggle.querySelector('.fas').classList.add('fa-bars');
+                
+                // Скрываем все мобильные подменю
+                document.querySelectorAll('.energy-submenu').forEach(sub => {
+                    sub.style.display = ''; // Сброс, чтобы CSS взял управление
+                });
+                document.querySelectorAll('.energy-menu-link').forEach(link => {
+                    link.classList.remove('active-submenu');
+                });
+            }
         });
     });
 
