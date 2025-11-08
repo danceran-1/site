@@ -9,11 +9,20 @@
             box-sizing: border-box;
         }
         
+        @font-face {
+            font-family: 'Inter Hewn';
+            src: url('inter-accent.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            background-color: #f5f5f5;
+            font-family: 'Inter', sans-serif; /* ИСПРАВЛЕНО: Теперь 'Inter' используется гарантированно */
+            background-color: #ffffff; 
+            padding-top: 80px; 
+            margin: 0; 
+            overflow-x: hidden; 
         }
         
         
@@ -153,95 +162,9 @@
             background-color: #EEB039;
         }
         
-        .highlight-photo {
-            box-shadow: 0 0 20px 5px #ff6363;
-            transform: scale(1.05);
-            transition: 0.3s ease;
-        }
+      
         
         
-
-        .description-section {
-            max-width: 82.5%;
-            margin: 0 auto;
-            width: 100%;
-            padding: 5px 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            color: black;
-            border-radius: 40px 40px 40px 40px;
-            text-align: center;
-            background-color: #f0f4fa;
-            box-sizing: border-box;
-            overflow: hidden;
-            position: relative; 
-    
-            min-height: 180px; 
-           
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .description-section p {
-            position: absolute;
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: opacity 0.9s ease, max-height 0.9s ease;
-            margin: 0;
-            text-align: center;
-        }
-        
-        .description-section p.active {
-            opacity: 1;
-            max-height: 500px;
-            position: absolute;
-        }
-        
-        .names-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 65px;
-            text-align: center;
-            justify-content: center;
-            margin-bottom: 40px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #1565c0;
-            transition: transform 0.4s ease, box-shadow 0.3s ease;
-        }
-        
-        .names-list span {
-            background: rgba(21, 101, 192, 0.1);
-            padding: 5px 10px;
-            border-radius: 10px;
-            white-space: nowrap;
-            transition: transform 0.4s ease;
-            user-select: none;
-            cursor: pointer;
-        }
-        
-        .names-list span.active-span {
-            color: #ff6363;
-            font-weight: 700;
-            transform: scale(1.05);
-            transition: all 0.2s ease;
-        }
-        
-        .names-list span:hover {
-            transform: scale(1.1);
-        }
-        
-        .names-list-page {
-            display: none;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            width: 100%;
-        }
-        
-        .names-list-page.active {
-            display: flex;
-        }
    
     
 </style>
@@ -255,8 +178,9 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
-
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
 <div class="energy-header-container" style="position: relative; z-index: 1000;">
     <div class="energy-header">
@@ -297,29 +221,35 @@
 </div>
 
 <section id="hero" class="hero">
-    <div class="hero-overlay"></div>
+        <div class="hero-overlay"></div>
 
-    <div class="hero-main content-wrapper">
+        <div class="hero-main content-wrapper">
+            
+            <div class="hero-content">
+                <h1>ООО “Ария-ЛКМ” - эксперт в мире лакокрасочных материалов</h1>
+                <p>Официальный представитель завода «Краски КВИЛ». Профессиональные решения для защиты и декора.</p>
+                
+                <!-- КНОПКИ ПЕРЕМЕЩЕНЫ СЮДА -->
+                <div class="hero-actions"> 
+                    <a href="tel:+79107500013" class="btn-gold">
+                        <i class="fas fa-phone"></i> +7 (910) 750-00-13
+                    </a>
+                    <a href="mailto:aria-lkm@mail.ru" class="btn-gold">
+                        <i class="fas fa-envelope"></i>  aria-lkm@mail.ru
+                    </a>
+                </div>
+            </div>
+
+            <div class="bins">
+                <img src="Free Paint Bucket Mockup 78 1.png" alt="Логотип" class="energy-logo" />
+                <img src="Free Paint Bucket Mockup 79 1.png" alt="Логотип" class="energy-logo" />
+                <img src="Free Paint Bucket Mockup 79 2.png" alt="Логотип" class="energy-logo" />
+            </div>
+
+        </div>
         
-        <div class="hero-content">
-            <h1>ООО “Ария-ЛКМ” - эксперт в мире лакокрасочных материалов</h1>
-            <p>Официальный представитель завода «Краски КВИЛ». Профессиональные решения для защиты и декора.</p>
-        </div>
+        <!-- Блок .hero-actions отсюда удален -->
 
-        <div class="bins">
-            <img src="Free Paint Bucket Mockup 78 1.png" alt="Логотип" class="energy-logo" />
-            <img src="Free Paint Bucket Mockup 79 1.png" alt="Логотип" class="energy-logo" />
-            <img src="Free Paint Bucket Mockup 79 2.png" alt="Логотип" class="energy-logo" />
-        </div>
-    </div>
-    
-    <div class="hero-actions content-wrapper"> 
-        <a href="tel:+79107500013" class="btn-gold">
-            <i class="fas fa-phone"></i> +7 (910) 750-00-13
-        </a>
-        <a href="mailto:aria-lkm@mail.ru" class="btn-gold">
-            <i class="fas fa-envelope"></i>  aria-lkm@mail.ru
-        </a>
 </section>
 
 
@@ -383,40 +313,31 @@
 </section>
 
 
-<section id="about-company" class="about-company">
-    
-    <div class="about-container">
-        <div class="about-text">
-            <h1>«Ария-ЛКМ»</h1>
-            <p>
-                Компания ООО «Ария-ЛКМ» является официальным представителем производителя передовых технологий в сфере лакокрасочных материалов ООО Завод «Краски КВИЛ». Наши совместные принципы деятельностей это - профессионализм и функциональность, а так же комплексный подход в решении поставленных задач. Команда высококвалифицированных сотрудников позволяет подобрать материал под любые цели. Также стоит отметить, что в штате компании есть инспекторы Русского регистра 2го уровня аттестованные в ACI, что говорит о возможном качественном контроле выполнения окрасочных работ на соответствие требованиям передовых международных стандартов, и тем самым обеспечить надлежащее качество и срок службы лакокрасочных покрытий.
-            </p>
-            <a href="#catalog" class="btn-primary">Перейти в каталог</a>
-        </div>
-    </div>
-</section>
-
 
 <section id="use-company" class="use-company">
-    <div class="use-container">
-        <div class="use-text">
-            <h1>Сферы применения</h1>
-            <p>Наша продукция успешно используется в различных отраслях промышленности</p>
+        
+            <div class="use-text">
+                <h1>Сферы применения</h1>
+                <p>Наша продукция успешно используется в различных отраслях промышленности</p>
+            </div>
             
             <div class="applications-grid">
-                <div class="application-card">
-                    <div class="app-image">
-                        <img src="bridg.jpg" alt="Металлоконструкции">
-                    </div>
-                    <div class="app-content">
-                        <h3>Металлоконструкции</h3>
-                        <p>Защита от коррозии и агрессивных сред</p>
-                    </div>
-                </div>
+                
+                
                 
                 <div class="application-card">
                     <div class="app-image">
-                        <img src="oil.jpg" alt="Нефтехранилище">
+                        <img src="avto.png" alt="Автомобили">
+                    </div>
+                    <div class="app-content">
+                        <h3>Прицепная техника</h3>
+                        <p>Долговечное покрытие с высококачественным декоративным видом.</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <div class="app-image">
+                        <img src="banka.png" alt="Нефтехранилища">
                     </div>
                     <div class="app-content">
                         <h3>Нефтехранилища</h3>
@@ -424,376 +345,24 @@
                     </div>
                 </div>
                 
+          
+                
+
                 <div class="application-card">
                     <div class="app-image">
-                        <img src="car.jpg" alt="Машины">
+                        <img src="metall.png" alt="Металлоконструкции">
                     </div>
                     <div class="app-content">
-                        <h3>Автомобили</h3>
-                        <p>Долговечное покрытие для транспорта</p>
+                        <h3>Металлоконструкции</h3>
+                        <p>Защита от коррозии и агрессивных сред</p>
                     </div>
                 </div>
                 
-                <div class="application-card">
-                    <div class="app-image">
-                        <img src="tractor.jpg" alt="Сельхозтехника">
-                    </div>
-                    <div class="app-content">
-                        <h3>Сельхозтехника</h3>
-                        <p>Защита в условиях интенсивной эксплуатации</p>
-                    </div>
-                </div>
-            </div>
             
-            <a href="#catalog" class="btn-primary">Перейти в каталог</a>
-        </div>
-    </div>
+          
 </section>
 
 
-<section id="coloring" class="coloring-section">
-    <div class="coloring-container">
-        <div class="coloring-content">
-            <h1>Колеровка</h1>
-            <p class="coloring-subtitle">Точные цвета по международным системам RAL и NCS</p>
-            
-            <div class="coloring-grid">
-                <div class="coloring-text">
-                    <div class="advantages-list">
-                        <div class="advantage-item">
-                            <div class="advantage-icon">🎨</div>
-                            <div class="advantage-content">
-                                <h3>Любые цвета</h3>
-                                <p>Подберем любой оттенок по каталогам RAL, NCS или вашему образцу</p>
-                            </div>
-                        </div>
-                        
-                        <div class="advantage-item">
-                            <div class="advantage-icon">⚡</div>
-                            <div class="advantage-content">
-                                <h3>Быстрая колеровка</h3>
-                                <p>Автоматическое оборудование обеспечивает точность и скорость</p>
-                            </div>
-                        </div>
-                        
-                        <div class="advantage-item">
-                            <div class="advantage-icon">🔬</div>
-                            <div class="advantage-content">
-                                <h3>Контроль качества</h3>
-                                <p>Каждая партия проходит проверку на соответствие эталону</p>
-                            </div>
-                        </div>
-                        
-                        <div class="advantage-item">
-                            <div class="advantage-icon">🏭</div>
-                            <div class="advantage-content">
-                                <h3>Промышленные объемы</h3>
-                                <p>Возможность колеровки от 1 кг до нескольких тонн</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="coloring-visual">
-                    <div class="equipment-showcase">
-                        <img src="colors.jpg" alt="Колеровочное оборудование" class="equipment-img">
-                        <div class="color-samples">
-                            <div class="color-sample" style="background-color: #FF6B6B"></div>
-                            <div class="color-sample" style="background-color: #4ECDC4"></div>
-                            <div class="color-sample" style="background-color: #45B7D1"></div>
-                            <div class="color-sample" style="background-color: #96CEB4"></div>
-                            <div class="color-sample" style="background-color: #FFEAA7"></div>
-                            <div class="color-sample" style="background-color: #DDA0DD"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="coloring-cta">
-                <p>Нужен конкретный цвет? Пришлите нам образец!</p>
-                <a href="#contact" class="btn-primary">Получить консультацию</a>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="contacts" class="contacts-section">
-    <div class="contacts-container">
-        <div class="contacts-content">
-            <h1>Контакты</h1>
-            <p class="contacts-subtitle">Свяжитесь с нами удобным для вас способом</p>
-            
-            <div class="contacts-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h3>Адрес</h3>
-                            <p>г. Москва, ул. Промышленная, 15<br><span class="contact-note">Пн-Пт: 9:00-18:00</span></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-details">
-                            <h3>Телефон</h3>
-                            <p>+7 (495) 123-45-67<br>+7 (800) 123-45-67</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h3>Почта</h3>
-                            <p>info@aria-lkm.ru<br>sales@aria-lkm.ru</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    <h3>Мы в мессенджерах</h3>
-                    <div class="social-buttons">
-                        <a href="https://t.me/Denzb56" class="social-button telegram">
-                            <i class="fab fa-telegram"></i>
-                            <span>Telegram</span>
-                        </a>
-                        
-                        <a href="https://wa.me/79991234567" class="social-button whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>WhatsApp</span>
-                        </a>
-                        
-                        <a href="mailto:info@aria-lkm.ru" class="social-button email">
-                            <i class="fas fa-envelope"></i>
-                            <span>Почта</span>
-                        </a>
-                        
-                        <a href="viber://chat?number=79991234567" class="social-button viber">
-                            <i class="fab fa-viber"></i>
-                            <span>Viber</span>
-                        </a>
-                    </div>
-                    
-                    <div class="contact-cta">
-                        <p>Есть вопросы? Напишите нам!</p>
-                        <small>Ответим в течение 15 минут</small>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="map-placeholder">
-                <div class="map-overlay">
-                    <h4>Как добраться</h4>
-                    <p>Мы находимся в промышленной зоне, есть парковка для грузового транспорта</p>
-                    <a href="#map" class="btn-outline">Посмотреть на карте</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contacts" class="contacts-section asymmetric-layout">
-    <div class="contacts-container">
-        <div class="contacts-content">
-            <div class="contacts-header">
-                <h1>Контакты</h1>
-                <p>Готовы ответить на все ваши вопросы</p>
-            </div>
-            
-            <div class="contacts-body">
-                <div class="contact-main">
-                    <div class="contact-block">
-                        <h3>📞 Звоните</h3>
-                        <div class="phone-numbers">
-                            <a href="tel:+74951234567">+7 (495) 123-45-67</a>
-                            <a href="tel:+78001234567">+7 (800) 123-45-67</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-block">
-                        <h3>📧 Пишите</h3>
-                        <div class="email-list">
-                            <a href="mailto:info@aria-lkm.ru">info@aria-lkm.ru</a>
-                            <a href="mailto:sales@aria-lkm.ru">sales@aria-lkm.ru</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-block">
-                        <h3>📍 Приезжайте</h3>
-                        <p>г. Москва, ул. Промышленная, 15</p>
-                        <small>Пн-Пт: 9:00-18:00</small>
-                    </div>
-                </div>
-                
-                <div class="contact-sidebar">
-                    <div class="quick-contact">
-                        <h4>Написать в мессенджер</h4>
-                        <div class="quick-buttons">
-                            <a href="https://t.me/Denzb56" class="quick-btn" style="background: #0088cc;">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                            <a href="https://wa.me/79991234567" class="quick-btn" style="background: #25D366;">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="viber://chat?number=79991234567" class="quick-btn" style="background: #7360F2;">
-                                <i class="fab fa-viber"></i>
-                            </a>
-                        </div>
-                        <p>Быстрый ответ в течение 5 минут</p>
-                    </div>
-                    
-                    <div class="callback-form">
-                        <h4>Обратный звонок</h4>
-                        <input type="tel" placeholder="Ваш номер телефона">
-                        <button class="callback-btn">Позвоните мне</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contacts" class="contacts-section vertical-layout">
-    <div class="contacts-container">
-        <div class="contacts-content">
-            <h1>Свяжитесь с нами</h1>
-            <p class="contacts-subtitle">Мы всегда на связи и готовы помочь</p>
-            
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <div class="card-icon">🏢</div>
-                    <h3>Адрес офиса</h3>
-                    <p>г. Москва, ул. Промышленная, 15</p>
-                    <small>Пн-Пт: 9:00-18:00</small>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="card-icon">📞</div>
-                    <h3>Телефоны</h3>
-                    <p>+7 (495) 123-45-67</p>
-                    <p>+7 (800) 123-45-67</p>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="card-icon">📧</div>
-                    <h3>Электронная почта</h3>
-                    <p>info@aria-lkm.ru</p>
-                    <p>sales@aria-lkm.ru</p>
-                </div>
-            </div>
-            
-            <div class="messengers-section">
-                <h3>Быстрая связь через мессенджеры</h3>
-                <div class="messenger-buttons">
-                    <a href="https://t.me/Denzb56" class="messenger-btn tg-btn">
-                        <i class="fab fa-telegram"></i>
-                        <span>Telegram</span>
-                    </a>
-                    <a href="https://wa.me/79991234567" class="messenger-btn wa-btn">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                    <a href="viber://chat?number=79991234567" class="messenger-btn vb-btn">
-                        <i class="fab fa-viber"></i>
-                        <span>Viber</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="contacts" class="contacts-section ultra-horizontal">
-    <div class="contacts-container">
-        <div class="contacts-content">
-            <h1>Контакты</h1>
-            
-            <div class="contacts-row">
-                <!-- Адрес -->
-                <div class="contact-mega-card">
-                    <div class="mega-icon">🏭</div>
-                    <div class="mega-content">
-                        <h3>Производство и офис</h3>
-                        <p class="mega-text">г. Москва, ул. Промышленная, 15</p>
-                        <p class="mega-hours">Пн-Пт: 8:00-19:00, Сб: 9:00-17:00</p>
-                        <div class="mega-features">
-                            <span>✓ Склад</span>
-                            <span>✓ Лаборатория</span>
-                            <span>✓ Парковка</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Телефоны -->
-                <div class="contact-mega-card">
-                    <div class="mega-icon">📞</div>
-                    <div class="mega-content">
-                        <h3>Многоканальная связь</h3>
-                        <div class="phones-mega">
-                            <a href="tel:+74951234567" class="mega-phone">+7 (495) 123-45-67</a>
-                            <a href="tel:+78001234567" class="mega-phone">+7 (800) 123-45-67</a>
-                            <a href="tel:+79991234567" class="mega-phone">+7 (999) 123-45-67</a>
-                        </div>
-                        <p class="mega-note">Отдел продаж · Техподдержка · Дирекция</p>
-                    </div>
-                </div>
-                
-                <!-- Почта и соцсети -->
-                <div class="contact-mega-card">
-                    <div class="mega-icon">🌐</div>
-                    <div class="mega-content">
-                        <h3>Онлайн-связь</h3>
-                        <div class="emails-mega">
-                            <a href="mailto:info@aria-lkm.ru">info@aria-lkm.ru</a>
-                            <a href="mailto:sales@aria-lkm.ru">sales@aria-lkm.ru</a>
-                            <a href="mailto:tech@aria-lkm.ru">tech@aria-lkm.ru</a>
-                        </div>
-                        <div class="socials-mega">
-                            <a href="https://t.me/Denzb56" class="mega-social tg">
-                                <i class="fab fa-telegram"></i>
-                                <span>Telegram</span>
-                            </a>
-                            <a href="https://wa.me/79991234567" class="mega-social wa">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>WhatsApp</span>
-                            </a>
-                            <a href="viber://chat?number=79991234567" class="mega-social vb">
-                                <i class="fab fa-viber"></i>
-                                <span>Viber</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Карта во всю ширину -->
-            <div class="full-width-map infographic-map">
-    <div class="map-content">
-        <h3>Схема проезда</h3>
-        <div class="infographic-grid">
-            <div class="info-card">
-                <div class="info-icon">🚗</div>
-                <h4>На автомобиле</h4>
-                <p>МКАД → съезд на Промышленную → 500м до ворот</p>
-                <small>Бесплатная парковка</small>
-            </div>
-            <div class="info-card">
-                <div class="info-icon">🚛</div>
-                <h4>Грузовой транспорт</h4>
-                <p>Въезд с восточной стороны, эстакада для разгрузки</p>
-                <small>Высота ворот 4.5м</small>
-            </div>
-            <div class="info-card">
-                <div class="info-icon">🚌</div>
-                <h4>Общественный транспорт</h4>
-                <p>Автобус №124, №567 до остановки "Заводская"</p>
-                <small>5 минут пешком</small>
-            </div>
-        </div>
-        <a href="#full-map" class="map-btn">Построить маршрут</a>
-    </div>
-</div>
-        </div>
-    </div>
-</section>
 
 <style>
 
@@ -816,486 +385,289 @@
         scroll-padding-top: 100px; 
     }
 
-    .content-wrapper {
-        
-        max-width: 1200px; 
-      
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .hero {
-        position: relative;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        
    
-        justify-content: flex-start;
-        text-align: center;
-        color: rgb(0, 0, 0);
-        font-family: "Montserrat", sans-serif;
-        overflow: hidden;
 
-        min-height: 600px;
-         /* для анимации */
-        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        transform-origin: top;
-        z-index: 10;
-    }
-
-    .hero-main {
-        display: flex; 
-        justify-content: flex-start; 
-        align-items: center;
+ .energy-header {
+            position: fixed; 
+            top: 0;
+            left: 0; 
+            width: 100%; 
+            background: #FFF2D9;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
         
-       
-        
-        flex-grow: 1; 
-        padding-bottom: 50px; 
-        width: 100%;
-    }
-
-    .hero-actions {
-        position: absolute;
-        bottom: 185px; 
-        
-        width: 100%; 
-        max-width: 1200px; 
-        
-      
-        left: 50%;
-        transform: translateX(-50%);
-        
-        z-index: 2;
-        
+        /* Главный контейнер навигации */
+        .energy-nav {
         display: flex;
+        align-items: center;
+    
         justify-content: flex-start; 
-        align-items: center;
         
-        gap: 0; 
-    }
-
-    .hero.scrolled {
-        transform: scale(0.95) translateY(-20px);
-        opacity: 0.8;
-        border-radius: 0 0 40px 40px;
-    }
-    .hero h1, .hero p, .buttons {
-
-        text-align: left;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .hero-content {
-        max-width: 850px; 
-        width: auto;
-        flex-shrink: 0; /* Не даем тексту сжиматься */
- 
-        text-align: left;
-    }
-
-        .hero.scrolled .hero-content {
-        transform: translateY(-30px) scale(0.98);
-        opacity: 0.7;
-    }
-
-    .hero-contact {
-        position: absolute;          
-        bottom: 40px;                
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 50px;
-        z-index: 2;
-    }
-
-    .hero-contact a {
-        font-size: 1.6rem;
-        text-decoration: none;
-        font-family: "Montserrat", sans-serif;
-        color: white;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
-        transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    .hero-contact a:hover {
-        transform: translateY(-3px); 
-        color: #F4F6FF;
-        text-shadow: 0 0 4px #F4F6FF, 0 0 10px #1E3A8A;
-    }
-
-    .hero-contact i {
-        font-size: 1.8rem;
-    }
-    
-    .hero-content .btn-gold {
-        display: inline-flex;
-        align-items: center;
-        margin-right: 0px;
-        margin-bottom: 0px;
-    }
-
-    .bins {
-        position: relative; 
+        /* КОРРЕКТИРОВКА 2: Установили нужный разрыв (например, 30px) */
+        gap: 30px; 
         
-        min-width: 500px; 
-        height: 700px; 
-        flex-shrink: 0; /* Не даем банкам сжиматься */
-    }
-
- 
-    .bins img {
-        position: absolute;
-        margin: 0;
-        
-
-        transition: transform 0.5s ease-in-out, box-shadow 0.3s ease; 
-        
-        animation-name: can-float;
-        animation-duration: 8s; 
-        animation-iteration-count: infinite; 
-        animation-timing-function: ease-in-out;
-        animation-direction: alternate;
-    }
-
-    
-
-    .bins img:nth-child(1) { /* Самая большая */
-        width: 500px;
-        height: 370px;
-  
-        top: 320px;
-     
-        right: 140px;
-        transform: rotate(5deg); 
-        z-index: 3;
-
-        animation-duration: 9s; 
-        animation-delay: 0s;
-    }
-    .bins img:nth-child(2) { /* Средняя */
-        width: 330px;
-        height: 310px;
-   
-        top: 170px;
-        right: 50px;
-        transform: rotate(0deg); 
-        z-index: 2;
-
-        animation-name: can-float-slow;
-        animation-duration: 6s; 
-        animation-delay: 1.5s;
-
-    }
-    .bins img:nth-child(3) { /* Самая маленькая */
-        width: 270px;
-        height: 200px;
-        top:120px;
-    
-      
-        right: 220px;
-        z-index: 1;
-
-        animation-duration: 7s;
-        animation-delay: 3s;
-    }
-
-    /* Определяем ключевые кадры для анимации "плавания" */
-    @keyframes can-float {
-        0% {
-            transform: translateY(0) rotate(5deg);
-        }
-        50% {
-            /* Движение немного вверх и изменение наклона */
-            transform: translateY(-15px) rotate(10deg); 
-        }
-        100% {
-            transform: translateY(0) rotate(5deg);
-        }
-    }
-    /* Отдельная анимация для второй банки, чтобы они не двигались синхронно */
-    @keyframes can-float-slow {
-        0% {
-            transform: translateY(0) rotate(0deg);
-        }
-        50% {
-            /* Движение немного вниз */
-            transform: translateY(10px) rotate(6deg);
-        }
-        100% {
-            transform: translateY(0) rotate(0deg);
-        }
-    }
-
-    .btn-gold {
-        display: inline-block;
-        padding: 12px 24px;
-        background: linear-gradient(135deg, #E4A836 0%, #7C5712 100%);
-        color: #ffffff !important;
-        text-decoration: none;
-        border-radius: 10px;
-        font-weight: 100px;
-        font-size: 27px;
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+        padding: 0 40px;
+        max-width: 1300px; 
+        height: 80px;
+        margin: 0 auto;
         position: relative;
-        overflow: hidden;
     }
-
-   .btn-gold:hover {
-       
-        background: linear-gradient(135deg, #7C5712 0%, #E4A836 100%); 
-        box-shadow: 0 8px 25px rgba(255, 165, 0, 0.5); 
         
-        filter: brightness(1.1); 
-        transform: translateY(-2px); 
-    }
-
-    .hero-actions .btn-gold:first-child {
-        margin-right: 162px; 
-    }
-
-    @media (max-width: 1440px) {
-        /* 1. Центрируем и ограничиваем весь контент Hero */
-        .hero-main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px; /* Отступы по бокам */
+        .energy-logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #000000;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1002;
         }
-        
-        /* 2. Делаем блок банок более гибким и уменьшаем его базовые размеры */
-        .bins {
-            /* Делаем его гибким, чтобы он занимал доступное место */
-            flex: 1 1 40%; 
-            /* Уменьшаем минимальную ширину и высоту для экономии места */
-            min-width: 400px; 
-            height: 600px;
+
+        /* Список меню - УМЕНЬШЕН ГЭП */
+        .energy-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            gap: 15px; /* Уменьшаем расстояние между ссылками */
+            position: relative;
+            z-index: 1001;
         }
         
-        /* 3. Корректируем размеры и позицию банок */
-        .bins img:nth-child(1) { /* Самая большая */
-            width: 400px; /* Уменьшаем размер */
-            height: 300px;
-            top: 250px;
-            right: 100px;
-        }
-        .bins img:nth-child(2) { /* Средняя */
-            width: 280px;
-            height: 260px;
-            top: 150px;
-            right: 30px;
-        }
-        .bins img:nth-child(3) { /* Самая маленькая */
-            width: 220px;
-            height: 180px;
-            top: 100px;
-            right: 180px;
+        /* Родительский LI для дропдауна - КЛЮЧЕВОЙ position: relative; */
+        .energy-menu > li {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            z-index: 1001;
         }
 
-        /* 4. Уменьшаем большие шрифты */
-        .hero h1 {
-            font-size: 40px;
-            line-height: 50px;
-        }
-        .hero p {
+        /* Ссылка меню */
+        .energy-menu-link {
+            padding: 28px 15px; /* Оставляем вертикальный padding, чтобы ссылка была кликабельной */
+            text-transform: uppercase;
             font-size: 20px;
-        }
-
-        /* 5. Корректируем позицию и отступы кнопок */
-        .hero-actions {
-            /* Сдвигаем вверх, так как банки стали меньше */
-            bottom: 120px; 
-            max-width: 1120px; 
-        }
-        /* Уменьшаем расстояние между кнопками */
-        .hero-actions .btn-gold:first-child {
-            margin-right: 80px; 
-        }
-    }
-
-    /* ============================================== */
-    /* === ПЛАНШЕТЫ (1024px и меньше) === */
-    /* ============================================== */
-    @media (max-width: 1024px) {
-        /* Основной контент Hero */
-        .hero {
-            min-height: 500px;
+            font-weight: 600;
+            color: #000000;
+            display: block;
+            position: relative;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            line-height: 1.2;
+            text-decoration: none;
         }
         
-        .hero-main {
-            /* Дополнительное уменьшение ширины контейнера */
-            max-width: 960px;
-        }
-
-        /* Шрифты */
-        .hero h1 {
-            font-size: 36px;
-            line-height: 44px;
-        }
-        .hero p {
-            font-size: 18px;
-        }
-
-        /* Банки */
-        .bins {
-            min-width: 350px; 
-            height: 500px;
-        }
-
-        .bins img:nth-child(1) { 
-            width: 320px;
-            height: 250px;
-            top: 220px;
-            right: 80px;
-        }
-        .bins img:nth-child(2) {
-            width: 250px;
-            height: 230px;
-            top: 130px;
-            right: 10px;
-        }
-        .bins img:nth-child(3) { 
-            width: 180px;
-            height: 150px;
-            top: 80px;
-            right: 150px;
-        }
-        
-        /* Кнопки */
-        .btn-gold {
-            padding: 10px 20px;
-            font-size: 22px;
-        }
-        .hero-actions {
-            bottom: 80px;
-        }
-        .hero-actions .btn-gold:first-child {
-            margin-right: 60px; 
-        }
-    }
-
-    /* ============================================== */
-    /* === МОБИЛЬНЫЕ (768px и меньше) === */
-    /* ============================================== */
-    @media (max-width: 768px) {
-        /* Главная секция теперь вертикальная */
-        .hero-main {
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            padding-top: 50px;
-            padding-bottom: 20px;
-        }
-
-        /* Заголовок и текст - центрируем */
-        .hero-content {
-            text-align: center;
-            order: 2; /* Перемещаем под банки */
-            padding: 0 20px;
-        }
-        .hero h1, .hero p {
-            text-align: center;
-        }
-
-        /* Банки - перемещаем наверх, центрируем и делаем меньше */
-        .bins {
-            order: 1; /* Перемещаем наверх */
-            min-width: auto;
-            width: 100%;
-            height: 350px; 
-            position: relative; 
-            margin-bottom: 30px;
-        }
-
-        /* Уменьшаем размер и позицию банок для мобильных */
-        .bins img {
-            /* Сбрасываем абсолютное позиционирование для мобильных для более контролируемого размещения */
-            position: static; 
-            transform: none !important;
-            animation: none !important; 
-            display: none; /* Скрываем все, кроме одной, или перерисовываем */
-        }
-
-        /* Оставляем только одну центрированную банку для мобильных */
-        .bins img:nth-child(1) { 
-            display: block; 
+        /* Эффект подчеркивания */
+        .energy-menu-link::after {
+            content: '';
             position: absolute;
-            width: 250px;
-            height: 180px;
-            top: 50%;
+            bottom: 20px;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #E4A836;
+            transition: width 0.3s ease;
+        }
+        .energy-menu-link:hover::after { width: 70%; }
+        
+        /* Выпадающий список (SUBMENU) - КОРРЕКТНОЕ ПОЗИЦИОНИРОВАНИЕ */
+        .energy-submenu {
+            background: rgba(0, 0, 0, 0.95);
+            position: absolute;
+            left: 0;
+            top: 100%; /* Открывается точно под родителем */
+            z-index: 9999;
+            min-width: 250px;
+            opacity: 0;
+            transform: scaleY(0) translateY(-10px);
+            transform-origin: top center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid #333;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+            visibility: hidden;
+            list-style: none;
+        }
+        
+        .energy-menu > li:hover .energy-submenu {
+            opacity: 1;
+            transform: scaleY(1) translateY(0);
+            visibility: visible;
+        }
+        
+        .energy-submenu a {
+            color: #ffffff;
+            text-align: left;
+            padding: 15px 20px;
+            font-size: 14px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .mobile-menu-toggle {
+            display: none; 
+            cursor: pointer;
+            font-size: 28px; 
+            color: #000000;
+            padding: 5px;
+            z-index: 1002;
         }
 
-        /* Блок действий (кнопки) */
-        .hero-actions {
-            position: static; /* Убираем абсолютное позиционирование */
-            transform: none;
-            order: 3;
-            flex-direction: column;
-            gap: 15px; /* Увеличиваем вертикальный отступ между кнопками */
-            padding: 0 20px;
-            margin-top: 20px;
+        /* =================================================================
+         2. СТИЛИ HERO И CONTENT-WRAPPER (СОХРАНЕННАЯ ЛОГИКА)
+        ================================================================= */
+
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column; 
+            justify-content: flex-start;
+            color: rgb(0, 0, 0);
+            background-color: #ffffff; 
+            overflow: hidden;
+            z-index: 10;
+            padding-bottom: 0px;
         }
-        .hero-actions .btn-gold {
+
+        .content-wrapper {
             width: 100%;
-            margin-right: 0 !important;
-            margin-bottom: 0 !important;
+            max-width: 1300px; 
+            margin: 0 auto; 
+            padding-left: 40px; 
+            padding-right: 40px;
+            box-sizing: border-box; 
         }
-        .hero-actions .btn-gold:first-child {
-            margin-right: 0;
+
+        .hero-main {
+            display: flex;
+            flex-wrap: nowrap; 
+            align-items: center; 
+            gap: 30px;
+            padding-top: 80px; 
+        }
+
+        .hero-content {
+            flex: 1 1 60%; 
+            min-width: 320px; 
+            text-align: left;
         }
         
-        /* Контакты */
-        .hero-contact {
-            position: static;
-            transform: none;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 30px;
+        .hero h1 { 
+            font-size: 46px; 
+            font-weight: 700; 
+            margin-bottom: 40px; 
+            line-height: 1.2; 
+            color: #000000; 
+            text-align: left; 
+            max-width: 900px; 
+            font-family: 'Inter Hewn',serif !important;
         }
-        .hero-contact a {
-            font-size: 1.4rem;
-            justify-content: center;
-        }
-    }
 
-    .hero h1 {
-        font-size: 47px;
-        font-weight: 700;
-        margin-bottom: 20px;
-        line-height: 60px;
+        .hero p { font-size: 28px; margin-bottom: 80px; font-weight: 700; line-height: 1.4; color: rgba(0, 0, 0, 0.85); text-align: left; max-width: 900px; }
+        .hero-actions { display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-top: 0; }
+        .btn-gold { display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: linear-gradient(135deg, #E4A836 0%, #7C5712 100%); color: #ffffff !important; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 28px; text-align: center; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3); }
+        .btn-gold:hover { background: linear-gradient(135deg, #7C5712 0%, #E4A836 100%); box-shadow: 0 8px 25px rgba(255, 165, 0, 0.5); transform: translateY(-2px); }
+        .hero-actions .btn-gold:first-child { margin-right: 40px; }
         
-        color: #000000;
-        font-family: "Inter Hewn", sans-serif;
-        text-align: left;
-    }
-    
+        .bins { flex: 1 1 40%; min-width: 320px; position: relative; aspect-ratio: 500 / 700; }
+        .bins img { position: absolute; height: auto; transition: transform 0.5s ease-in-out; }
+        /* ИЗМЕНЕНИЕ: Уменьшаем 'top' для каждой банки, чтобы они поднялись ВНУТРИ .bins */
+        .bins img:nth-child(1) { width: 100%; top: 35%; right: 28%; transform: rotate(5deg); z-index: 3; animation: 9s can-float 0s infinite alternate ease-in-out; }
+        .bins img:nth-child(2) { width: 66%; top: 12%; right: 10%; transform: rotate(0deg); z-index: 2; animation: 6s can-float-slow 1.5s infinite alternate ease-in-out; }
+        .bins img:nth-child(3) { width: 54%; top: 7%; right: 44%; z-index: 1; animation: 7s can-float 3s infinite alternate ease-in-out; }
 
-    .hero p {
-        font-size: 24px;
-        margin-bottom: 30px;
-        font-weight: 700;
-        max-width: 800px;
-        line-height: 143%;
-        font-family: "Montserrat", sans-serif;
-        color: rgba(0, 0, 0, 0.85);
-        text-align: left;
+        @keyframes can-float {
+            0% { transform: translateY(0) rotate(5deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(5deg); }
+        }
+        @keyframes can-float-slow {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(10px) rotate(6deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        /* =================================================================
+         3. АДАПТИВНОСТЬ
+        ================================================================= */
 
-    
-    }
-   
+        /* АСИММЕТРИЧНЫЙ ДИЗАЙН (Только на ОЧЕНЬ больших экранах) */
+        @media (min-width: 1440px) {
+            .content-wrapper {
+                max-width: 2000px; 
+                padding-left: 350px; 
+                padding-right: 40px;
+            }
+        }
+
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+        @media (max-width: 1024px) {
+            .content-wrapper { padding-left: 20px; padding-right: 20px; max-width: 100%; }
+            .hero-main { flex-direction: column; padding-top: 100px; }
+            .hero-content { order: 2; text-align: center; max-width: 600px; flex-basis: auto; }
+            .hero h1, .hero p { text-align: center; }
+            .bins { order: 1; width: 80%; max-width: 400px; margin-bottom: 20px; }
+            .hero-actions { justify-content: center; padding-top: 10px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; margin-bottom: 30px; }
+            .btn-gold { font-size: 20px; padding: 10px 20px; }
+            
+            /* Навигация на планшетах */
+            .energy-nav { padding: 0 20px; height: 70px; gap: 10px; }
+            .energy-menu { gap: 10px; }
+            .energy-menu-link { padding: 20px 10px; font-size: 14px; }
+            
+        }
+
+        /* МОБИЛЬНЫЕ (768px и меньше) */
+        @media (max-width: 768px) {
+            .energy-header { position: static; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+            body { padding-top: 0; }
+            .hero { min-height: calc(100vh - 60px); }
+            .energy-nav { height: 60px; padding: 10px 20px; }
+            
+            .mobile-menu-toggle { display: block; }
+            
+            .energy-menu {
+                display: none; 
+                position: absolute;
+                top: 60px; 
+                left: 0;
+                width: 100%;
+                background: #FFF2D9;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                flex-direction: column; 
+                align-items: flex-start;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+            
+            .energy-menu.menu-open { display: flex; }
+            .energy-menu > li { width: 100%; }
+            .energy-menu-link { padding: 10px 20px; font-size: 16px; font-weight: 500; text-transform: none; }
+            .energy-menu-link::after { content: none; }
+            
+            .energy-submenu {
+                position: static; 
+                display: none; 
+                opacity: 1; transform: none; visibility: visible;
+                min-width: 100%; padding: 0; border: none; box-shadow: none;
+                background: rgba(0, 0, 0, 0.85);
+                flex-direction: column;
+            }
+            .energy-submenu a { padding-left: 40px; font-size: 14px; }
+
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 16px; margin-bottom: 20px; }
+            .hero-actions { flex-direction: column; gap: 15px; padding-top: 0; }
+            .btn-gold { width: 100%; }
+            .hero-actions .btn-gold:first-child { margin-right: 0; }
+        }
 
     .cotalog {
         width: 100%;
@@ -1352,19 +724,19 @@
     }
 
     .product-card {
-    /* Ширина, чтобы 3 помещались в 1200px с учетом gap 30px */
-    flex: 0 0 calc(33.333% - 20px); 
-    width: auto;
-    max-width: 380px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: 15px;
-    background-color: #f9f9f9; 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
+        /* Ширина, чтобы 3 помещались в 1200px с учетом gap 30px */
+        flex: 0 0 calc(33.333% - 20px); 
+        width: auto;
+        max-width: 380px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-radius: 15px;
+        background-color: #f9f9f9; 
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
 
     .btn-detail {
       
@@ -1564,1706 +936,214 @@
         }
     }
 
-    .about-company {
-        position: relative;
-        width: 100%;
-        min-height: 70vh;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        background: white;
-        overflow: hidden;
-        padding: 0 20px;
-        
-        border-top-left-radius: 80px;
-        border-top-right-radius: 80px;
+        /* =================================================================
+         3. СТИЛИ СЕКЦИИ СФЕР ПРИМЕНЕНИЯ (#use-company)
+        ================================================================= */
 
-        color: #fff;
-        font-family: "Montserrat", sans-serif;
-
-        z-index: 20;
-        margin-top: -50px;
-
-
-    }
-    
-
-    .about-company::before,
-    .about-company::after {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.3;
-        z-index: 0;
-    }
-
-    .about-company::before {
-        width: 400px;
-        height: 400px;
-        background: rgba(255,255,255,0.15);
-        top: 20%;
-        left: 15%;
-        transform: translate(-50%, -50%);
-        animation: float 18s ease-in-out infinite;
-    }
-
-    .about-company::after {
-        width: 600px;
-        height: 600px;
-        background: rgba(255,255,255,0.1);
-        bottom: 15%;
-        right: 10%;
-        transform: translate(50%, 50%);
-        animation: float 22s ease-in-out infinite alternate;
-    }
-
-    @keyframes float {
-        0% { transform: translateY(0) translateX(0) rotate(0deg); }
-        50% { transform: translateY(20px) translateX(20px) rotate(45deg); }
-        100% { transform: translateY(0) translateX(0) rotate(0deg); }
-    }
-
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 50px;
-        width: 90%;
-        max-width: 1200px;
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        margin-top: 80px;
-
-        background: rgba(45, 45, 65, 0.85); /* мягкий фон */
-        padding: 40px 30px;
-        border-radius: 20px;
-
-
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    
-    }
-
-
-
-    .about-text {
-        flex: 1;
-        padding-top: 20px;
- text-align: center; 
-    }       
-
-    .about-text p {
-        text-align: left; 
-    }
-
-    .about-text h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        line-height: 1.2;
-        color: #F4F6FF;
-        text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
-        text-align: center; 
-        position: relative;
-    }
-
- 
-
-    .about-text p {
-        font-size: 1.3rem;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        text-shadow: 0 0 6px rgba(0,0,0,0.2);
-    }
-
-
-
-
-    /* Эффект при наведении */
-   
-
-    /* Адаптивность */
-    @media (max-width: 900px) {
-        .about-container {
-            flex-direction: column-reverse;
-            gap: 30px;
+        .use-company {
+            background-color: #ffffff; 
+            padding: 80px 0;
         }
-        .about-text h1 {
-            font-size: 2.5rem;
+
+        .use-text {
+            text-align: center;
+            margin-bottom: 50px;
         }
-        .about-text p {
-            font-size: 1.1rem;
+
+        .use-text h1 {
+            font-size: 48px;
+            font-weight: 800;
+            /* Убрана попытка использовать 'Inter Hewn' - используется глобальный 'Inter' */
+            color: #000000;
+            margin-bottom: 10px;
         }
-        .about-image img {
-            max-width: 90%;
-        }
-    }
 
-   
-
-
-
-
-
-    /* Убираем фон у секций */
-    .about-company,
-    .cotalog {
-        background: transparent;
-    }
-
-/* Остальное оставляем как есть */
-
-
-
-
-    .btn-primary {
-        display: inline-block;
-        position: relative;
-        padding: 14px 32px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        background: linear-gradient(120deg, #1E3A8A 0%, #2E59C1 50%);
-        background-size: 200% 200%;
-        box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
-        transition: background-position 0.5s, box-shadow 0.3s;
-
-    }
-    .btn-primary:hover {
-    background-position: 100% 0;
-    box-shadow: 0 6px 20px rgba(195, 29, 29, 0.5);
-}
-    .use-company{
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background: white;
-    overflow: hidden;
-    padding: 0 20px;
-    
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-}
-
-.use-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 50px;
-    width: 100%;
-    max-width: 1950px; /* ОГРАНИЧИВАЕМ ШИРИНУ - не на всю ширину */
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    margin-top: 80px;
-    background: rgba(45, 45, 65, 0.85);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.use-text{
-    font-size: 24px;
-    color: #ffffff;
-    margin: 40px 0 20px;
-    text-align: center;
-}
-
-.use-text h1{
-   text-transform: uppercase !important ;
-}
-
-.applications-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 КАРТОЧКИ В РЯД - не переносятся */
-    gap: 50px;
-    margin: 50px 0;
-    align-items: center;
-    justify-items: center;
-    width: 100%; /* ЗАНИМАЕТ ВСЮ ШИРИНУ КОНТЕЙНЕРА */
-}
-
-.application-card {
-    background: transparent;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    position: relative;
-    border: 2px solid #f0f4fa;
-    width: 110%; /* КАРТОЧКИ РАСТЯГИВАЮТСЯ ПО ШИРИНЕ */
-}
-
-.application-card:hover {
-    transform: translateY(-10px);
-    border-color: #1565c0;
-    box-shadow: 0 10px 25px rgba(21, 101, 192, 0.2);
-}
-
-.app-image {
-    height: 250px; /* УВЕЛИЧИЛИ ВЫСОТУ ФОТО */
-    overflow: hidden;
-    position: relative;
-}
-
-.app-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.app-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent 50%, rgba(21, 101, 192, 0.1));
-    transition: all 0.3s ease;
-}
-
-.application-card:hover .app-image img {
-    transform: scale(1.1);
-}
-
-.application-card:hover .app-overlay {
-    background: linear-gradient(to bottom, transparent 30%, rgba(21, 101, 192, 0.2));
-}
-
-.app-content {
-    padding: 25px; /* УВЕЛИЧИЛИ ПАДДИНГИ */
-    text-align: center;
-    background: white;
-    min-height: 120px; /* МИНИМАЛЬНАЯ ВЫСОТА ДЛЯ ЕДИНООБРАЗИЯ */
-}
-
-.app-content h3 {
-    color: #1565c0;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-.app-content p {
-    color: #161718;
-    font-size: 1rem;
-    line-height: 1.4;
-}
-
-@media (max-width: 1200px) {
-    .applications-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 КАРТОЧКИ НА ПЛАНШЕТАХ */
-    }
-}
-
-@media (max-width: 768px) {
-    .applications-grid {
-        grid-template-columns: 1fr; /* 1 КАРТОЧКА НА МОБИЛЬНЫХ */
-        gap: 20px;
-    }
-    
-    .app-image {
-        height: 200px; /* ЧУТЬ МЕНЬШЕ НА МОБИЛЬНЫХ */
-    }
-}
-
-
-
-.advantages-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    text-align: left;
-}
-
-.advantage-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.advantage-item:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #1565c0;
-    transform: translateX(10px);
-}
-
-.advantage-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-}
-
-.advantage-content h3 {
-    color: #1565c0;
-    margin-bottom: 8px;
-    font-size: 1.3rem;
-}
-
-.advantage-content p {
-    color: #e0e0e0;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.coloring-visual {
-    position: relative;
-}
-
-.equipment-showcase {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.equipment-img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    display: block;
-}
-
-.color-samples {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.color-sample {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    border: 2px solid white;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.color-sample:hover {
-    transform: scale(1.2);
-}
-
-.coloring-cta {
-    margin-top: 50px;
-    padding: 30px;
-    background: rgba(21, 101, 192, 0.2);
-    border-radius: 15px;
-    border: 1px solid rgba(21, 101, 192, 0.3);
-}
-
-.coloring-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-.advantage-content h3 {
-    color: #4ECDC4; /* Яркий бирюзовый */
-   
-    color: #FFD93D; /* Яркий желтый */
-    
-    color: #6CFF7C; /* Неоново-зеленый */
-   
-    color: #FFFFFF; /* Просто белый */
-    
-    margin-bottom: 8px;
-    font-size: 1.3rem;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Добавляем свечение */
-}
-
-@media (max-width: 968px) {
-    .coloring-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .coloring-content h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .coloring-container {
-        padding: 40px 20px;
-    }
-    
-    .advantage-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-    
-    .equipment-img {
-        height: 250px;
-    }
-    
-    .color-samples {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        right: auto;
-        margin-top: 20px;
-    }
-}
-
-
-.contacts-section {
-    position: relative;
-    width: 100%;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    overflow: hidden;
-    padding: 80px 20px;
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-}
-
-.contacts-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    width: 100%;
-    max-width: 1200px;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    background: rgba(45, 45, 65, 0.85);
-    padding: 60px 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.contacts-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #F4F6FF;
-    text-transform: uppercase;
-    display: block;     
-    width: 100%;        
-    position: relative; 
-}
-
-.contacts-content h1::after {
-    content: "";
-    position: absolute;
-    left: 0;       
-    bottom: -10px; 
-    width: 100%;   
-    height: 2px;   
-    background-color: #F4F6FF;
-}
-
-.contacts-subtitle {
-    font-size: 1.3rem;
-    color: #ffffff;
-    margin-bottom: 50px;
-    opacity: 0.9;
-}
-
-.contacts-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    margin: 50px 0;
-    text-align: left;
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.contact-item:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: #1565c0;
-    transform: translateX(10px);
-}
-
-.contact-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-}
-
-.contact-details h3 {
-    color: #4ECDC4;
-    margin-bottom: 8px;
-    font-size: 1.3rem;
-}
-
-.contact-details p {
-    color: #e0e0e0;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.contact-note {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    color: #FFD93D;
-}
-
-.social-links h3 {
-    color: #4ECDC4;
-    margin-bottom: 25px;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.social-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.social-button {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.social-button:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.2);
-    border-color: currentColor;
-}
-
-
-
-.social-button i {
-    font-size: 1.5rem;
-}
-
-.contact-cta {
-    background: rgba(21, 101, 192, 0.2);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid rgba(21, 101, 192, 0.3);
-}
-
-.contact-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: #ffffff;
-}
-
-.contact-cta small {
-    color: #FFD93D;
-    opacity: 0.9;
-}
-
-.map-placeholder {
-    height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 15px;
-    position: relative;
-    overflow: hidden;
-    margin-top: 40px;
-}
-
-.map-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    padding: 20px;
-}
-
-.map-overlay h4 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #4ECDC4;
-}
-
-.map-overlay p {
-    margin-bottom: 15px;
-    opacity: 0.9;
-}
-
-.btn-outline {
-    padding: 10px 25px;
-    border: 2px solid #4ECDC4;
-    color: #4ECDC4;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-    background: #4ECDC4;
-    color: #2d2d41;
-}
-
-@media (max-width: 968px) {
-    .contacts-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .social-buttons {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .contacts-container {
-        padding: 40px 20px;
-    }
-    
-    .contact-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-    
-    .social-button {
-        justify-content: center;
-    }
-}
-
-
-    /* Анимация плавного движения градиента */
-    @keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    40% {
-        background-position: 100% 70%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-    }
-
-    /*плавная прокрутка */
-    @media (prefers-reduced-motion: no-preference) {
-        html {
-            scroll-behavior: smooth;
-        }
-    }
-
-    @supports (scroll-behavior: smooth) {
-        html {
-            scroll-behavior: smooth;
-        }
-    }
-    
-    .energy-header-container {
-        width: 100%;
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        z-index: 10000 !important;
-    }
-    
-   
-    
-    .energy-header {
-        position: fixed;
-       
-        top: 0;
-        left: 0; 
-        width: 100%; 
-        background: #FFF2D9;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-     
-       
-        z-index: 1001;
-    }
-
-    
-    .energy-header.scrolled {
-        background: rgba(0, 0, 0, 0.7) !important;
-    }
-    
-    .energy-header a {
-        text-decoration: none;
-        outline: none;
-        display: block;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .energy-nav {
-        
-        
-        display: flex;
-        white-space: nowrap;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between; 
-        gap: 30px;
-        padding: 0 40px;
-        max-width: 1300px;
-        height: 80px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1001;
-    }
-    
-    .energy-logo {
-        width: 254px;
-        height: 39px;
-        transition: transform 0.3s ease;
-        position: relative;
-        z-index: 1002;
-        align-self: center;
-        top: 2px;
-    }
-    
-    .energy-logo:hover {
-        transform: scale(1.05);
-    }
-    
-    .energy-nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .energy-menu {
-        display: flex;
-        justify-content: center;
-        flex-wrap: nowrap;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        gap: 25px;
-        position: relative;
-        z-index: 1001;
-    }
-    
-    .energy-menu>li {
-        position: relative;
-        font-family: 'Montserrat', sans-serif;
-        z-index: 1001;
-    }
-
-    @font-face {
-        font-family: 'Inter Hewn';
-        src: url('inter-accent.otf') format('opentype');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
-    
-    .energy-menu-link {
-        padding: 25px 15px;
-        text-transform: uppercase;
-        font-size: 20px;
-        font-weight: 600;
-        font-family: 'Inter Hewn', sans-serif;
-        color: #000000;
-        display: block;
-        position: relative;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-        line-height: 1.2;
-    }
-    
-
-    .mobile-menu-toggle {
-        display: none; 
-        cursor: pointer;
-        font-size: 28px; 
-        color: #000000;
-        transition: transform 0.3s ease;
-        padding: 5px;
-    }
-
-    .mobile-menu-toggle:hover {
-        color: #E4A836;
-        transform: scale(1.1);
-    }
-
-
-    .energy-menu-link::after {
-        content: '';
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background: #E4A836;
-        transition: width 0.3s ease;
-        z-index: 1001;
-    }
-    
-    .energy-menu-link:hover::after {
-        width: 70%;
-    }
-    
-    .energy-submenu {
-        background: rgba(0, 0, 0, 0.95);
-        position: absolute;
-        left: 0;
-        top: 100%;
-        z-index: 9999 !important;
-        /* Очень высокий z-index для подменю */
-        min-width: 250px;
-        opacity: 0;
-        transform: scaleY(0) translateY(-10px);
-        transform-origin: top center;
-        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        border: 1px solid #333;
-        border-radius: 4px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        padding: 10px 0;
-        visibility: hidden;
-    }
-    
-    .energy-submenu a {
-        color: #ffffff;
-        text-align: left;
-        padding: 15px 20px;
-        font-size: 14px;
-        font-family: 'Montserrat', sans-serif;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.2s ease;
-        position: relative;
-        white-space: nowrap;
-    }
-    
-    .energy-submenu a::before {
-        content: '🖌';
-        position: absolute;
-        left: 5px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    
-    .energy-submenu a:hover {
-        color: #E4A836;
-        background: rgba(213, 180, 91, 0.1);
-        padding-left: 30px;
-    }
-    
-    .energy-submenu a:hover::before {
-        opacity: 1;
-    }
-    
-    .energy-submenu li:last-child a {
-        border-bottom: none;
-    }
-    
-    .energy-menu>li:hover .energy-submenu {
-        opacity: 1;
-        transform: scaleY(1) translateY(0);
-        visibility: visible;
-    }
-    
-    .energy-menu-link .fas {
-       
-        transition: transform 0.3s ease;
-    }
-
-    .energy-menu-link:hover .fas {
-        transform: rotate(180deg);
-    }
-
-    .energy-submenu li {
-        opacity: 0;
-        transform: translateX(-10px);
-        transition: all 0.3s ease;
-    }
-    
-    .energy-menu>li:hover .energy-submenu li {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    
-    .energy-menu>li:hover .energy-submenu li:nth-child(1) {
-        transition-delay: 0.1s;
-    }
-    
-    .energy-menu>li:hover .energy-submenu li:nth-child(2) {
-        transition-delay: 0.15s;
-    }
-    
-    .energy-menu>li:hover .energy-submenu li:nth-child(3) {
-        transition-delay: 0.2s;
-    }
-    
-    .energy-menu>li:hover .energy-submenu li:nth-child(4) {
-        transition-delay: 0.25s;
-    }
-    
-    .energy-menu>li:hover .energy-submenu li:nth-child(5) {
-        transition-delay: 0.3s;
-    }
-    
-    .energy-menu>li:hover .energy-submenu li:nth-child(6) {
-        transition-delay: 0.35s;
-    }
-    
-    .energy-menu>li:hover .energy-submenu li:nth-child(7) {
-        transition-delay: 0.4s;
-    }
-    /* Адаптивность */
-    
-    @media (max-width: 1024px) {
-    /* Тут уже были ваши стили для сжатия меню. Оставляем их. */
-    .energy-nav {
-        padding: 0 20px; /* Уменьшаем горизонтальный отступ */
-        height: 70px; /* Чуть уменьшаем высоту шапки */
-    }
-    .energy-menu {
-        gap: 15px;
-    }
-    .energy-menu-link {
-        padding: 20px 10px;
-        font-size: 14px; /* Чуть увеличил для читаемости, было 12px */
-    }
-    .energy-logo {
-        width: 200px; /* Чуть уменьшаем логотип */
-        height: auto;
-    }
-}
-
-
-
-    @media (max-width: 768px) {
-        /* Скрываем фиксированный header, чтобы он не мешал на маленьких экранах */
-        .energy-header {
-            position: static; 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            height: auto;
+        .use-text p {
+            font-size: 20px;
+            font-weight: 500;
+            color: #555555;
+            margin-bottom: 30px;
         }
         
-        .energy-nav {
-            flex-direction: row; /* Навигация теперь Лого + Гамбургер */
-            justify-content: space-between;
-            align-items: center;
-            height: 60px; /* Уменьшаем высоту */
-            padding: 10px 20px; /* Отступы */
-            gap: 0;
-        }
-        
-        /* 1. Отображаем кнопку Гамбургер */
-        .mobile-menu-toggle {
-            display: block; 
+        /* Золотой разделитель под подзаголовком */
+        .use-text p::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, #E4A836 0%, #7C5712 100%);
+            margin: 20px auto 0 auto;
+            border-radius: 2px;
         }
 
-        /* 2. Скрываем основное меню по умолчанию */
-        .energy-menu {
-            display: none; 
+
+        .applications-grid {
+        
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(335px, 1fr)); 
+            justify-items: center; 
+            gap: 1px;
+            margin-bottom: 50px;
+        }
+
+        .application-card {
+         
+            width: 335px;
+            height: 439px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .application-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-image {
+            /* Фиксированные размеры контейнера изображения: 311px * 273px */
+            width: 311px;
+            height: 273px;
+            position: relative;
+            overflow: hidden;
+      
+            margin: 12px auto 0 auto; 
+            border-radius: 8px; 
+        }
+
+        .app-image img {
             position: absolute;
-            top: 60px; /* Высота .energy-nav */
+            top: 0;
             left: 0;
             width: 100%;
-            background: #FFF2D9;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            flex-direction: column; 
-            align-items: flex-start;
-            padding: 10px 0;
-            z-index: 1000;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
         
-        /* 3. Когда класс .menu-open добавлен к energy-menu, показываем его */
-        .energy-menu.menu-open {
+        .application-card:hover .app-image img {
+            transform: scale(1.08);
+        }
+
+        /* Стили для текстового блока в карточке */
+        .app-content {
+            /* Оставшееся пространство для контента (439 - 273 - 12 (margin-top) = 154px) */
+            height: auto; 
+            padding: 20px 20px 25px 20px;
+            text-align: center; 
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-
-        /* 4. Стиль для элементов мобильного меню */
-        .energy-menu > li {
-            width: 100%;
-            margin-bottom: 0;
-        }
-        .energy-menu-link {
-            padding: 10px 20px;
-            font-size: 16px; /* Чуть увеличиваем шрифт */
-            font-weight: 500;
+        
+        .app-content h3 {
+            font-size: 20px;
+            font-weight: 700;
             color: #000000;
-            text-transform: none; /* Убираем uppercase */
+            margin-bottom: 5px;
+            transition: color 0.3s ease;
         }
-        .energy-menu-link::after {
-            content: none;
+
+        .application-card:hover .app-content h3 {
+            color: #E4A836; 
         }
         
-        /* 5. Подменю в мобильном режиме */
-        .energy-submenu {
-            position: static;
-            opacity: 1;
-            transform: none;
-            visibility: visible;
-            display: none; /* Скрываем по умолчанию, открываем через JS */
-            min-width: 100%;
-            margin-top: 0;
-            padding: 0;
-            border: none;
-            box-shadow: none;
-            background: rgba(0, 0, 0, 0.85);
+        .app-content p {
+            font-size: 16px;
+            font-weight: 400;
+            color: #777777;
+            line-height: 1.4;
+        }
+
+
+        /* Кнопка "Перейти в каталог" */
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #E4A836 0%, #7C5712 100%);
+            color: #ffffff !important; 
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 22px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 165, 0, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 165, 0, 0.6);
+        }
+
+        /* =================================================================
+         4. АДАПТИВНОСТЬ
+        ================================================================= */
+
+        /* АСИММЕТРИЧНЫЙ ДИЗАЙН СБРОС (для Hero) */
+        @media (min-width: 1440px) {
+            .hero .content-wrapper { 
+                max-width: 2000px; 
+                padding-left: 350px; 
+                padding-right: 40px;
+            }
+        }
+
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+        @media (max-width: 1024px) {
+            .content-wrapper { padding-left: 20px; padding-right: 20px; max-width: 100%; }
+            .hero-main { flex-direction: column; padding-top: 60px; }
+            .hero-content { order: 2; text-align: center; max-width: 600px; flex-basis: auto; }
+            .hero h1, .hero p { text-align: center; }
+            .hero-actions { justify-content: center; }
             
+            /* Секция применения: карточки остаются фиксированной ширины, но переносятся */
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(335px, 1fr)); 
+                gap: 20px;
+            }
         }
-        .energy-submenu a {
-            padding-left: 40px; /* Отступ для вложенности */
-            font-size: 14px;
+
+        /* МОБИЛЬНЫЕ (768px и меньше) */
+        @media (max-width: 768px) {
+            .energy-header { position: static; height: auto; }
+            body { padding-top: 0; }
+            .mobile-menu-toggle { display: block; }
+            
+            .hero-actions { flex-direction: column; gap: 15px; }
+            .btn-gold { width: 100%; }
+            .hero-actions .btn-gold:first-child { margin-right: 0; }
+            
+            /* Секция применения на мобильных: карточки занимают всю доступную ширину, 
+               чтобы избежать горизонтального скролла, но сохраняют пропорции изображения. */
+            .applications-grid {
+                grid-template-columns: 1fr; 
+                gap: 15px;
+            }
+            
+            .application-card {
+                /* На мобильном устройстве ширина должна быть гибкой */
+                width: 100%; 
+                height: auto;
+                max-width: 335px; /* Ограничиваем максимальную ширину */
+            }
+
+            .app-image {
+                /* Привязываем размеры изображения к максимальным, но делаем их гибкими */
+                width: 90%; 
+                height: auto;
+                max-width: 311px;
+                max-height: 273px;
+                aspect-ratio: 311 / 273;
+            }
+            
+            .use-text h1 { font-size: 30px; }
+            .use-text p { font-size: 16px; }
         }
 
-        /* Убираем hover-эффекты, которые конфликтуют с мобильным JS */
-        .energy-menu > li:hover .energy-submenu,
-        .energy-menu > li:hover .energy-submenu li {
-            opacity: 1;
-            transform: none;
-            transition: none;
-            transition-delay: 0s;
-            display: none; /* Управляется JS */
-        }
-        
-        /* Иконка-стрелка для подменю */
-        .energy-menu-link .fa-chevron-down {
-            transform: rotate(0deg);
-            transition: transform 0.3s ease;
-        }
-        .energy-menu-link.active-submenu .fa-chevron-down {
-            transform: rotate(180deg);
-        }
-    }
-/* 2 пробных варианта */   
-    .asymmetric-layout .contacts-container {
-    background: rgba(255, 255, 255, 0.95);
-    max-width: 1000px;
-    color: #333;
-}
-
-.asymmetric-layout .contacts-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.asymmetric-layout .contacts-header h1 {
-    color: #2c3e50;
-    font-size: 3rem;
-}
-
-.asymmetric-layout .contacts-header p {
-    color: #7f8c8d;
-    font-size: 1.2rem;
-}
-
-.asymmetric-layout .contacts-body {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 50px;
-    align-items: start;
-}
-
-.asymmetric-layout .contact-block {
-    margin-bottom: 35px;
-    padding: 25px;
-    background: #f8f9fa;
-    border-radius: 12px;
-    border-left: 4px solid #1565c0;
-}
-
-.asymmetric-layout .contact-block h3 {
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-}
-
-.asymmetric-layout .phone-numbers a,
-.asymmetric-layout .email-list a {
-    display: block;
-    color: #1565c0;
-    text-decoration: none;
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
-}
-
-.asymmetric-layout .phone-numbers a:hover,
-.asymmetric-layout .email-list a:hover {
-    color: #0d47a1;
-}
-
-.asymmetric-layout .contact-sidebar {
-    position: sticky;
-    top: 20px;
-}
-
-.asymmetric-layout .quick-contact {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 25px;
-    border-radius: 15px;
-    color: white;
-    margin-bottom: 25px;
-}
-
-.asymmetric-layout .quick-contact h4 {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.asymmetric-layout .quick-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.asymmetric-layout .quick-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 1.3rem;
-    transition: transform 0.3s ease;
-}
-
-.asymmetric-layout .quick-btn:hover {
-    transform: scale(1.1);
-}
-
-.asymmetric-layout .callback-form {
-    background: #f8f9fa;
-    padding: 25px;
-    border-radius: 15px;
-    border: 2px solid #e9ecef;
-}
-
-.asymmetric-layout .callback-form h4 {
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-.asymmetric-layout .callback-form input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-.asymmetric-layout .callback-btn {
-    width: 100%;
-    padding: 12px;
-    background: #1565c0;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.asymmetric-layout .callback-btn:hover {
-    background: #0d47a1;
-}
-
-.vertical-layout .contacts-container {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    max-width: 800px;
-}
-
-.vertical-layout .contact-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 40px 0;
-}
-
-.vertical-layout .contact-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 25px 20px;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-.vertical-layout .contact-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.vertical-layout .card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.vertical-layout .contact-card h3 {
-    color: #4ECDC4;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.vertical-layout .contact-card p {
-    color: white;
-    margin: 5px 0;
-    font-size: 1rem;
-}
-
-.vertical-layout .contact-card small {
-    color: #FFD93D;
-    font-size: 0.9rem;
-}
-
-.vertical-layout .messengers-section {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
-    margin-top: 30px;
-}
-
-.vertical-layout .messengers-section h3 {
-    color: white;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.vertical-layout .messenger-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.vertical-layout .messenger-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 25px;
-    background: white;
-    border-radius: 25px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    min-width: 140px;
-    justify-content: center;
-}
-
-.vertical-layout .tg-btn:hover { background: #0088cc; color: white; }
-.vertical-layout .wa-btn:hover { background: #25D366; color: white; }
-.vertical-layout .vb-btn:hover { background: #7360F2; color: white; }
-
-
-
-.ultra-horizontal .contacts-container {
-    max-width: 100%; /* ВОТ ЭТО ГЛАВНОЕ - 100% ширины */
-    width: 100%;
-    margin: 0;
-    padding: 60px 40px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 0; /* Убираем скругления для полной ширины */
-}
-
-.ultra-horizontal .contacts-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 КОЛОНКИ В РЯД */
-    gap: 30px;
-    margin: 50px 0;
-}
-
-.ultra-horizontal .contact-mega-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px 30px;
-    border-radius: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-    transition: all 0.3s ease;
-    min-height: 350px; /* ВЫСОКИЕ КАРТОЧКИ */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.ultra-horizontal .contact-mega-card:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-5px);
-    border-color: #4ECDC4;
-}
-
-.ultra-horizontal .mega-icon {
-    font-size: 4rem; /* ОГРОМНЫЕ ИКОНКИ */
-    margin-bottom: 25px;
-}
-
-.ultra-horizontal .mega-content h3 {
-    color: #4ECDC4;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-}
-
-.ultra-horizontal .mega-text {
-    color: white;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.ultra-horizontal .mega-hours {
-    color: #FFD93D;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-.ultra-horizontal .mega-features {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.ultra-horizontal .mega-features span {
-    color: white;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-.ultra-horizontal .phones-mega {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.ultra-horizontal .mega-phone {
-    color: white;
-    font-size: 1.3rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.ultra-horizontal .mega-phone:hover {
-    color: #4ECDC4;
-}
-
-.ultra-horizontal .mega-note {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-}
-
-.ultra-horizontal .emails-mega {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 25px;
-}
-
-.ultra-horizontal .emails-mega a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.ultra-horizontal .emails-mega a:hover {
-    color: #4ECDC4;
-}
-
-.ultra-horizontal .socials-mega {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.ultra-horizontal .mega-social {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 25px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    min-width: 120px;
-    justify-content: center;
-}
-
-.ultra-horizontal .mega-social:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.ultra-horizontal .tg:hover { background: #0088cc; color: white; }
-.ultra-horizontal .wa:hover { background: #25D366; color: white; }
-.ultra-horizontal .vb:hover { background: #7360F2; color: white; }
-
-/* КАРТА ВО ВСЮ ШИРИНУ */
-.ultra-horizontal .full-width-map {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 20px;
-    margin-top: 40px;
-    width: 100%;
-}
-
-.ultra-horizontal .map-content h3 {
-    color: #4ECDC4;
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.ultra-horizontal .map-details {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.ultra-horizontal .map-info p {
-    color: white;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.ultra-horizontal .transport-info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.ultra-horizontal .transport-info span {
-    color: #FFD93D;
-    font-size: 1.1rem;
-}
-
-.ultra-horizontal .map-btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #4ECDC4;
-    color: #2d2d41;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.ultra-horizontal .map-btn:hover {
-    background: #45B7D1;
-    transform: translateY(-3px);
-}
-
-/* АДАПТИВНОСТЬ */
-@media (max-width: 1200px) {
-    .ultra-horizontal .contacts-row {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .ultra-horizontal .contacts-container {
-        padding: 40px 20px;
-    }
     
-    .ultra-horizontal .contacts-row {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .ultra-horizontal .contact-mega-card {
-        min-height: 300px;
-        padding: 30px 20px;
-    }
-    
-    .ultra-horizontal .map-details {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        text-align: center;
-    }
-    
-    .ultra-horizontal .socials-mega {
-        flex-wrap: wrap;
-    }
-}
-
-.minimal-map {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.minimal-map .location-details {
-    margin: 25px 0;
-}
-
-.minimal-map .location-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-}
-
-.minimal-map .location-item i {
-    color: #4ECDC4;
-    font-size: 1.5rem;
-}
-
-.minimal-map .location-item strong {
-    color: white;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.minimal-map .location-item span {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.minimal-map .location-features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.minimal-map .feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    color: white;
-}
-
-.minimal-map .feature i {
-    color: #FFD93D;
-}
-
-.preview-map .map-preview {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    align-items: center;
-    margin: 25px 0;
-}
-
-.preview-map .map-placeholder {
-    height: 200px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    position: relative;
-    border: 2px dashed rgba(255, 255, 255, 0.3);
-}
-
-.infographic-map .infographic-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 30px 0;
-}
-
-.infographic-map .info-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 25px 20px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.infographic-map .info-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.infographic-map .info-card h4 {
-    color: #4ECDC4;
-    margin-bottom: 10px;
-}
-
-.infographic-map .info-card p {
-    color: white;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-}
-
-.infographic-map .info-card small {
-    color: #FFD93D;
-    font-size: 0.85rem;
-}
-
-/* Общие стили кнопки */
-.map-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #4ECDC4;
-    color: #2d2d41;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.map-btn:hover {
-    background: #45B7D1;
-    transform: translateY(-2px);
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
     
     #cotalog,
     #use-company,
@@ -3296,436 +1176,8 @@
     @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 
-    /*палитра*/
-    .color-mixer-section {
-        background: white;
-        padding: 80px 20px;
-    }
-
-    .mixer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .mixer-interface {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        gap: 40px;
-        margin-top: 50px;
-        align-items: start;
-    }
-
-    /* Палитра базовых цветов */
-    .base-colors {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        margin-top: 20px;
-    }
-
-    .base-color {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        cursor: pointer;
-        border: 3px solid transparent;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .base-color:hover {
-        transform: scale(1.1);
-        border-color: #333;
-    }
-
-    .base-color.active {
-        border-color: #1565c0;
-        transform: scale(1.05);
-    }
-
-    /* Область смешивания */
-    .mixing-area {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .color-canvas {
-        width: 300px;
-        height: 300px;
-        background: #f0f0f0;
-        border-radius: 20px;
-        position: relative;
-        overflow: hidden;
-        border: 3px dashed #ccc;
-        cursor: crosshair;
-    }
-
-    .color-droplet {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        pointer-events: none;
-        animation: dropSpread 0.8s ease-out forwards;
-    }
-
-    @keyframes dropSpread {
-        0% {
-            transform: scale(0);
-            opacity: 0.8;
-        }
-        100% {
-            transform: scale(3);
-            opacity: 0;
-        }
-    }
-
-    .mix-controls {
-        display: flex;
-        gap: 15px;
-    }
-
-    .btn-mix, .btn-clear, .btn-save {
-        padding: 12px 25px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-
-    .btn-mix {
-        background: #1565c0;
-        color: white;
-    }
-
-    .btn-clear {
-        background: #f44336;
-        color: white;
-    }
-
-    .btn-save {
-        background: #4CAF50;
-        color: white;
-    }
-
-    .btn-mix:hover, .btn-clear:hover, .btn-save:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    /* Результат */
-    .final-color {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        margin: 25px 0;
-        padding: 20px;
-        background: #f8f9fa;
-        border-radius: 15px;
-    }
-
-    .color-preview {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        border: 3px solid #ddd;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .color-info {
-        text-align: left;
-    }
-
-    .color-hex {
-        display: block;
-        font-size: 1.3rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 5px;
-    }
-
-    .color-rgb {
-        color: #666;
-        font-size: 0.9rem;
-    }
-
-    .save-section {
-        margin: 25px 0;
-    }
-
-    #colorName {
-        padding: 12px 15px;
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        width: 100%;
-        margin-bottom: 15px;
-        font-size: 1rem;
-    }
-
-    #colorName:focus {
-        border-color: #1565c0;
-        outline: none;
-    }
-
-    /* Сохраненные цвета */
-    .saved-colors {
-        margin-top: 30px;
-    }
-
-    .saved-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 15px;
-        margin-top: 15px;
-    }
-
-    .saved-color-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        padding: 15px 10px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .saved-color-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .saved-color-preview {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 2px solid #eee;
-    }
-
-    .saved-color-name {
-        font-size: 0.8rem;
-        color: #333;
-        text-align: center;
-        word-break: break-word;
-    }
-
-    /* Адаптивность */
-    @media (max-width: 968px) {
-        .mixer-interface {
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        
-        .color-canvas {
-            width: 250px;
-            height: 250px;
-        }
-    }
-
-    /*новая сфера применения*/
-    /* Секция интерактивного превью */
-.texture-preview-section {
-    margin: 60px 0;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.texture-preview-section h3 {
-    color: #4ECDC4;
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 1.8rem;
-}
-
-/* Выбор текстуры */
-.texture-selector {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-.texture-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 20px 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid transparent;
-    border-radius: 15px;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.texture-btn i {
-    font-size: 2rem;
-}
-
-.texture-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-3px);
-}
-
-.texture-btn.active {
-    background: rgba(21, 101, 192, 0.3);
-    border-color: #4ECDC4;
-    transform: translateY(-2px);
-}
-
-/* Область превью */
-.preview-container {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    margin: 30px 0;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    cursor: crosshair;
-}
-
-.texture-base {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: all 0.5s ease;
-}
-
-/* Текстуры по умолчанию */
-.texture-base[data-texture="metal"] {
-    background-image: linear-gradient(45deg, #b8b8b8 25%, transparent 25%), 
-                      linear-gradient(-45deg, #b8b8b8 25%, transparent 25%), 
-                      linear-gradient(45deg, transparent 75%, #b8b8b8 75%), 
-                      linear-gradient(-45deg, transparent 75%, #b8b8b8 75%);
-    background-size: 20px 20px;
-    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-}
-
-.texture-base[data-texture="wood"] {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="%238B4513"/><path d="M20,0 L20,100 M40,0 L40,100 M60,0 L60,100 M80,0 L80,100" stroke="%23A0522D" stroke-width="2"/></svg>');
-    background-size: 100px 100px;
-}
-
-.texture-base[data-texture="concrete"] {
-    background: #9E9E9E;
-    background-image: radial-gradient(circle at 25% 25%, #BDBDBD 2%, transparent 2.5%), 
-                      radial-gradient(circle at 75% 75%, #BDBDBD 2%, transparent 2.5%);
-    background-size: 30px 30px;
-}
-
-.texture-base[data-texture="plastic"] {
-    background: linear-gradient(135deg, #E0E0E0 0%, #BDBDBD 100%);
-    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);
-}
-
-.paint-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(21, 101, 192, 0.7);
-    mix-blend-mode: multiply;
-    opacity: 0.8;
-    transition: all 0.5s ease;
-    pointer-events: none;
-}
-
-/* Эффект "мокрой" краски при наведении */
-.preview-container:hover .paint-overlay {
-    opacity: 0.9;
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-                               rgba(21, 101, 192, 0.9) 0%, 
-                               rgba(21, 101, 192, 0.7) 40%, 
-                               rgba(21, 101, 192, 0.5) 70%, 
-                               transparent 100%);
-}
-
-.preview-hint {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    pointer-events: none;
-}
-
-/* Выбор цвета */
-.color-selector {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.color-selector h4 {
-    color: white;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.color-options {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.color-option {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 3px solid transparent;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
-
-.color-option:hover {
-    transform: scale(1.2);
-}
-
-.color-option.active {
-    border-color: #4ECDC4;
-    transform: scale(1.1);
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .texture-selector {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  
     
-    .preview-container {
-        height: 300px;
-    }
-    
-    .texture-btn {
-        padding: 15px 10px;
-        font-size: 0.8rem;
-    }
-    
-    .texture-btn i {
-        font-size: 1.5rem;
-    }
-}
 
 </style>
 
@@ -3903,21 +1355,7 @@
 
 
 
-        document.addEventListener('DOMContentLoaded', function() {
-            window.addEventListener('scroll', function() {
-                const hero = document.getElementById('hero');
-                const heroBottom = hero.getBoundingClientRect().bottom;
-                const windowHeight = window.innerHeight;
-                
-                console.log("функция работает", heroBottom);
-                
-                if (heroBottom < windowHeight * 0.8) {
-                    hero.classList.add('scrolled');
-                } else {
-                    hero.classList.remove('scrolled');
-                }
-            });
-        })
+       
 
 // Плавный скролл для якорных ссылок
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -3937,40 +1375,7 @@
     </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM loaded - setting up scroll listener');
-        
-     
-        
-        function handleScroll() {
-            const heroBottom = hero.getBoundingClientRect().bottom;
-            const windowHeight = window.innerHeight;
-            
-           
-            
-            if (heroBottom < windowHeight * 0.8) {
-                hero.classList.add('scrolled');
-                
-            } else {
-                hero.classList.remove('scrolled');
 
-            }
-        }
-
-        // Несколько способов отслеживать скролл
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('wheel', handleScroll);
-        window.addEventListener('touchmove', handleScroll); // для мобильных
-        
-        // Также запускай при resize
-        window.addEventListener('resize', handleScroll);
-        
-        // Запусти сразу
-        handleScroll();
-
- 
-
-    });
 
     document.addEventListener('DOMContentLoaded', function() {
         const sections = document.querySelectorAll('#cotalog, #use-company, #coloring, #contacts');
