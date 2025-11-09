@@ -326,9 +326,12 @@
                 
                 
                 <div class="application-card">
-                    <div class="app-image">
-                        <img src="avto.png" alt="Автомобили">
+                    <div class="app-image-frame">
+                        <div class="app-image">
+                            <img src="avto.png" alt="Автомобили">
+                        </div>
                     </div>
+
                     <div class="app-content">
                         <h3>Прицепная техника</h3>
                         <p>Долговечное покрытие с высококачественным декоративным видом.</p>
@@ -336,8 +339,10 @@
                 </div>
 
                 <div class="application-card">
-                    <div class="app-image">
-                        <img src="banka.png" alt="Нефтехранилища">
+                    <div class="app-image-frame">
+                        <div class="app-image">
+                            <img src="banka.png" alt="Нефтехранилища">
+                        </div>
                     </div>
                     <div class="app-content">
                         <h3>Нефтехранилища</h3>
@@ -349,9 +354,12 @@
                 
 
                 <div class="application-card">
-                    <div class="app-image">
-                        <img src="metall.png" alt="Металлоконструкции">
+                    <div class="app-image-frame">
+                        <div class="app-image">
+                            <img src="metall.png" alt="Металлоконструкции">
+                        </div>
                     </div>
+
                     <div class="app-content">
                         <h3>Металлоконструкции</h3>
                         <p>Защита от коррозии и агрессивных сред</p>
@@ -361,6 +369,113 @@
             
           
 </section>
+
+<section id="coloring" class="coloring-section">
+       
+        <div class="content-wrapper">
+            
+        
+            <div class="coloring-title">
+                <h1>Колеровка</h1>
+            </div>
+            
+            <div class="coloring-main">
+                
+                <!-- Левая колонка (Фичи) -->
+                <div class="coloring-features">
+                    <ul>
+                        <li>
+                            <div class="icon"><i class="fas fa-palette"></i></div>
+                            <div class="text-content">
+                                <h3>Любые цвета</h3>
+                                <p>Подберем любой оттенок по каталогам RAL, NCS или по Вашему образцу.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><i class="fas fa-shipping-fast"></i></div>
+                            <div class="text-content">
+                                <h3>Быстрая колеровка</h3>
+                                <p>Автоматическое оборудование обеспечивает точность и скорость.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="text-content">
+                                <h3>Контроль качества</h3>
+                                <p>Каждая партия проходит проверку на соответствие эталону.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><i class="fas fa-weight-hanging"></i></div>
+                            <div class="text-content">
+                                <h3>Промышленные объемы</h3>
+                                <p>Возможность колеровки от одного кг., до нескольких тонн.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Правая колонка (Изображение) -->
+                <div class="coloring-image">
+                    <img src="Конвеер псд 1 (1).png" alt="Колеровочное оборудование">
+                </div>
+                
+            </div>
+        </div>
+</section>
+
+<section class="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Адаптивная компоновка: Flex на десктопе, Stack на мобильном -->
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+
+                <!-- 1. Блок с текстом (Левая часть) -->
+                <div class="lg:w-1/2 text-content">
+                    <h2 class="main-heading">
+                        О компании
+                    </h2>
+
+                    <!-- Первый абзац с выделением жирным -->
+                    <p>
+                        <span class="text-bold-segment">Компания ООО "Ария-ЛКМ"</span> является официальным представителем производителя передовых технологий в сфере лакокрасочных материалов - <span class="text-bold-segment">ООО Завод "Краски КВИЛ"</span>.
+                    </p>
+
+                    <!-- Второй абзац -->
+                    <p>
+                        Наши совместные принципы деятельности: профессионализм, функциональность и комплексный подход к решению поставленных задач.
+                    </p>
+
+                    <!-- Третий абзац -->
+                    <p>
+                        Команда высококвалифицированных специалистов позволяет подобрать материалы под любые цели.
+                    </p>
+
+                    <!-- Четвертый абзац -->
+                    <p class="mb-0">
+                        В нашей компании работают сертифицированные инспекторы АКЗ, которые готовы провести аудит на вашем предприятии и помочь оперативно решить любые технические вопросы.
+                    </p>
+                </div>
+
+                <!-- 2. Блок с иллюстрацией (Правая часть) -->
+                <!-- Обратите внимание, что изображение в макете занимает более половины ширины и заходит за края контейнера, но мы делаем его адаптивным внутри 1/2 колонки. -->
+                <div class="lg:w-1/2 image-container">
+                    
+                    <!-- ЗДЕСЬ ВАШ ПУТЬ К ФОТОГРАФИИ БАНКИ КРАСКИ С ЖЕЛТЫМИ БРЫЗГАМИ -->
+                    <img 
+                        src="/путь/к/вашему/изображению_банка_краски.png" 
+                        alt="Иллюстрация: банка краски с желтыми брызгами" 
+                        class="w-full h-full object-contain mx-auto"
+                        onerror="this.onerror=null;this.src='https://placehold.co/800x600/FFFFFF/FFC300?text=Место+для+изображения+Банки+Краски';">
+                    
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
+
 
 
 
@@ -953,7 +1068,7 @@
         .use-text h1 {
             font-size: 48px;
             font-weight: 800;
-            /* Убрана попытка использовать 'Inter Hewn' - используется глобальный 'Inter' */
+            font-family: 'Inter Hewn',serif;
             color: #000000;
             margin-bottom: 10px;
         }
@@ -961,28 +1076,39 @@
         .use-text p {
             font-size: 20px;
             font-weight: 500;
-            color: #555555;
+            color: #000000;
+            font-family: 'Montserrat',serif;
             margin-bottom: 30px;
         }
         
+        
+
         /* Золотой разделитель под подзаголовком */
-        .use-text p::after {
+        .use-text h1::after {
             content: '';
             display: block;
-            width: 150px;
+            width: 1300px;
             height: 4px;
-            background: linear-gradient(90deg, #E4A836 0%, #7C5712 100%);
-            margin: 20px auto 0 auto;
-            border-radius: 2px;
+            background: linear-gradient(90deg, #ffffff 0%,#EEB039 25% , #7C5712 50%,#EEB039 75% ,#ffffff 100%);
+            box-shadow: 0 0 20px rgba(238, 176, 57, 0.4); 
+            
+            margin:0px auto; 
+         
+            
+            /* Эффект плавного перехода (как на макете) */
+            mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+                margin: 20px auto 0 auto;
+                border-radius: 2px;
         }
 
 
         .applications-grid {
-        
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(335px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, 335px); 
+            justify-content: center;
             justify-items: center; 
-            gap: 1px;
+            gap: 85px;
             margin-bottom: 50px;
         }
 
@@ -990,7 +1116,7 @@
          
             width: 335px;
             height: 439px;
-            background-color: #ffffff;
+            background: linear-gradient(90deg, #EEB039 0%, #7C5712 100%);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -1002,15 +1128,33 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
+        .app-image-frame {
+            background-color: #ffffff;
+            margin: 5px; 
+            border-radius: 3px;
+            padding: 3px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1) inset;
+            
+            display: flex;
+            justify-content: center; 
+            align-items: center;   
+            
+          
+            height: 284px; 
+          
+            height: 279px; 
+       
+        }
+        
         .app-image {
-            /* Фиксированные размеры контейнера изображения: 311px * 273px */
             width: 311px;
             height: 273px;
             position: relative;
             overflow: hidden;
-      
-            margin: 12px auto 0 auto; 
-            border-radius: 8px; 
+          
+            margin: 0; 
+            
+            border-radius: 1px; 
         }
 
         .app-image img {
@@ -1040,21 +1184,23 @@
         }
         
         .app-content h3 {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 700;
+            font-family: 'Montserrat',serif;
             color: #000000;
             margin-bottom: 5px;
             transition: color 0.3s ease;
         }
 
         .application-card:hover .app-content h3 {
-            color: #E4A836; 
+            color: #ffffff; 
         }
         
         .app-content p {
             font-size: 16px;
             font-weight: 400;
-            color: #777777;
+            font-family: 'Montserrat',serif;
+            color: #000000;
             line-height: 1.4;
         }
 
@@ -1142,7 +1288,212 @@
             .use-text h1 { font-size: 30px; }
             .use-text p { font-size: 16px; }
         }
+        /* КОЛЕВРОВКА */
+        /* КОЛЕВРОВКА */
 
+        .coloring-section {
+            padding: 80px 0;
+            background-color: #ffffff; 
+        }
+        
+        /* Стили для заголовка, аналогичные .use-text */
+        .coloring-title {
+            text-align: left;
+            margin-bottom: 60px;
+            margin-left: 0px
+        }
+        .coloring-title h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 10px;
+            font-family: 'Inter Hewn',serif;
+        }
+      
+        
+        /* 2-колоночный макет */
+        .coloring-main {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        /* Левая колонка (Фичи) */
+        .coloring-features {
+            flex: 1 1 45%;
+            min-width: 300px;
+        }
+        .coloring-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Расстояние между фичами */
+        }
+        .coloring-features li {
+            display: flex;
+            align-items: flex-start;
+        }
+        .coloring-features .icon {
+            flex-shrink: 0;
+            width: 45px;
+            height: 45px;
+            background: #E4A836;
+            color: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+            margin-right: 20px;
+            box-shadow: 0 4px 10px rgba(228, 168, 54, 0.3);
+        }
+        .coloring-features .text-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000;
+            margin: 0 0 8px 0;
+        }
+        .coloring-features .text-content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        /* Правая колонка (Изображение) */
+        .coloring-image {
+            flex: 1 1 55%;
+            min-width: 300px;
+        }
+        .coloring-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+
+        /* =================================================================
+         4. АДАПТИВНОСТЬ
+        ================================================================= */
+
+        /* АСИММЕТРИЧНЫЙ ДИЗАЙН СБРОС (для Hero) */
+        @media (min-width: 1440px) {
+            .hero .content-wrapper { 
+                max-width: 2000px; 
+                padding-left: 350px; 
+                padding-right: 40px;
+            }
+        }
+
+    @media (min-width: 1025px) {
+            .coloring-title {
+        
+                margin-left: 60px; 
+            }
+        }
+
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+        @media (max-width: 1024px) {
+            .content-wrapper { padding-left: 20px; padding-right: 20px; max-width: 100%; }
+            .hero-main { flex-direction: column; padding-top: 60px; }
+            .hero-content { order: 2; text-align: center; max-width: 600px; flex-basis: auto; }
+            .hero h1, .hero p { text-align: center; }
+            .hero-actions { justify-content: center; }
+            
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(335px, 1fr)); 
+                gap: 20px;
+            }
+            
+            /* Адаптивность Колеровки (Планшет) */
+            .coloring-title h1 { font-size: 36px; }
+            .coloring-main { gap: 30px; }
+            .coloring-features .text-content h3 { font-size: 20px; }
+        }
+
+        /* МОБИЛЬНЫЕ (768px и меньше) */
+        @media (max-width: 768px) {
+            .energy-header { position: static; height: auto; }
+            body { padding-top: 0; }
+            .mobile-menu-toggle { display: block; }
+            
+            .hero-actions { flex-direction: column; gap: 15px; }
+            .btn-gold { width: 100%; }
+            .hero-actions .btn-gold:first-child { margin-right: 0; }
+            
+            .applications-grid {
+                grid-template-columns: 1fr; 
+                gap: 15px;
+            }
+            
+            .application-card {
+                width: 100%; 
+                height: auto;
+                max-width: 335px; 
+            }
+            
+            .app-image-frame {
+                margin: 8px;
+                padding: 8px;
+                height: auto; 
+            }
+            .app-image {
+                width: 100%; 
+                height: auto;
+                aspect-ratio: 311 / 273; 
+            }
+            
+            .use-text h1 { font-size: 30px; }
+            .use-text p { font-size: 16px; }
+            
+            /* Адаптивность Колеровки (Мобильный) */
+            .coloring-section { padding: 60px 0; }
+            .coloring-title h1 { font-size: 30px; }
+            .coloring-main {
+                flex-direction: column;
+            }
+            .coloring-features {
+                order: 2; /* Текст под картинкой */
+            }
+            .coloring-image {
+                order: 1; /* Картинка сверху */
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+
+        .text-content p {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.6;
+            margin-bottom: 1.5rem; /* mb-6 */
+            color: #1f2937; /* Темный текст для контраста */
+        }
+        
+        /* Выделение жирным ключевых фраз */
+        .text-bold-segment {
+            font-weight: 700;
+        }
+
+        /* Настройка заголовка для точного соответствия макету */
+        .main-heading {
+            font-size: 3rem; /* Примерно 48px */
+            font-weight: 800; /* Extra bold */
+            color: #1f2937;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        /* Контейнер для изображения для контроля адаптивности */
+        .image-container {
+            /* Убедитесь, что изображение растягивается и занимает место на мобильном */
+            min-height: 300px; 
+            max-height: 600px;
+            width: 100%;
+            position: relative;
+        }
     
     
     #cotalog,
