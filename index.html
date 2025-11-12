@@ -1039,32 +1039,70 @@
         }
 
         /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
-        @media (max-width: 1024px) {
-            .content-wrapper { padding-left: 20px; padding-right: 20px; max-width: 100%; }
-            .hero-main { flex-direction: column; padding-top: 5px; }
-            .hero-content { order: 2; text-align: center; max-width: 600px; flex-basis: auto; }
-            .hero h1, .hero p { text-align: center; }
-            .bins { order: 1; width: 80%; max-width: 400px; margin-bottom: 20px; }
-            .hero-actions { justify-content: center; padding-top: 10px; }
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; margin-bottom: 30px; }
-            .btn-gold { font-size: 20px; padding: 10px 20px; }
-            
-            /* Навигация на планшетах */
-            .energy-nav { padding: 0 20px; height: 70px; gap: 10px; }
-            .energy-menu { gap: 10px; }
-            .energy-menu-link { padding: 20px 10px; font-size: 14px; }
-
-            .bins {
-                display: none;
-            }
-            
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+    @media (max-width: 1024px) {
+        /* ... Ваш существующий код для 1024px ... */
+        
+        /* АКТИВИРУЕМ МОБИЛЬНОЕ МЕНЮ ЗДЕСЬ */
+        body { padding-top: 70px; } /* Переносим сюда */
+        .energy-nav { 
+            height: 70px; 
+            padding: 0 20px; 
+            justify-content: space-between; 
         }
+        .mobile-menu-toggle { display: block; } 
+
+        .energy-menu {
+            display: none; 
+            position: absolute;
+            top: 70px; /* Должен соответствовать высоте .energy-nav */
+            left: 0;
+            width: 100%;
+            background: #FFF2D9; 
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            flex-direction: column; 
+            align-items: flex-start;
+            padding: 10px 0;
+            gap: 0; 
+            transform: none; 
+            z-index: 1000;
+        }
+        .energy-menu > li:hover { transform: none; }
+        .energy-menu.menu-open { display: flex; }
+        .energy-menu > li { width: 100%; font-family: 'Inter', sans-serif; }
+        .energy-menu-link { 
+            padding: 12px 20px; 
+            font-size: 16px; 
+            font-weight: 500;
+            text-transform: none; 
+            width: 100%; 
+            justify-content: space-between; 
+            box-sizing: border-box;
+            color: #000000; 
+        }
+        .energy-menu-link::after { content: none; }
+        
+        /* Новое правило для открытия подменю (через JS-класс) */
+        .energy-submenu {
+            position: static; 
+            display: none; 
+            /* ... остальные стили ... */
+        }
+        .energy-menu > li.submenu-open .energy-submenu { 
+            display: flex; 
+            flex-direction: column;
+        }
+        .energy-submenu a { padding-left: 40px; font-size: 15px; color: #333; }
+        .energy-menu > li.submenu-open > .energy-menu-link .fas { transform: rotate(180deg); }
+
+
+        /* ... Ваш существующий код для 1024px ... */
+    }
 
         /* МОБИЛЬНЫЕ (768px и меньше) */
         @media (max-width: 768px) {
             .energy-header { position: static; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
-            .body { padding-top: 0; }
+            .body { padding-top: 60px; }
             .hero { 
                 min-height: auto; 
                 padding-bottom: 100px; 
@@ -2626,82 +2664,75 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const menu = document.querySelector('.energy-menu');
-        const submenuLinks = document.querySelectorAll('.energy-menu > li');
-        
-        // Функция проверки, является ли экран мобильным
-        const isMobile = () => window.innerWidth <= 768;
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.energy-menu');
+    const submenuLinks = document.querySelectorAll('.energy-menu > li');
+    
+    // Новая функция проверки для меню - 1024px
+    const isMobileMenuEnabled = () => window.innerWidth <= 1024;
 
-        // --- Логика открытия/закрытия главного меню (Гамбургер) ---
-        menuToggle.addEventListener('click', () => {
-            if (isMobile()) {
-                menu.classList.toggle('menu-open');
-                
-                // Меняем иконку Гамбургера на Крестик
-                const icon = menuToggle.querySelector('.fas');
-                if (menu.classList.contains('menu-open')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+    // --- Логика открытия/закрытия главного меню (Гамбургер) ---
+    menuToggle.addEventListener('click', () => {
+        if (isMobileMenuEnabled()) {
+            menu.classList.toggle('menu-open');
+            
+            // Меняем иконку Гамбургера на Крестик
+            const icon = menuToggle.querySelector('.fas');
+            if (menu.classList.contains('menu-open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
-        });
-
-        // --- Логика открытия/закрытия подменю (только на мобильных) ---
-        submenuLinks.forEach(li => {
-            const link = li.querySelector('.energy-menu-link');
-            const submenu = li.querySelector('.energy-submenu');
-
-            // Проверяем, есть ли подменю
-            if (submenu) {
-                link.addEventListener('click', (e) => {
-                    // Если мы на мобильном устройстве (768px и меньше)
-                    if (isMobile()) {
-                        // Предотвращаем переход по ссылке
-                        e.preventDefault(); 
-
-                        // Переключаем класс для подменю
-                        // Toggle visibility of the submenu
-                        const isSubmenuOpen = submenu.style.display === 'block';
-                        submenu.style.display = isSubmenuOpen ? 'none' : 'block';
-                        link.classList.toggle('active-submenu');
-                        
-                        // Закрываем другие подменю
-                        submenuLinks.forEach(otherLi => {
-                            const otherLink = otherLi.querySelector('.energy-menu-link');
-                            const otherSubmenu = otherLi.querySelector('.energy-submenu');
-                            
-                            if (otherSubmenu && otherSubmenu !== submenu) {
-                                otherSubmenu.style.display = 'none';
-                                otherLink.classList.remove('active-submenu');
-                            }
-                        });
-                    }
-                });
-            }
-        });
-
-        // --- Закрытие меню при изменении размера экрана (с мобильного на десктоп) ---
-        window.addEventListener('resize', () => {
-            if (!isMobile() && menu.classList.contains('menu-open')) {
-                menu.classList.remove('menu-open');
-                // Возвращаем иконку Гамбургера
-                menuToggle.querySelector('.fas').classList.remove('fa-times');
-                menuToggle.querySelector('.fas').classList.add('fa-bars');
-                
-                // Скрываем все мобильные подменю
-                document.querySelectorAll('.energy-submenu').forEach(sub => {
-                    sub.style.display = ''; // Сброс, чтобы CSS взял управление
-                });
-                document.querySelectorAll('.energy-menu-link').forEach(link => {
-                    link.classList.remove('active-submenu');
-                });
-            }
-        });
+        }
     });
+
+    // --- Логика открытия/закрытия подменю (только на мобильных) ---
+    submenuLinks.forEach(li => {
+        const link = li.querySelector('.energy-menu-link');
+        const submenu = li.querySelector('.energy-submenu');
+
+        // Проверяем, есть ли подменю
+        if (submenu) {
+            li.classList.add('has-submenu'); 
+            
+            link.addEventListener('click', (e) => {
+                // Активируем логику только когда меню показывается как мобильное (до 1024px)
+                if (isMobileMenuEnabled()) {
+                    
+                    e.preventDefault(); // Предотвращаем переход
+                    
+                    // Закрываем другие подменю
+                    submenuLinks.forEach(otherLi => {
+                        if (otherLi !== li) {
+                            otherLi.classList.remove('submenu-open');
+                        }
+                    });
+
+                    // Переключаем текущее
+                    li.classList.toggle('submenu-open');
+                }
+            });
+        }
+    });
+
+    // --- Закрытие меню при изменении размера экрана (с мобильного на десктоп) ---
+    window.addEventListener('resize', () => {
+        // Условие: если экран стал БОЛЬШЕ 1024px И меню открыто
+        if (!isMobileMenuEnabled() && menu.classList.contains('menu-open')) {
+            menu.classList.remove('menu-open');
+            // Возвращаем иконку Гамбургера
+            menuToggle.querySelector('.fas').classList.remove('fa-times');
+            menuToggle.querySelector('.fas').classList.add('fa-bars');
+            
+            // Скрываем все мобильные подменю
+            document.querySelectorAll('.energy-menu > li').forEach(li => {
+                li.classList.remove('submenu-open');
+            });
+        }
+    });
+});
 
 </script>
 
