@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<style>
+  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @font-face {
+            font-family: 'Inter Hewn';
+            src: url('inter-accent.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* ИСПРАВЛЕНО: Теперь 'Inter' используется гарантированно */
+            background-color: #ffffff; 
+            padding-top: 80px; 
+            margin: 0; 
+            overflow-x: hidden; 
+        }
+        
+        
+
+        .category-title-bar {
+           
+            background: linear-gradient(90deg, #ffffff 0%, #EEB039 50%,#ffffff 100%);
+            
+            text-align: center;
+            justify-self: center;
+       
+            box-shadow: 0 0 20px rgba(228, 168, 54, 0.6); 
+            
+            
+            margin: 30px auto; 
+            width: 100%; 
+            height: 60px;
+            min-height: 60px;
+            
+         
+            mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+        }
+        
+        
+        
+        .btn-primary {
+            display: inline-block;
+            background-color: #1565c0;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0d47a1;
+        }
+        
+        /* Карусель */
+        
+        
+        
+        
+        .arrow:hover {
+            background-color: #ed9d08;
+        }
+        
+        
+        
+        .photo-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+        }
+        
+        .carousel-page {
+            display: none;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        
+        .carousel-page.active {
+            display: flex;
+        }
+        
+        .logo-container {
+            background-color: #fff;
+            border-radius: 12px 12px 12px 12px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        
+       
+        .logo {
+            width: 254px;
+            height: 39px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .logo-container:hover .logo {
+            transform: scale(1.05);
+           
+        }
+        
+        .info {
+            margin: 8px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #333;
+            padding: 0 10px;
+            text-align: center !important;
+        }
+        
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top:10px;
+            margin-bottom:30px;
+      
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dot.active {
+            background-color: #EEB039;
+        }
+        
+      
+        
+        
+   
+    
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ария-ЛКМ></title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- tsParticles Core -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="energy-header">
+     
+        <nav class="energy-nav">
+            <a href="#hero">
+              
+                <img src="Ресурс 21 1.svg" alt="Логотип" class="energy-logo" 
+                     onerror="this.outerHTML='<div class=energy-logo style=background:#ccc;padding:10px;width:130px;text-align:center;color:#333;font-weight:bold;>Логотип</div>'">
+            </a>
+            
+            <!-- КНОПКА ГАМБУРГЕРА -->
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="energy-menu">
+                <li class="has-submenu">
+                    <a href="#cotalog" class="energy-menu-link">
+                        Каталог <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="energy-submenu">
+                        <li><a href="#primers-dots">Грунтовки</a></li>
+                        <li><a href="#cotalog">Грунт-эмали</a></li>
+                        <li><a href="#primer-enamel-dots">Эмали</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#enamel-dots" class="energy-menu-link">Сферы применения</a></li>
+                <li><a href="#coloring" class="energy-menu-link">Колеровка</a></li>
+                <li><a href="#company-section" class="energy-menu-link">О компании</a></li>
+                <li><a href="#contacts-section" class="energy-menu-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+
+<section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-main content-wrapper">
+            
+            <div class="hero-content">
+                <h1>ООО “Ария-ЛКМ” - эксперт в мире лакокрасочных материалов</h1>
+                <p>Официальный представитель завода «Краски КВИЛ». Профессиональные решения для защиты и декора.</p>
+                
+                <!-- КНОПКИ -->
+                <div class="hero-actions"> 
+                    <a href="tel:+79107500013" class="btn-gold">
+                        <i class="fas fa-phone"></i> +7 (910) 750-00-13
+                    </a>
+                    <a href="mailto:aria-lkm@mail.ru" class="btn-gold">
+                        <i class="fas fa-envelope"></i>  aria-lkm@mail.ru
+                    </a>
+                </div>
+            </div>
+
+            <div class="bins">
+                <img src="first_bini.svg" alt="Логотип" />
+                <img src="second_bini.svg" alt="Логотип" />
+                <img src="third_1.svg" alt="Логотип" />
+            </div>
+
+        </div>
+
+</section>
+
+
+<section id="cotalog" class="cotalog">
+    <div class="cotalog-container">
+        
+        <div class="cotalog-text"> 
+            <h1>Каталог товаров</h1>
+        </div>
+
+        <div class="category-title-bar">
+            <h2 id="Grunt-emali">Грунт-эмали</h2>
+        </div>
+        
+        <div class="cotalog-text">
+            <div class="carousel-wrapper">
+                <button class="arrow left" onclick="prevSlide('primers')">
+                    <img src="left.svg" alt="Предыдущий" class="arrow-icon">
+                </button>
+                <div class="carousel-viewport">
+                    <div class="photo-carousel" id="primers-carousel"></div>
+                </div>
+                <button class="arrow right" onclick="nextSlide('primers')">
+                    <img src="right.svg" alt="Предыдущий" class="arrow-icon">
+                </button>
+            </div>
+            
+            <div class="carousel-dots" id="primers-dots"></div>
+        </div>
+        
+        <div class="category-title-bar">
+            <h2 id="Grunt">Грунтовки</h2>
+        </div>
+
+        
+        <div class="cotalog-text">
+            <div class="carousel-wrapper">
+                <button class="arrow left" onclick="prevSlide('primer-enamel')">
+                  <img src="left.svg" alt="Предыдущий" class="arrow-icon">
+                </button>
+                <div class="carousel-viewport">
+                    <div class="photo-carousel" id="primer-enamel-carousel"></div>
+                </div>
+                <button class="arrow right" onclick="nextSlide('primer-enamel')">
+                    <img src="right.svg" alt="Предыдущий" class="arrow-icon">
+                </button>
+            </div>
+            <div class="carousel-dots" id="primer-enamel-dots"></div>
+        </div>
+        
+        <div class="category-title-bar">
+            <h2 id ="Emali">Эмали</h2>
+        </div>
+        
+        <div class="cotalog-text">
+            <div class="carousel-wrapper">
+                <button class="arrow left" onclick="prevSlide('enamel')">
+                    <img src="left.svg" alt="Предыдущий" class="arrow-icon">
+                </button>
+                <div class="carousel-viewport">
+                    <div class="photo-carousel" id="enamel-carousel"></div>
+                </div>
+                <button class="arrow right" onclick="nextSlide('enamel')">
+                   <img src="right.svg" alt="Предыдущий" class="arrow-icon">
+                </button>
+            </div>
+            <div class="carousel-dots" id="enamel-dots"></div>
+        </div>
+        
+    </div>
+</section>
+
+
+<section id="use-company" class="use-company">
+        
+            <div class="use-text">
+                <h1>Сферы применения</h1>
+                <p>Наша продукция успешно используется в различных отраслях промышленности</p>
+            </div>
+            
+            <div class="applications-grid">
+                
+                
+                
+                <div class="application-card">
+                    <div class="app-image-frame">
+                        <div class="app-image">
+                            <img src="avto.png" alt="Автомобили">
+                        </div>
+                    </div>
+
+                    <div class="app-content">
+                        <h3>Прицепная техника</h3>
+                        <p>Долговечное покрытие с высококачественным декоративным видом.</p>
+                    </div>
+                </div>
+
+                <div class="application-card">
+                    <div class="app-image-frame">
+                        <div class="app-image">
+                            <img src="banka.png" alt="Нефтехранилища">
+                        </div>
+                    </div>
+                    <div class="app-content">
+                        <h3>Нефтехранилища</h3>
+                        <p>Стойкость к химическим воздействиям</p>
+                    </div>
+                </div>
+                
+          
+                
+
+                <div class="application-card">
+                    <div class="app-image-frame">
+                        <div class="app-image">
+                            <img src="metall.png" alt="Металлоконструкции">
+                        </div>
+                    </div>
+
+                    <div class="app-content">
+                        <h3>Металлоконструкции</h3>
+                        <p>Защита от коррозии и агрессивных сред</p>
+                    </div>
+                </div>
+
+</section>
+
+<section id="use-company" class="use-company">
+    <div class="applications-grid">
+
+        <div class="application-card">
+            <div class="app-image-frame">
+                <div class="app-image">
+                    <img src="tractor.svg" alt="Металлоконструкции">
+                </div>
+            </div>
+
+            <div class="app-content">
+                <h3>Сельхозтехника</h3>
+                <p>Защита в условиях интенсивной эксплуатации.</p>
+            </div>
+        </div>
+        
+        <div class="application-card">
+            <div class="app-image-frame">
+                <div class="app-image">
+                    <img src="byr.svg" alt="Металлоконструкции">
+                </div>
+            </div>
+
+            <div class="app-content">
+                <h3>Буровые установки</h3>
+                <p>Стойкость к химическим воздействиям в агрессивной среде.</p>
+            </div>
+        </div>
+
+        <div class="application-card">
+            <div class="app-image-frame">
+                <div class="app-image">
+                    <img src="train.svg" alt="Металлоконструкции">
+                </div>
+            </div>
+
+            <div class="app-content">
+                <h3>Вагоностроение</h3>
+                <p>Защита техники сертифицированными материалами.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="coloring" class="coloring-section">
+    <div class="content-wrapper">
+
+        <div class="temp">
+
+            <div class="coloring-title">
+                <h1>Колеровка</h1>
+            </div>
+
+            <div class="coloring-features">
+                <ul>
+                    <li>
+                        <div class="icon"><i class="fas fa-palette"></i></div>
+                        <div class="text-content">
+                            <h3>Любые цвета</h3>
+                            <p>Подберем любой оттенок по каталогам<br> RAL, NCS или по Вашему образцу.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="icon"><i class="fas fa-shipping-fast"></i></div>
+                        <div class="text-content">
+                            <h3>Быстрая колеровка</h3>
+                            <p>Автоматическое оборудование<br> обеспечивает точность и скорость.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="text-content">
+                            <h3>Контроль качества</h3>
+                            <p>Каждая партия проходит проверку<br> на соответствие по эталону.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="icon"><i class="fas fa-weight-hanging"></i></div>
+                        <div class="text-content">
+                            <h3>Промышленные объемы</h3>
+                            <p>Возможность колеровки от 1 кг,<br> до нескольких тонн.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="coloring-image">
+                <img src="aparat.svg" id="for-company_block" alt="Колеровочное оборудование" class="tinting-machine">
+
+                <div class="conveyor-stage">
+                    <img src="conveer_1.svg" alt="Эмаль" class="paint-can">
+                    <img src="conveer_2.svg" alt="Грунт-эмаль" class="paint-can">
+                    <img src="conveer_3.svg" alt="Грунт-эмаль PRO" class="paint-can">
+                </div>
+
+                <div class="falling-paint-container">
+                    <div class="falling-paint-effect"></div>
+                    <div class="falling-paint-effect"></div>
+                    <div class="falling-paint-effect"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="company-section" id = "company-section">
+    <div class="content-wrapper">
+        <div class="container">
+
+            <div class="text-block">
+                <h2>О компании</h2>
+                <p><strong>Компания ООО "Ария-ЛКМ"</strong> является официальным представителем<br> производителя передовых технологий<br> в сфере лакокрасочных материалов - <strong>ООО Завод "Краски КВИЛ"</strong>.</p>
+                <p>Наши совместные принципы деятельности: профессионализм, функциональность и комплексный подход к решению поставленных задач.</p>
+                <p>Команда высококвалифицированных специалистов<br> позволяет подобрать материалы под любые цели.</p>
+                <p>В нашей компании работают сертифицированные инспекторы АКЗ,<br> которые готовы провести аудит на вашем предприятии и помочь оперативно решить любые технические вопросы.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="full_backet.svg" alt="Краска" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contacts-section" id = "contacts-section">
+    <div class="contacts-container">
+        <div class="contact-row top-row">
+            <div class="contact-item">
+                <span class="icons">
+                <img src="eyyy.svg" alt="whatsapp">
+                <img src="Vector (1).svg" alt="telegram">
+                </span>
+                <span class="text">+7 (910) 750-00-13</span>
+            </div>
+
+
+            <div class="contact-item">
+                <img src="clarity_email-solid.svg" alt="mail" class="icon">
+                <span class="text">aria-lkm@mail.ru</span>
+            </div>
+
+
+            <div class="contact-item">
+                <img src="ri_time-fill.svg" alt="clock" class="icon">
+                <span class="text">Пн - Пт, с 9:00 - до 18:00</span>
+                </div>
+            </div>
+
+
+            <div class="contact-row bottom-row">
+                <div class="contact-item">
+                    <img src="healthicons_geo-location.svg" alt="marker" class="icon">
+                    <span class="text">Адрес офиса</span>
+                </div>
+
+
+                <div class="contact-item">
+                    <img src="healthicons_geo-location.svg" alt="marker" class="icon">
+                    <span class="text">Адрес склада Белгород</span>
+                </div>
+
+
+                <div class="contact-item">
+                   <img src="healthicons_geo-location.svg" alt="marker" class="icon">
+                    <span class="text">Адрес склада Москва</span>
+                </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+    
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: white;
+  
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; 
+        overflow-x: hidden;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px; 
+    }
+
+   
+
+    .energy-header {
+            position: fixed; 
+            top: 0;
+            left: 0; 
+            width: 100%; 
+            background: #FFF2D9;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        /* Главный контейнер навигации */
+        .energy-nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; 
+            gap: 30px; /* Ваш gap */
+            padding: 0 40px;
+            max-width: 1300px; 
+            height: 80px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .energy-logo {
+            /* * Я использую <img>, как в вашем первом HTML.
+             * Стили для <img> немного отличаются от стилей для текста.
+             */
+            width: 200px; /* Примерная ширина, настройте по вашему .svg */
+            height: auto;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1002;
+        }
+
+        .energy-logo:hover {
+            transform: scale(1.08);
+        }
+        
+        .energy-menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            gap: 15px; /* Уменьшаем расстояние между ссылками */
+            position: relative;
+            z-index: 1001;
+        }
+        
+        /* Родительский LI для дропдауна */
+        .energy-menu > li {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            z-index: 1001;
+            transition: transform 0.3s ease; 
+        }
+
+        .energy-menu > li:hover {
+            transform: scale(1.1);
+        }
+
+        /* Ссылка меню */
+        .energy-menu-link {
+            padding: 28px 15px; /* Оставляем вертикальный padding, чтобы ссылка была кликабельной */
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 600;
+            color: #000000;
+            display: flex; /* Изменено на flex, чтобы выровнять иконку */
+            align-items: center;
+            position: relative;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            line-height: 1.2;
+            text-decoration: none;
+            white-space: nowrap; /* * ФИКС от переноса строк при зуме */
+        }
+        
+        /* Эффект подчеркивания */
+        .energy-menu-link::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #E4A836;
+            transition: width 0.3s ease;
+        }
+        .energy-menu-link:hover::after { width: 70%; }
+        
+        /* Выпадающий список (SUBMENU) */
+        .energy-submenu {
+            background: rgba(0, 0, 0, 0.95);
+            position: absolute;
+            left: 0;
+            top: 100%; /* Открывается точно под родителем */
+            z-index: 9999;
+            min-width: 250px;
+            opacity: 0;
+            transform: scaleY(0) translateY(-10px);
+            transform-origin: top center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid #333;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+            visibility: hidden;
+            list-style: none;
+            /* display: none; Был в моем коде, но ваша логика opacity/visibility лучше */
+        }
+        
+        .energy-menu > li:hover .energy-submenu {
+            opacity: 1;
+            transform: scaleY(1) translateY(0);
+            visibility: visible;
+        }
+        
+        .energy-submenu a {
+            color: #ffffff;
+            text-align: left;
+            padding: 15px 20px;
+            font-size: 14px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative; /* Нужно для ::before */
+        }
+
+        .energy-submenu a::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .energy-submenu a:hover {
+            color: #E4A836;
+            background: rgba(213, 180, 91, 0.1);
+            padding-left: 30px;
+        }
+        
+        .energy-submenu a:hover::before {
+            opacity: 1;
+        }
+        
+        .energy-submenu li:last-child a {
+            border-bottom: none;
+        }
+        
+        .energy-menu-link .fas {
+            margin-left: 5px; /* Добавил отступ для иконки */
+            transition: transform 0.3s ease;
+        }
+
+        .energy-menu > li:hover .energy-menu-link .fas {
+            transform: rotate(180deg);
+        }
+
+        .energy-submenu li {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .energy-menu > li:hover .energy-submenu li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Анимации появления li (ваши стили) */
+        .energy-menu > li:hover .energy-submenu li:nth-child(1) { transition-delay: 0.1s; }
+        .energy-menu > li:hover .energy-submenu li:nth-child(2) { transition-delay: 0.15s; }
+        .energy-menu > li:hover .energy-submenu li:nth-child(3) { transition-delay: 0.2s; }
+        /* ... и т.д. ... */
+
+        .mobile-menu-toggle {
+            display: none; 
+            cursor: pointer;
+            font-size: 28px; 
+            color: #000000;
+            padding: 5px;
+            z-index: 1002;
+        }
+
+    @media (max-width: 1300px) {
+            
+            .energy-nav { 
+                height: 70px; 
+                /* Переопределяем padding для планшета/мобильных */
+                padding: 0 20px; 
+                /* * .energy-menu теперь не в потоке,
+                 * поэтому justify-content: space-between нужен,
+                 * чтобы раскинуть лого и гамбургер по краям.
+                 */
+                justify-content: space-between;
+            }
+            
+            body {
+                padding-top: 70px; /* Уменьшаем отступ body */
+            }
+
+            .mobile-menu-toggle {
+                display: block; /* ПОКАЗЫВАЕМ ГАМБУРГЕР */
+            }
+
+            .energy-menu {
+                display: none; /* СКРЫВАЕМ ВАШЕ ДЕСКТОПНОЕ МЕНЮ */
+                
+                /* * Стили для МОБИЛЬНОГО меню (когда JS добавит .menu-open)
+                 */
+                position: absolute;
+                top: 70px; /* Должно соответствовать .energy-nav height */
+                left: 0;
+                width: 100%;
+                background: #FFF2D9; /* ВАШ ЦВЕТ ФОНА */
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                flex-direction: column; 
+                align-items: flex-start;
+                padding: 10px 0;
+                gap: 0; /* Убираем десктопный gap */
+                
+                /* Отключаем десктопную :hover анимацию */
+                transform: none; 
+            }
+            
+            .energy-menu > li:hover {
+                transform: none; /* Отключаем :hover */
+            }
+            
+            .energy-menu.menu-open {
+                display: flex; /* Показываем меню по клику на гамбургер */
+            }
+
+            .energy-menu > li { 
+                width: 100%;
+                font-family: 'Inter', sans-serif; /* Возвращаем Inter для мобильных */
+            }
+
+            .energy-menu-link { 
+                /* Переопределяем стили для мобильной ссылки */
+                padding: 12px 20px; 
+                font-size: 16px; 
+                font-weight: 500;
+                text-transform: none; /* Убираем uppercase */
+                width: 100%; 
+                justify-content: space-between; /* Иконка стрелки будет справа */
+                box-sizing: border-box;
+                color: #000000; /* ВАШ ЦВЕТ ТЕКСТА */
+            }
+            
+            .energy-menu-link::after {
+                content: none; /* Убираем подчеркивание на мобильных */
+            }
+            
+            .energy-menu-link .fas {
+                transform: rotate(0deg); /* Начальная позиция для JS-анимации */
+            }
+            
+            /* Стили для открытого подменю на мобильных (через JS) */
+            .energy-menu > li.submenu-open > .energy-menu-link .fas {
+                 transform: rotate(180deg);
+            }
+
+            /* --- Подменю (Мобильное/Планшетное) --- */
+            .energy-submenu {
+                position: static; 
+                display: none; /* Полностью управляется JS */
+                opacity: 1; 
+                transform: none; 
+                visibility: visible;
+                min-width: 100%; 
+                padding: 0; 
+                border: none; 
+                box-shadow: none;
+                /* Сделаем фон чуть темнее основного, но в вашей гамме */
+                background: rgba(228, 168, 54, 0.1); 
+                border-radius: 0;
+                transition: none; /* Отключаем десктопную анимацию */
+            }
+            
+            /* Это правило :hover не будет работать, мы его отключаем */
+            .energy-menu > li:hover .energy-submenu {
+                display: none;
+                opacity: 0;
+                transform: scaleY(0) translateY(-10px);
+                visibility: hidden;
+            }
+            
+            /* Вместо этого мы будем использовать класс .submenu-open, который добавит JS */
+            .energy-menu > li.submenu-open .energy-submenu {
+                display: block;
+            }
+
+            .energy-submenu a { 
+                padding-left: 40px; 
+                font-size: 15px;
+                color: #333; /* Черный на светлом фоне */
+            }
+            
+            .energy-submenu a:hover {
+                color: #E4A836; /* Ваш цвет при :hover */
+                background: rgba(0,0,0,0.05);
+                padding-left: 40px; /* Не сдвигаем */
+            }
+            .energy-submenu a::before {
+                content: none; /* Убираем эмодзи */
+            }
+            .energy-submenu li {
+                opacity: 1; /* Отключаем вашу анимацию на мобильных */
+                transform: none;
+            }
+        }
+
+        /* МОБИЛЬНЫЕ (768px и МЕНЬШЕ) */
+        @media (max-width: 768px) {
+            /* * Все стили для .energy-menu уже унаследованы от 1024px.
+             * Нам нужно только изменить высоту шапки.
+             */
+            .energy-nav { 
+                height: 60px; /* Уменьшаем шапку на телефонах */
+            }
+            
+            body {
+                padding-top: 60px; /* Уменьшаем отступ body */
+            }
+            
+            .energy-menu {
+                top: 60px; /* Позиция меню должна соответствовать высоте шапки */
+            }
+        }
+
+    
+
+        /* =================================================================
+         2. СТИЛИ HERO И CONTENT-WRAPPER (СОХРАНЕННАЯ ЛОГИКА)
+        ================================================================= */
+
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column; 
+            justify-content: flex-start;
+            color: rgb(0, 0, 0);
+            background-color: #ffffff; 
+            overflow: hidden;
+            z-index: 10;
+            padding-bottom: 0px;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 1300px; 
+            margin: 0 auto; 
+            padding-left: 40px; 
+            padding-right: 40px;
+            box-sizing: border-box; 
+        }
+
+        .hero-main {
+            display: flex;
+            flex-wrap: nowrap; 
+            align-items: center; 
+            gap: 30px;
+            padding-top: 80px; 
+        }
+
+        .hero-content {
+            flex: 1 1 60%; 
+            min-width: 320px; 
+            text-align: left;
+        }
+        
+        .hero h1 { 
+            font-size: 46px; 
+            font-weight: 700; 
+            margin-bottom: 40px; 
+            line-height: 1.2; 
+            color: #000000; 
+            text-align: left; 
+            max-width: 900px; 
+            font-family: 'Inter Hewn',serif !important;
+        }
+
+        .hero p { font-size: 28px; margin-bottom: 80px; font-weight: 700; line-height: 1.4; color: rgba(0, 0, 0, 0.85); text-align: left; max-width: 900px; }
+
+        .hero-actions { 
+            display: flex; 
+            justify-content: flex-start;
+            align-items: center;
+            gap: 30px;
+            margin-top: 0;
+        }
+        
+        .btn-gold { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 12px; 
+            padding: 16px 32px; 
+            background: #EEB039;
+            color: #000000 !important; 
+            
+            text-decoration: none; 
+            border-radius: 10px; 
+            font-weight: 800; 
+            font-size: 20px; 
+            text-align: center; 
+            border: 3px solid #000000;
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3); 
+        }
+
+        .btn-gold:hover {
+
+            background: #F3C86A;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(238, 176, 57, 0.55);
+        }
+        .hero-actions .btn-gold:first-child { margin-right: 40px; }
+        
+        .bins { flex: 1 1 40%; min-width: 320px; position: relative; aspect-ratio: 500 / 700; }
+        .bins img { position: absolute; height: auto; transition: transform 0.5s ease-in-out; }
+        /* ИЗМЕНЕНИЕ: Уменьшаем 'top' для каждой банки, чтобы они поднялись ВНУТРИ .bins */
+        .bins img:nth-child(1) { width: 100%; top: 35%; right: 28%; transform: rotate(5deg); z-index: 3; animation: 9s can-float 0s infinite alternate ease-in-out; }
+        .bins img:nth-child(2) { width: 66%; top: 12%; right: 10%; transform: rotate(0deg); z-index: 2; animation: 6s can-float-slow 1.5s infinite alternate ease-in-out; }
+        .bins img:nth-child(3) { width: 54%; top: 7%; right: 44%; z-index: 1; animation: 7s can-float 3s infinite alternate ease-in-out; }
+
+        @keyframes can-float {
+            0% { transform: translateY(0) rotate(5deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(5deg); }
+        }
+        @keyframes can-float-slow {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(10px) rotate(6deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        /* =================================================================
+         3. АДАПТИВНОСТЬ
+        ================================================================= */
+
+        /* АСИММЕТРИЧНЫЙ ДИЗАЙН (Только на ОЧЕНЬ больших экранах) */
+        @media (min-width: 1440px) {
+            .content-wrapper {
+                max-width: 2000px; 
+                padding-left: 350px; 
+                padding-right: 40px;
+            }
+        }
+
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+        @media (max-width: 1024px) {
+            .content-wrapper { padding-left: 20px; padding-right: 20px; max-width: 100%; }
+            .hero-main { flex-direction: column; padding-top: 100px; }
+            .hero-content { order: 2; text-align: center; max-width: 600px; flex-basis: auto; }
+            .hero h1, .hero p { text-align: center; }
+            .bins { order: 1; width: 80%; max-width: 400px; margin-bottom: 20px; }
+            .hero-actions { justify-content: center; padding-top: 10px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; margin-bottom: 30px; }
+            .btn-gold { font-size: 20px; padding: 10px 20px; }
+            
+            /* Навигация на планшетах */
+            .energy-nav { padding: 0 20px; height: 70px; gap: 10px; }
+            .energy-menu { gap: 10px; }
+            .energy-menu-link { padding: 20px 10px; font-size: 14px; }
+            
+        }
+
+        /* МОБИЛЬНЫЕ (768px и меньше) */
+        @media (max-width: 768px) {
+            .energy-header { position: static; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+            body { padding-top: 0; }
+            .hero { min-height: calc(100vh - 60px); }
+            .energy-nav { height: 60px; padding: 10px 20px; }
+            
+            .mobile-menu-toggle { display: block; }
+            
+            .energy-menu {
+                display: none; 
+                position: absolute;
+                top: 60px; 
+                left: 0;
+                width: 100%;
+                background: #FFF2D9;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                flex-direction: column; 
+                align-items: flex-start;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+            
+            .energy-menu.menu-open { display: flex; }
+            .energy-menu > li { width: 100%; }
+            .energy-menu-link { padding: 10px 20px; font-size: 16px; font-weight: 500; text-transform: none; }
+            .energy-menu-link::after { content: none; }
+            
+            .energy-submenu {
+                position: static; 
+                display: none; 
+                opacity: 1; transform: none; visibility: visible;
+                min-width: 100%; padding: 0; border: none; box-shadow: none;
+                background: rgba(0, 0, 0, 0.85);
+                flex-direction: column;
+            }
+            .energy-submenu a { padding-left: 40px; font-size: 14px; }
+
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 16px; margin-bottom: 20px; }
+            .hero-actions { flex-direction: column; gap: 15px; padding-top: 0; }
+            .btn-gold { width: 100%; }
+            .hero-actions .btn-gold:first-child { margin-right: 0; }
+        }
+
+    .cotalog {
+            width: 100%;
+            padding: 80px 0 50px;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .cotalog-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .cotalog-text { 
+            max-width: 1200px; 
+            width: 100%; 
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Montserrat',serif;
+            font-size: 24px;
+            padding: 0 20px; 
+            text-align: center;
+            box-sizing: border-box;
+            margin-bottom: 15px; 
+        }
+
+        /* --- Заголовок H1 "Каталог товаров" --- */
+        .cotalog-text h1 {
+            font-family: 'Inter Hewn', 'Montserrat', serif; /* Fallback */
+            font-size: 48px;
+            font-weight: bold; 
+            text-align: center;
+            color: #000000;
+            margin-bottom: 0px;
+        }
+
+        .category-title-bar {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 60px; 
+            max-width: 1600px;
+            padding: 0;
+            background: linear-gradient(90deg, #ffffff 0%, #EEB039 50%, #ffffff 100%);
+            box-shadow: 0 0 20px rgba(238, 176, 57, 0.4); 
+            margin: 20px 0;
+            width: 100%; 
+            mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+        }
+
+        .category-title-bar h2 {
+            font-size: 36px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold; 
+            color: #000000; 
+            margin: 0; 
+            padding: 0;
+        }
+
+        /* --- Карусель --- */
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin: 0; 
+        }
+
+        .carousel-viewport {
+            overflow: hidden; 
+            width: 100%;
+            padding: 10px 0;
+        }
+        
+        .photo-carousel {
+            display: flex;
+            color: green;
+            gap: 30px; 
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* --- Стрелки карусели --- */
+        .arrow {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .arrow:hover {
+            background-color: #f4f4f4;
+            background: transparent !important;
+            transform: scale(1.2);
+        }
+        .arrow.left {
+            margin-right: 10px;
+        }
+        .arrow.right {
+            margin-left: 10px;
+        }
+
+        /* --- Точки карусели --- */
+        .carousel-dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .dot.active {
+            background-color: #EEB039;
+        }
+
+     
+        .product-card {
+            flex: 0 0 calc(33.333% - 20px); 
+            width: auto;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border-radius: 15px;
+            
+        
+            border: 2px solid #F6C87C;
+            overflow: hidden; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card:hover {
+            /* transform: translateY(-5px); <-- УБРАНО, как на макете */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* БЕРЕМ С МАКЕТА */
+            background-color: #ffffff; 
+            padding: 15px; /* Добавим отступ для банки */
+        }
+
+        .product-image img {
+            max-height: 100%;
+            max-width: 90%;
+            object-fit: contain; 
+        }
+
+        /* --- ИНФО-ЧАСТЬ КАРТОЧКИ (ИЗМЕНЕНО) --- */
+        .product-info-card {
+          
+            background-color: #FEF7E6;
+            padding: 20px;
+            text-align: center;
+            
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #000000;
+            margin: 0 0 10px;
+        }
+
+        .product-summary {
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif; /* меняем на Inter */
+            color: #000000;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        /* --- КНОПКА "ПОДРОБНЕЕ" (ИЗМЕНЕНО) --- */
+        .btn-detail {
+            display: inline-block;
+            padding: 12px 25px; /* Слегка поменял */
+            text-align: center;
+            text-decoration: none; 
+            cursor: pointer;
+            white-space: nowrap; 
+            font-size: 16px; /* Уменьшил для Montserrat */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600; /* Жирнее, как на макете */
+            border-radius: 5px;
+            transition: all 0.2s ease;
+            
+            /* БЕРЕМ С МАКЕТА */
+            background: #F4BA44; 
+            color: #402E00 !important; 
+            border: none;
+            box-shadow: 0 4px 0 #D69929; /* 3D эффект */
+        }
+
+        .btn-detail:hover {
+            background: #FAD16A; /* Чуть светлее */
+            box-shadow: 0 2px 0 #D69929; /* Тень меньше */
+            transform: translateY(2px); /* "Нажатие" */
+            opacity: 1; /* Убираем старый hover */
+        }
+
+
+        /* --- 
+         * АДАПТИВНОСТЬ (HEADER)
+        --- */
+
+        @media (max-width: 1300px) {
+            .energy-nav { 
+                height: 70px; 
+                padding: 0 20px; 
+                justify-content: space-between;
+            }
+            body { padding-top: 70px; }
+            .mobile-menu-toggle { display: block; }
+            .energy-menu {
+                display: none; 
+                position: absolute;
+                top: 70px; 
+                left: 0;
+                width: 100%;
+                background: #FFF2D9; 
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                flex-direction: column; 
+                align-items: flex-start;
+                padding: 10px 0;
+                gap: 0; 
+                transform: none; 
+            }
+            .energy-menu > li:hover { transform: none; }
+            .energy-menu.menu-open { display: flex; }
+            .energy-menu > li { width: 100%; font-family: 'Inter', sans-serif; }
+            .energy-menu-link { 
+                padding: 12px 20px; 
+                font-size: 16px; 
+                font-weight: 500;
+                text-transform: none; 
+                width: 100%; 
+                justify-content: space-between; 
+                box-sizing: border-box;
+                color: #000000; 
+            }
+            .energy-menu-link::after { content: none; }
+            .energy-menu-link .fas { transform: rotate(0deg); }
+            .energy-menu > li.submenu-open > .energy-menu-link .fas { transform: rotate(180deg); }
+            .energy-submenu {
+                position: static; 
+                display: none; 
+                opacity: 1; 
+                transform: none; 
+                visibility: visible;
+                min-width: 100%; 
+                padding: 0; 
+                border: none; 
+                box-shadow: none;
+                background: rgba(228, 168, 54, 0.1); 
+                border-radius: 0;
+                transition: none; 
+            }
+            .energy-menu > li:hover .energy-submenu {
+                display: none; opacity: 0; transform: scaleY(0) translateY(-10px); visibility: hidden;
+            }
+            .energy-menu > li.submenu-open .energy-submenu { display: block; }
+            .energy-submenu a { padding-left: 40px; font-size: 15px; color: #333; }
+            .energy-submenu a:hover { color: #E4A836; background: rgba(0,0,0,0.05); padding-left: 40px; }
+            .energy-submenu a::before { content: none; }
+            .energy-submenu li { opacity: 1; transform: none; }
+        }
+
+        @media (max-width: 768px) {
+            .energy-nav { height: 60px; }
+            body { padding-top: 60px; }
+            .energy-menu { top: 60px; }
+        }
+
+        /* --- 
+         * АДАПТИВНОСТЬ (CATALOG)
+        --- */
+
+        @media (max-width: 1024px) {
+            .cotalog { padding: 60px 0 40px; }
+            .cotalog-text h1 { font-size: 36px; }
+            .category-title-bar h2 { font-size: 28px; }
+            .photo-carousel { gap: 20px; }
+            
+            /* 2 карточки в ряд */
+            .product-card {
+                flex: 0 0 calc(50% - 10px); 
+                max-width: none; 
+            }
+            .btn-detail { font-size: 16px; padding: 10px 20px; }
+            .product-summary { font-size: 0.85rem; }
+            .product-title { font-size: 1.1rem; }
+        }
+
+        @media (max-width: 768px) {
+            .cotalog { padding: 40px 0 30px; }
+            .cotalog-text { padding: 0 10px; }
+            .cotalog-text h1 { font-size: 30px; }
+            .category-title-bar h2 { font-size: 22px; }
+            
+            /* Прячем стрелки, оставляем свайп */
+            .arrow { display: none; }
+            .carousel-wrapper { margin: 0; }
+            .carousel-viewport { padding: 10px; }
+            
+            /* 1 карточка в ряд (почти) */
+            .photo-carousel { gap: 15px; }
+            .product-card {
+                flex: 0 0 90%; /* Показываем 1 карту и "кусочек" следующей */
+                max-width: 90%;
+                scroll-snap-align: center; /* Для плавного свайпа */
+            }
+            .carousel-viewport {
+                overflow-x: auto; /* Включаем скролл/свайп */
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+            }
+            .photo-carousel {
+                /* Отключаем JS-трансформ, полагаемся на скролл */
+                transform: none !important; 
+            }
+            
+            .product-image { height: 200px; }
+            .product-title { font-size: 1rem; }
+            .product-summary { font-size: 0.8rem; }
+        }
+
+        /* =================================================================
+         3. СТИЛИ СЕКЦИИ СФЕР ПРИМЕНЕНИЯ (#use-company)
+        ================================================================= */
+
+        .use-company {
+            background-color: #ffffff; 
+            padding: 0px 0;
+        }
+
+        .use-text {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .use-text h1 {
+            font-size: 48px;
+            font-weight: 800;
+            font-family: 'Inter Hewn',serif;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .use-text p {
+            font-size: 27px;
+            font-weight: 700;
+            color: #000000;
+            font-family: 'Montserrat',serif;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+        
+        
+
+        /* Золотой разделитель под подзаголовком */
+        .use-text h1::after {
+            content: '';
+            display: block;
+            width: 1300px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffffff 0%,#EEB039 25% , #7C5712 50%,#EEB039 75% ,#ffffff 100%);
+            box-shadow: 0 0 20px rgba(238, 176, 57, 0.4); 
+            
+            margin:0px auto; 
+         
+            
+            /* Эффект плавного перехода (как на макете) */
+            mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+                margin: 20px auto 0 auto;
+                border-radius: 2px;
+        }
+
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 335px); 
+            justify-content: center;
+            justify-items: center; 
+            gap: 85px;
+            margin-bottom: 50px;
+        }
+
+        .application-card {
+         
+            width: 335px;
+            height: 439px;
+            background: linear-gradient(90deg, #EEB039 0%, #7C5712 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .application-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-image-frame {
+            background-color: #ffffff;
+            margin: 5px; 
+            border-radius: 3px;
+            padding: 3px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1) inset;
+            
+            display: flex;
+            justify-content: center; 
+            align-items: center;   
+            
+          
+            height: 284px; 
+          
+            height: 279px; 
+       
+        }
+        
+        .app-image {
+            width: 311px;
+            height: 273px;
+            position: relative;
+            overflow: hidden;
+          
+            margin: 0; 
+            
+            border-radius: 1px; 
+        }
+
+        .app-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .application-card:hover .app-image img {
+            transform: scale(1.08);
+        }
+
+        /* Стили для текстового блока в карточке */
+        .app-content {
+            /* Оставшееся пространство для контента (439 - 273 - 12 (margin-top) = 154px) */
+            height: auto; 
+            padding: 20px 20px 25px 20px;
+            text-align: center; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .app-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Montserrat',serif;
+            color: #000000;
+            margin-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .application-card:hover .app-content h3 {
+            color: #ffffff; 
+        }
+        
+        .app-content p {
+            font-size: 16px;
+            font-weight: 400;
+            font-family: 'Montserrat',serif;
+            color: #000000;
+            line-height: 1.4;
+        }
+
+
+        /* Кнопка "Перейти в каталог" */
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #E4A836 0%, #7C5712 100%);
+            color: #ffffff !important; 
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 22px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 165, 0, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 165, 0, 0.6);
+        }
+
+        /* =================================================================
+         4. АДАПТИВНОСТЬ
+        ================================================================= */
+
+        /* АСИММЕТРИЧНЫЙ ДИЗАЙН СБРОС (для Hero) */
+        @media (min-width: 1440px) {
+            .hero .content-wrapper { 
+                max-width: 2000px; 
+                padding-left: 350px; 
+                padding-right: 40px;
+            }
+        }
+
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+        @media (max-width: 1024px) {
+            .content-wrapper { padding-left: 20px; padding-right: 20px; max-width: 100%; }
+            .hero-main { flex-direction: column; padding-top: 60px; }
+            .hero-content { order: 2; text-align: center; max-width: 600px; flex-basis: auto; }
+            .hero h1, .hero p { text-align: center; }
+            .hero-actions { justify-content: center; }
+            
+            /* Секция применения: карточки остаются фиксированной ширины, но переносятся */
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(335px, 1fr)); 
+                gap: 20px;
+            }
+        }
+
+        /* МОБИЛЬНЫЕ (768px и меньше) */
+        @media (max-width: 768px) {
+            .energy-header { position: static; height: auto; }
+            body { padding-top: 0; }
+            .mobile-menu-toggle { display: block; }
+            
+            .hero-actions { flex-direction: column; gap: 15px; }
+            .btn-gold { width: 100%; }
+            .hero-actions .btn-gold:first-child { margin-right: 0; }
+            
+            /* Секция применения на мобильных: карточки занимают всю доступную ширину, 
+               чтобы избежать горизонтального скролла, но сохраняют пропорции изображения. */
+            .applications-grid {
+                grid-template-columns: 1fr; 
+                gap: 15px;
+            }
+            
+            .application-card {
+                /* На мобильном устройстве ширина должна быть гибкой */
+                width: 100%; 
+                height: auto;
+                max-width: 335px; /* Ограничиваем максимальную ширину */
+            }
+
+            .app-image {
+                /* Привязываем размеры изображения к максимальным, но делаем их гибкими */
+                width: 90%; 
+                height: auto;
+                max-width: 311px;
+                max-height: 273px;
+                aspect-ratio: 311 / 273;
+            }
+            
+            .use-text h1 { font-size: 30px; }
+            .use-text p { font-size: 16px; }
+        }
+        /* КОЛЕВРОВКА */
+        /* КОЛЕВРОВКА */
+
+    .coloring-section {
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.temp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 20px;
+    align-items: end; /* Прикрепление к низу секции */
+    width: 100%;
+    max-width: 1440px; /* Ограничение ширины для больших экранов */
+    margin: 30px auto 0 auto;
+}
+
+/* Заголовок */
+.coloring-title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: flex-end;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+.coloring-title h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #000000;
+    font-family: 'Inter Hewn', serif;
+    margin: 0;
+}
+
+/* Левая колонка (фичи) */
+.coloring-features {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center; /* Центрируем весь блок */
+    align-items: flex-start;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.coloring-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.coloring-features li {
+    display: flex;
+    justify-content: center; /* Центрируем каждый элемент */
+    align-items: center;
+}
+
+.coloring-features .icon {
+    width: 45px;
+    height: 45px;
+    background: #E4A836;
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    margin-right: 15px;
+    box-shadow: 0 4px 10px rgba(228, 168, 54, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.coloring-features .text-content h3 {
+    font-size: 27px;
+    font-weight: 700;
+    font-family: 'Montserrat', serif;
+    color: #000;
+    margin: 0 0 8px 0;
+}
+
+.coloring-features .text-content p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    font-family: 'Montserrat', serif;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Правая колонка (анимация) */
+.coloring-image {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Прикрепляем аппарат к низу */
+    overflow: visible;
+}
+
+/* Аппарат */
+.coloring-image img.tinting-machine {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    z-index: 1;
+}
+
+/* Банки */
+.conveyor-stage {
+    position: absolute;
+    bottom: 12%; /* адаптивно */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    overflow: visible;
+}
+
+.paint-can {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 8vw;
+    max-width: 120px;
+    height: auto;
+    transform: translateX(-50%);
+    opacity: 1;
+    animation: move-stop-go 12s linear infinite;
+}
+
+/* Краска */
+.falling-paint-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6vw;
+    max-width: 60px;
+    aspect-ratio: 1 / 2;
+    z-index: 3;
+}
+
+.falling-paint-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('falling_paint.svg') no-repeat center center;
+    background-size: contain;
+    opacity: 0;
+    animation: drop-paint 12s linear infinite;
+}
+
+/* Анимации */
+@keyframes move-stop-go {
+    0% { transform: translateX(-300px); opacity: 0; }
+    20% { transform: translateX(-50%); opacity: 1; }
+    40% { transform: translateX(-50%); opacity: 1; }
+    60% { transform: translateX(400px); opacity: 1; }
+    61% { opacity: 0; }
+    100% { transform: translateX(400px); opacity: 0; }
+}
+
+@keyframes drop-paint {
+    0%, 22% { opacity: 0; transform: translateY(-20px); }
+    25% { opacity: 1; transform: translateY(0); }
+    38% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 0; }
+}
+
+/* Синхронизация */
+.paint-can:nth-child(1) { animation-delay: 0s; }
+.paint-can:nth-child(2) { animation-delay: 4s; }
+.paint-can:nth-child(3) { animation-delay: 8s; }
+
+.falling-paint-effect:nth-child(1) { animation-delay: 0s; }
+.falling-paint-effect:nth-child(2) { animation-delay: 4s; }
+.falling-paint-effect:nth-child(3) { animation-delay: 8s; }
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .temp { grid-template-columns: 1fr 1fr; column-gap: 10px; }
+    .coloring-title h1 { font-size: 36px; }
+    .coloring-features .text-content h3 { font-size: 22px; }
+    .paint-can { width: 10vw; max-width: 100px; }
+    .falling-paint-container { top: 48%; width: 8vw; max-width: 50px; }
+}
+
+@media (max-width: 768px) {
+    .temp { grid-template-columns: 1fr; grid-template-rows: auto auto auto; row-gap: 25px; }
+    .coloring-title { justify-content: center; text-align: center; }
+    .coloring-features { justify-content: center; text-align: center; }
+    .coloring-image { justify-content: center; margin-bottom: 30px; }
+    .paint-can { width: 12vw; max-width: 60px; }
+    .falling-paint-container { top: 50%; width: 10vw; max-width: 50px; }
+}
+
+
+        .text-content p {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.6;
+            margin-bottom: 1.5rem; /* mb-6 */
+            color: #67d518; /* Темный текст для контраста */
+        }
+        
+        /* Выделение жирным ключевых фраз */
+        .text-bold-segment {
+            font-weight: 700;
+        }
+
+        /* Настройка заголовка для точного соответствия макету */
+        .main-heading {
+            font-size: 3rem; /* Примерно 48px */
+            font-weight: 800; /* Extra bold */
+            color: #1f2937;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        /* Контейнер для изображения для контроля адаптивности */
+        .image-container {
+            /* Убедитесь, что изображение растягивается и занимает место на мобильном */
+            min-height: 300px; 
+            max-height: 600px;
+            width: 100%;
+            position: relative;
+        }
+    
+    .container {
+        display: flex;
+        flex-wrap: nowrap; /* запрещаем перенос */
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+
+    .container {
+    
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+
+    .text-block {
+        flex: 1 1 55%; /* растягиваемся, но есть минимальная ширина */
+        min-width: 200px; /* чтобы текст не сжимался слишком сильно */
+    }
+
+    .company-section,
+    .contacts-section {
+        margin: 0;
+        padding-bottom: 0;
+        box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .company-section {
+        position: relative;
+        padding-top: 80px; /* чтобы текст не прилипал к градиенту */
+        background: linear-gradient(
+            to bottom,
+            rgba(238, 176, 57, 0.35) 0%,   /* яркий жёлтый сверху */
+            rgba(238, 176, 57, 0.15) 25%,  /* мягкое затухание */
+            rgba(238, 176, 57, 0) 60%      /* полностью исчезает */
+        );
+    }
+
+    .text-block h2 {
+        font-family: 'Inter Hewn',serif;
+        font-weight: 700;
+        font-weight: 400;
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .text-block p strong {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+    }
+
+    .text-block p {
+        font-size: 22px;
+        line-height: 1.6;
+        color:#000000;
+        font-weight: 500;
+  
+        margin-bottom: 16px;
+        font-family: 'Montserrat',serif;
+    }
+
+
+    .image-block {
+        flex: 1 1 40%; /* занимает до 40% контейнера */
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .image-block img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+
+    /* --- Adaptive --- */
+        @media (max-width: 1200px) {
+        .text-block p {
+            font-size: 20px;
+        }
+        .image-block img {
+            max-width: 400px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .text-block p {
+            font-size: 18px;
+        }
+        .image-block img {
+            max-width: 350px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .text-block p {
+            font-size: 16px;
+        }
+        .image-block img {
+            max-width: 300px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .text-block p {
+            font-size: 14px;
+        }
+        .text-block h2 {
+            font-size: 20px;
+        }
+        .image-block img {
+            max-width: 250px;
+        }
+    }
+
+
+    .contacts-section {
+        width: 100%;
+        background: #FFF2D9;
+
+
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
+
+
+    .contacts-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+
+    .contact-row {
+        display: flex;
+        flex-wrap: nowrap; 
+        justify-content: space-between; 
+      
+        gap: 20px; 
+    }
+
+   
+    .contact-item {
+        display: inline-flex; /* меняем на inline-flex */
+        align-items: center;
+        gap: 12px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #000;
+        flex-shrink: 0; /* запрещаем сжатие */
+        white-space: nowrap; /* текст не переносится */
+        min-width: 0; /* важно для inline-flex */
+    }
+
+
+    .contact-item .icons img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .contact-item .icon {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .contact-item .icons img,
+    .contact-item .icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0; 
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    @keyframes cuteBounce {
+        0%   { transform: translateY(0) scale(1) rotate(0deg); }
+        15%  { transform: translateY(-6px) scale(1.1) rotate(-3deg); }
+        30%  { transform: translateY(-12px) scale(1.15) rotate(3deg); }
+        45%  { transform: translateY(-6px) scale(1.1) rotate(-2deg); }
+        60%  { transform: translateY(0) scale(1) rotate(0deg); }
+        75%  { transform: translateY(0) scale(1.05) rotate(1deg); }
+        100% { transform: translateY(0) scale(1) rotate(0deg); }
+    }
+
+   
+    .bounce {
+        animation: cuteBounce 0.9s ease-out;
+    }
+    
+    @media (max-width: 1200px) {
+        .contact-item {
+            font-size: 18px;
+            gap: 10px;
+        }
+        .contact-item .icons img,
+        .contact-item .icon {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    /* Адаптив под маленькие ноутбуки */
+    @media (max-width: 992px) {
+        .contact-item {
+            font-size: 16px;
+            gap: 8px;
+        }
+        .contact-item .icons img,
+        .contact-item .icon {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    /* Адаптив под мобильные */
+    @media (max-width: 500px) {
+        .contact-item {
+            font-size: 14px;
+            gap: 6px;
+        }
+        .contact-item .icons img,
+        .contact-item .icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    #cotalog,
+    #use-company,
+    #coloring,
+    #contacts {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    #cotalog { transition-delay: 0.1s; }
+    #use-company { transition-delay: 0.2s; }
+    #coloring { transition-delay: 0.3s; }
+    #contacts { transition-delay: 0.4s; }
+
+    #cotalog.visible,
+    #use-company.visible,
+    #coloring.visible,
+    #contacts.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #cotalog.cotalog { transition-delay: 0.1s; }
+    #use-company.use-company { transition-delay: 0.2s; }
+    #coloring.coloring-section { transition-delay: 0.3s; }
+    #contacts.animate-contacts-section-scroll { transition-delay: 0.4s; }
+
+    
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+
+  
+    
+
+</style>
+
+<script>
+        // Данные продуктов
+     
+  
+    const productsData = {
+        primers: [
+            {
+                id: 'primer_1',
+                name: "Грунт-эмаль<br>УР-2К PRO 224",
+                image: 'first_grunt_emal.svg',  
+                summary: 'Материал на<br> полиуретановой основе',
+                link: '#'
+            },
+            {
+                id: 'primer_2',
+                name: "Грунт-эмаль<br>УР-2К PRO 224",
+                image: 'second_grunt_emal.svg',
+                summary: 'Материал на<br> полиуретановой основе'
+            },
+            {
+                id: 'primer_3',
+                name: "Грунт-эмаль<br>УР-2К PRO 224",
+                image: 'third_grunt_emal.svg',
+                summary: 'Материал на<br> полиуретановой основе',
+                link: '#'
+            },
+            {
+                id: 'primer_4',
+                name: "Грунт-эмаль<br>УР-2К PRO 224",
+                image: 'img.png',
+                summary: 'Материал на<br> полиуретановой основе',
+                link: '#'
+            }
+         
+        ],
+        'primer-enamel': [
+            { id: 'pe_1', name: "Грунт-эмаль<br>УР-2К PRO 224", image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' }
+        ],
+        enamel: [
+            { id: 'enamel_1', name: 'Эмаль АК-511', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'enamel_2', name: 'ПФ-115', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
+            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' }
+        ]
+    };
+
+    const currentPages = {
+        primers: 0,
+        'primer-enamel': 0,
+        enamel: 0
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        Object.keys(productsData).forEach(category => {
+            buildCarousel(category);
+            createDots(category);
+            
+            updateCarouselPosition(category, 0); 
+        });
+
+        const icons = document.querySelectorAll(".contact-item .icons img, .contact-item .icon");
+        let index = 0;
+
+        function animateNext() {
+            const icon = icons[index];
+
+            icon.classList.add("bounce");
+
+            // убираем класс после завершения анимации
+            icon.addEventListener("animationend", () => {
+                icon.classList.remove("bounce");
+
+                // переходим к следующей иконке
+                index = (index + 1) % icons.length;
+
+                // запускаем анимацию следующей
+                animateNext();
+            }, { once: true });
+        }
+
+        // стартуем цикл
+        animateNext();
+
+        const conveyorBelt = document.querySelector('.conveyor-belt');
+    
+        if (conveyorBelt) {
+            // Клонируем существующие банки
+            const cansToClone = conveyorBelt.querySelectorAll('.paint-can');
+            
+            // Добавляем клоны в конец
+            cansToClone.forEach(can => {
+                const clonedCan = can.cloneNode(true);
+                conveyorBelt.appendChild(clonedCan);
+            });
+
+            // Устанавливаем ширину контейнера (3 банки + 3 клона)
+            // Пример: 6 * 150px (ширина) + 6 * 50px (отступ) = 1200px
+            const canWidth = 150; 
+            const canMargin = 50; 
+            const totalCans = cansToClone.length * 2; // 6 в вашем случае
+            const newWidth = totalCans * canWidth + totalCans * canMargin;
+
+            conveyorBelt.style.width = `${newWidth}px`;
+        }
+    });
+
+    
+    function buildCarousel(category) {
+        const carousel = document.getElementById(`${category}-carousel`);
+        if (!carousel) return;
+        
+        const products = productsData[category];
+        
+
+        carousel.innerHTML = ''; 
+        
+    
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+            card.innerHTML = `
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}" />
+                </div>
+                <div class="product-info-card">
+                    <h3 class="product-title">${product.name}</h3>
+                    <p class="product-summary">${product.summary}</p>
+                    <a href="${product.link}" class="btn-detail">Подробнее</a>
+                </div>
+            `;
+            carousel.appendChild(card);
+        });
+    }
+
+
+    function createDots(category) {
+        const dotsContainer = document.getElementById(`${category}-dots`);
+        if (!dotsContainer) return;
+
+        const totalItems = productsData[category].length;
+    
+        const itemsPerView = 3; 
+ 
+        const totalPages = Math.ceil(totalItems / itemsPerView); 
+        
+        dotsContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            
+     
+            dot.addEventListener('click', () => showPage(i, category));
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+
+    function showPage(index, category) {
+        const carousel = document.getElementById(`${category}-carousel`);
+        const dots = document.querySelectorAll(`#${category}-dots .dot`);
+        const totalItems = productsData[category].length;
+        const itemsPerView = 3;
+        const totalPages = Math.ceil(totalItems / itemsPerView); 
+        
+
+        let newIndex = index;
+        if (newIndex < 0) newIndex = totalPages - 1;
+        if (newIndex >= totalPages) newIndex = 0;
+        
+     
+        currentPages[category] = newIndex;
+        
+   
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === newIndex));
+        
+  
+        updateCarouselPosition(category, newIndex);
+    }
+    
+    // Функция для сдвига карусели с помощью CSS transform
+    function updateCarouselPosition(category, pageIndex) {
+        const carousel = document.getElementById(`${category}-carousel`);
+        if (!carousel) return;
+        
+       
+        const shiftPercentage = -100 * pageIndex;
+        
+        carousel.style.transform = `translateX(${shiftPercentage}%)`;
+    }
+
+
+ 
+    function nextSlide(category) {
+        showPage(currentPages[category] + 1, category);
+    }
+
+    function prevSlide(category) {
+        showPage(currentPages[category] - 1, category);
+    }
+
+  
+
+
+       
+
+// Плавный скролл для якорных ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    
+
+
+    </script>
+
+<script>
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('#cotalog, #use-company, #coloring, #contacts');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                   
+                }
+            });
+        }, {
+            threshold: 0.05, // Срабатывает когда всего 5% элемента видно
+            rootMargin: '0px 0px -50px 0px' // Срабатывает на 50px раньше
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const menu = document.querySelector('.energy-menu');
+        const submenuLinks = document.querySelectorAll('.energy-menu > li');
+        
+        // Функция проверки, является ли экран мобильным
+        const isMobile = () => window.innerWidth <= 768;
+
+        // --- Логика открытия/закрытия главного меню (Гамбургер) ---
+        menuToggle.addEventListener('click', () => {
+            if (isMobile()) {
+                menu.classList.toggle('menu-open');
+                
+                // Меняем иконку Гамбургера на Крестик
+                const icon = menuToggle.querySelector('.fas');
+                if (menu.classList.contains('menu-open')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // --- Логика открытия/закрытия подменю (только на мобильных) ---
+        submenuLinks.forEach(li => {
+            const link = li.querySelector('.energy-menu-link');
+            const submenu = li.querySelector('.energy-submenu');
+
+            // Проверяем, есть ли подменю
+            if (submenu) {
+                link.addEventListener('click', (e) => {
+                    // Если мы на мобильном устройстве (768px и меньше)
+                    if (isMobile()) {
+                        // Предотвращаем переход по ссылке
+                        e.preventDefault(); 
+
+                        // Переключаем класс для подменю
+                        // Toggle visibility of the submenu
+                        const isSubmenuOpen = submenu.style.display === 'block';
+                        submenu.style.display = isSubmenuOpen ? 'none' : 'block';
+                        link.classList.toggle('active-submenu');
+                        
+                        // Закрываем другие подменю
+                        submenuLinks.forEach(otherLi => {
+                            const otherLink = otherLi.querySelector('.energy-menu-link');
+                            const otherSubmenu = otherLi.querySelector('.energy-submenu');
+                            
+                            if (otherSubmenu && otherSubmenu !== submenu) {
+                                otherSubmenu.style.display = 'none';
+                                otherLink.classList.remove('active-submenu');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+        // --- Закрытие меню при изменении размера экрана (с мобильного на десктоп) ---
+        window.addEventListener('resize', () => {
+            if (!isMobile() && menu.classList.contains('menu-open')) {
+                menu.classList.remove('menu-open');
+                // Возвращаем иконку Гамбургера
+                menuToggle.querySelector('.fas').classList.remove('fa-times');
+                menuToggle.querySelector('.fas').classList.add('fa-bars');
+                
+                // Скрываем все мобильные подменю
+                document.querySelectorAll('.energy-submenu').forEach(sub => {
+                    sub.style.display = ''; // Сброс, чтобы CSS взял управление
+                });
+                document.querySelectorAll('.energy-menu-link').forEach(link => {
+                    link.classList.remove('active-submenu');
+                });
+            }
+        });
+    });
+
+</script>
+
+
+</body>
+</html>
