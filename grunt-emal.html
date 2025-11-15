@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грунт эмаль УР-2К PRO 224</title>
+    <style>
+        /* --- Общие стили --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            padding-bottom: 50px; 
+        }
+
+      
+        .product-page-container {
+            max-width: 1140px;
+            margin: 30px auto;
+            padding: 20px;
+            overflow: hidden; 
+        }
+
+        /* --- Кнопка "Назад" --- */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #EEB039;
+            color: #ffffff;
+            padding: 8px 15px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', serif;
+            width: 100px;
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #eaa83c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* --- НОВОЕ: Анимация нажатия --- */
+        .back-button:active {
+            transform: translateY(0) scale(0.95);
+            box-shadow: none;
+        }
+
+        .back-button .arrow {
+            font-size: 24px;
+            line-height: 1;
+            margin-right: 10px;
+        }
+
+        .back-button .back-text small {
+            font-size: 12px;
+            font-weight: normal;
+            display: block;
+            line-height: 1.2;
+        }
+
+        /* --- Основной блок продукта (Flex-контейнер) --- */
+        .product-details {
+            display: flex;
+            flex-wrap: wrap; /* Для мобильных */
+            align-items: flex-start;
+            gap: 40px; /* Пространство между колонками */
+        }
+
+        /* --- Левая колонка (Изображение и значки) --- */
+        .product-image-column {
+            flex: 1; /* Занимает 1 часть */
+            min-width: 300px;
+            max-width: 450px;
+        }
+
+        /* --- Основное изображение --- */
+        .main-product-image {
+            width: 100%;
+            height: 400px; 
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .main-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+        }
+
+        
+        .product-thumbnails {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-thumbnails .thumb {
+            width: 100px; 
+            height: 100px; 
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden;
+            /* --- ОБНОВЛЕНИЕ: Плавный переход для hover --- */
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .product-thumbnails .thumb:hover {
+            border-color: #f3b64f;
+          
+            transform: scale(1.05);
+        }
+        
+        .product-thumbnails .thumb.active {
+            border-color: #f3b64f;
+            transform: scale(1); /* Убираем увеличение у активного */
+        }
+
+        .product-thumbnails .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+     
+        .product-badges {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            gap: 0px;
+        }
+
+        .product-badges img {
+            height: 80px !important; 
+            width: 80px !important; 
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            padding: 10px; 
+            box-sizing: border-box; 
+        }
+
+     
+        .product-badges img:hover {
+            transform: scale(1.1);
+        }
+
+        
+     
+        .product-info-column {
+            flex: 2; 
+           
+            min-width: 320px;
+        }
+
+        .product-info-column h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-top: 0;
+            font-family: 'Inter Hewn', serif;
+            margin-bottom: 25px;
+            color: #000000;
+            /* --- НОВОЕ: Для позиционирования ::after --- */
+            position: relative;
+            padding-bottom: 15px; /* Оставляем место для линии */
+        }
+
+        /* --- ИСПРАВЛЕНИЕ: Градиентная полоса под H1 --- */
+        .product-info-column h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 700px; 
+            height: 5px; 
+            background: linear-gradient(90deg, #EEB039, #f3b64f);
+            border-radius: 2px;
+        }
+
+        .product-info-column p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #000000;
+            text-align: left;
+            font-weight: 500;
+            font-family: 'Montserrat', serif;
+            margin-bottom: 35px;
+            max-width: 100%;
+        }
+
+        .fade-transition {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 1;
+        }
+        .fade-transition.fading {
+            opacity: 0;
+        }
+   
+
+        .product-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .product-actions .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: 'Montserrat', sans-serif; 
+            width: 250px;
+            height: 50px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+
+        .product-actions .btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+   
+        .product-actions .btn:active {
+            transform: translateY(-2px) scale(0.98);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .product-actions .btn-primary {
+            background-color: #EEB039;
+            color: #ffffff;
+            font-size: 20px;
+        }
+        
+        .product-actions .btn-secondary {
+            background-color: #EEB039;
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+        
+
+        /* --- Адаптация для мобильных --- */
+        @media (max-width: 768px) {
+            .product-details {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-image-column {
+                max-width: 100%;
+                order: 1;
+                width: 100%;
+            }
+            
+            .main-product-image {
+                height: 300px; 
+            }
+
+            .product-thumbnails {
+                justify-content: center; /* Центрируем превью */
+                flex-wrap: nowrap; /* Позволяем переноситься */
+            }
+
+            .product-thumbnails .thumb {
+                width: 80px;
+                height: 80px;
+            }
+
+            .product-info-column {
+                order: 2;
+                width: 100%; /* Занимаем всю ширину */
+            }
+
+            .product-info-column h1 {
+                text-align: center; /* Центрируем заголовок */
+                font-size: 32px; /* Уменьшаем шрифт */
+            }
+
+            /* --- НОВОЕ: Центрируем полосу под H1 на мобильных --- */
+            .product-info-column h1::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .product-info-column p {
+                text-align: center; /* Центрируем текст */
+                font-size: 18px;
+            }
+
+            .product-badges {
+                justify-content: center;
+            }
+
+            .product-actions {
+                flex-direction: column;
+                width: 100%;
+                gap: 20px; /* Уменьшаем отступ */
+                align-items: center; /* Центрируем кнопки */
+            }
+
+            .product-actions .btn {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 9999;
+    }
+
+    .modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .modal {
+        background: #fff;
+        width: 90%;
+        max-width: 420px;
+        padding: 30px 25px;
+        border-radius: 12px;
+        text-align: center;
+        position: relative;
+        transform: scale(0.7);
+        transition: transform 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .modal-overlay.active .modal {
+        transform: scale(1);
+    }
+
+    .modal-close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        background: none;
+        border: none;
+        font-size: 32px;
+        cursor: pointer;
+        color: #555;
+        transition: color 0.2s ease;
+    }
+
+    .modal-close:hover {
+        color: #000;
+    }
+
+    .modal h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .modal p {
+        font-size: 18px;
+        margin-bottom: 25px;
+        color: #444;
+        line-height: 1.5;
+    }
+
+    .modal-btn {
+        display: inline-block;
+        background: #EEB039;
+        padding: 12px 25px;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.2s ease;
+    }
+
+    .modal-btn:hover {
+        background: #d89c2f;
+    }
+            /* --- Шрифты (предполагается, что они в папке /fonts) --- */
+        @font-face {
+            font-family: 'Inter Hewn';
+            src: url('./fonts/Inter-accent.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Futura-Normal';
+            src: url('./fonts/Futura-Bold\ Regular.ttf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Futura-Bold';
+            src: url('./fonts/a_FuturicaBs-Bold.ttf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    .product-image-column,
+    .product-info-column {
+        visibility: hidden; 
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .product-image-column.visible,
+    .product-info-column.visible {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .fade-transition {
+        transition: opacity 0.3s ease;
+        opacity: 1;
+    }
+
+    .fade-transition.fading {
+        opacity: 0;
+    }
+    
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="product-page-container">
+        
+    
+        <a href="index.html" class="back-button">
+            <span class="arrow">&larr;</span>
+            <span class="back-text">НАЗАД
+                <small>в каталог</small>
+            </span>
+        </a>
+
+        <main class="product-details">
+            <div class="product-image-column">
+                <div class="main-product-image">
+                    <img id="mainImage" class="fade-transition" src="грунт-эмаль 224.png" alt="Главное изображение продукта">
+                </div>
+                
+                <div class="product-thumbnails">
+                    
+                  
+                    <div class="thumb" data-product-index="1" 
+                         data-src="грунт-эмаль 224.png" 
+                         data-title="Грунт эмаль УР-2К PRO 224" 
+                         data-description="Полиуретановая двухкомпонентная грунт-эмаль представляет собой суспензию атмосферо- и химически стойких пигментов, фосфата цинка, инертных наполнителей в растворе акриловой гидроксилсодержащей смолы в органических растворителях с добавлением функциональных добавок.Поставляется комплектно: полуфабрикат грунт-эмали, отвердитель и разбавитель. Для антикоррозионной защиты металлических поверхностей, бетонных поверхностей, а также окрашивания изделий из стеклопластика."
+
+                         data-link="https://drive.google.com/file/d/17FN5c39YIxfvmfV-O0ehQoaZM525eiLT/view?usp=sharing"
+                         data-icon1="2К.svg"
+                         data-icon2="ПУ.svg"
+                         data-icon3="МТ-ПГ.svg">
+                        <img src="грунт-эмаль 224.png" alt="Превью 1">
+                    </div>
+                    
+               
+                    <div class="thumb" data-product-index="2"
+                         data-src="grunt_second1.svg" 
+                         data-title="Грунт-эмаль УР-2К ИП 222" 
+                         data-description="Двухкомпонентная грунт-эмаль на основе акриловых смол с добавлением фосфата цинка,атмосферо и химически стойких пигментов, инертных наполнителей, органических растворителей и отвердителя. Поставляется комплектно: полуфабрикат грунт-эмали, отвердитель и разбавитель.
+                    Подходит для: профессиональной антикоррозионной защиты металлических поверхностей, окрашивание изделий из стеклопластика, окрашивания изделий из чугуна."
+                         data-link="https://drive.google.com/file/d/1Gqgn7KPzPb82DjHlo7JMHw5_ogrLNbP7/view?usp=sharing"
+                         data-icon1="2К.svg"
+                         data-icon2="ПУ.svg"
+                         data-icon3="ПГ.svg">
+                        <img src="grunt_second1.svg" alt="Превью 2">
+                    </div>
+
+              
+                    <div class="thumb" data-product-index="3"
+                         data-src="third_grunt1.svg" 
+                         data-title="Грунт-эмаль HARDMAX PUR 223" 
+                         data-description="Толстослойная двухкомпонентная полиуретановая грунт-эмаль на основе гидроксилсо-держащей акриловой смолы с отвердителем на основе алифатического изоцианата. Содержит антикоррозионные пигменты.Для окрашивания металлических деревянных и бетонных поверхностей, изделий из стеклопластика, эксплуатируемых в различных климатических зонах."
+                         data-link="https://drive.google.com/file/d/1Wn2lCd3b8ZwsQTUALY922MC1sPdUvzU_/view?usp=sharing"
+                         data-icon1="2К.svg"
+                         data-icon2="ПУ.svg"
+                         data-icon3="ПМ.svg">
+                        <img src="third_grunt1.svg" alt="Превью 3">
+                    </div>
+
+                </div>
+                
+                
+                
+                <div id="productBadges" class="product-badges fade-transition">
+                    <img id="badge1" src="2К.svg" alt="Иконка 1">
+                    <img id="badge2" src="ПУ.svg" alt="Иконка 2">
+                    <img id="badge3" src="МТ-ПГ.svg" alt="Иконка 3">
+                </div>
+            </div>
+            
+        
+          
+            <div class="product-info-column">
+                <h1 id="productTitle" class="fade-transition">Грунт эмаль УР-2К PRO 224</h1>
+                <p id="productDescription" class="fade-transition">
+                    Двухкомпонентная толстослойная низкотемпературная противокоррозионная эпоксидно-новолачная грунт-эмаль с низким содержанием растворителей, толерантная к степени подготовки поверхности. Образует превосходное атмосферостойкое покрытие, хорошо сохраняет цвет и внешний вид. Обладает высокой стойкостью к механическому и абразивному воздействию. Устойчива к брызгам минеральных и растительных масел, парафинов, алифатических нефтепродуктов и химических веществ умеренной агрессивности.
+                </p>
+                <div class="product-actions">
+                    <a href="path/to/tech-doc-224.pdf" id="techLink" class="btn btn-primary">Смотреть техническое<br>описание</a>
+                    <a href="#" class="btn btn-secondary">Прайс-лист</a>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+   
+    <div id="priceModal" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close">&times;</button>
+            <h2>Прайс-лист</h2>
+            <p>
+                Чтобы получить актуальный прайс-лист, свяжитесь с нашим отделом продаж
+                или оставьте запрос на электронную почту.
+            </p>
+
+            <a href="mailto:info@company.com" class="modal-btn">Написать нам</a>
+        </div>
+    </div>
+
+    <script>
+   
+        document.addEventListener('DOMContentLoaded', () => {
+            const allThumbnails = document.querySelectorAll('.product-thumbnails .thumb');
+            const mainImage = document.getElementById('mainImage');
+            const productTitle = document.getElementById('productTitle');
+            const productDescription = document.getElementById('productDescription');
+            const techLink = document.getElementById('techLink');
+            const badge1 = document.getElementById('badge1');
+            const badge2 = document.getElementById('badge2');
+            const badge3 = document.getElementById('badge3');
+            const productBadges = document.getElementById('productBadges');
+            const mainColumn = document.querySelector('.product-image-column');
+            const infoColumn = document.querySelector('.product-info-column');
+
+            const elementsToFade = [mainImage, productTitle, productDescription, productBadges];
+
+            function activateThumb(thumb) {
+                allThumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+
+                elementsToFade.forEach(el => el.classList.add('fading'));
+
+                setTimeout(() => {
+                    mainImage.src = thumb.dataset.src;
+                    productTitle.innerText = thumb.dataset.title;
+                    productDescription.innerText = thumb.dataset.description;
+                    techLink.href = thumb.dataset.link;
+                    badge1.src = thumb.dataset.icon1 || '2К.svg';
+                    badge2.src = thumb.dataset.icon2 || 'ПУ.svg';
+                    badge3.src = thumb.dataset.icon3 || 'МТ-ПГ.svg';
+
+                    // снимаем класс fading, чтобы включилась анимация
+                    elementsToFade.forEach(el => el.classList.remove('fading'));
+
+                    // показываем блок с плавным появлением
+                    mainColumn.classList.add('visible');
+                    infoColumn.classList.add('visible');
+                }, 300); // небольшая задержка для плавного эффекта
+            }
+
+            allThumbnails.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    if (!thumb.classList.contains('active')) activateThumb(thumb);
+                });
+            });
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedIndex = urlParams.get('index');
+
+            if (selectedIndex) {
+                const thumb = Array.from(allThumbnails)
+                    .find(t => t.dataset.productIndex === selectedIndex);
+                if (thumb) activateThumb(thumb);
+            } else if (allThumbnails.length > 0) {
+                activateThumb(allThumbnails[0]);
+            }
+
+            // --- Модальное окно для прайс-листа ---
+            const priceBtn = document.querySelector('.btn-secondary');
+            const modal = document.getElementById('priceModal');
+            const modalClose = document.querySelector('.modal-close');
+
+            priceBtn.addEventListener('click', e => {
+                e.preventDefault();
+                modal.classList.add('active');
+            });
+
+            modalClose.addEventListener('click', () => modal.classList.remove('active'));
+            modal.addEventListener('click', e => {
+                if (e.target === modal) modal.classList.remove('active');
+            });
+        });
+
+
+
+ 
+    </script>
+
+</body>
+</html>

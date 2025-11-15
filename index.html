@@ -228,7 +228,7 @@
             
             <div class="hero-content">
                 <h1>ООО “Ария-ЛКМ” - эксперт в мире лакокрасочных материалов</h1>
-                <p>Официальный представитель завода «Краски КВИЛ». Профессиональные решения для защиты и декора.</p>
+                <p>Официальный представитель ООО Завод “Краски КВИЛ». Профессиональные решения для защиты и декора.</p>
                 
                 <!-- КНОПКИ -->
                 <div class="hero-actions"> 
@@ -902,23 +902,44 @@
 
         /* МОБИЛЬНЫЕ (768px и МЕНЬШЕ) */
         @media (max-width: 768px) {
-            /* * Все стили для .energy-menu уже унаследованы от 1024px.
-             * Нам нужно только изменить высоту шапки.
-             */
+           
             .energy-nav { 
-                height: 60px; /* Уменьшаем шапку на телефонах */
+                height: 60px; 
             }
             
             body {
-                padding-top: 60px; /* Уменьшаем отступ body */
+                padding-top: 60px; 
             }
             
             .energy-menu {
-                top: 60px; /* Позиция меню должна соответствовать высоте шапки */
+                top: 60px; 
             }
         }
 
-    
+        @media (max-width: 1300px) {
+            .energy-nav {
+                position: fixed; 
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 999;
+            }
+
+         
+            body {
+                padding-top: 70px; 
+            }
+        }
+
+      
+        @media (max-width: 768px) {
+            .energy-nav {
+                height: 60px; 
+            }
+            body {
+                padding-top: 60px; 
+            }
+        }
 
         /* =================================================================
          2. СТИЛИ HERO И CONTENT-WRAPPER (СОХРАНЕННАЯ ЛОГИКА)
@@ -2098,8 +2119,8 @@
 
 
     .text-block {
-        flex: 1 1 55%; /* растягиваемся, но есть минимальная ширина */
-        min-width: 200px; /* чтобы текст не сжимался слишком сильно */
+        flex: 1 1 55%;
+        min-width: 200px;
     }
 
     .company-section,
@@ -2111,12 +2132,12 @@
 
     .company-section {
         position: relative;
-        padding-top: 80px; /* чтобы текст не прилипал к градиенту */
+        padding-top: 80px; 
         background: linear-gradient(
             to bottom,
-            rgba(238, 176, 57, 0.35) 0%,   /* яркий жёлтый сверху */
-            rgba(238, 176, 57, 0.15) 25%,  /* мягкое затухание */
-            rgba(238, 176, 57, 0) 60%      /* полностью исчезает */
+            rgba(238, 176, 57, 0.35) 0%,  
+            rgba(238, 176, 57, 0.15) 25%,  
+            rgba(238, 176, 57, 0) 60%    
         );
     }
 
@@ -2322,19 +2343,7 @@
             cursor: pointer;
         }
         
-        /* Иконка для часов, которая была 48px в вашем старом коде, 
-           теперь приведена к общему размеру 32px для единообразия */
-
-        /* Анимация (если нужна, для клика) */
-        @keyframes cuteBounce {
-            0%   { transform: translateY(0) scale(1) rotate(0deg); }
-            30%  { transform: translateY(-8px) scale(1.1) rotate(3deg); }
-            60%  { transform: translateY(0) scale(1) rotate(0deg); }
-        }
-
-        .bounce {
-            animation: cuteBounce 0.6s ease-out;
-        }
+        
 
         /* --- АДАПТИВНОСТЬ --- */
 
@@ -2431,29 +2440,51 @@
             {
                 id: 'primer_1',
                 name: "Грунт-эмаль<br>УР-2К PRO 224",
-                image: 'first_grunt_emal.svg',  
+                image: 'грунт-эмаль 224.png',  
                 summary: 'Материал на<br> полиуретановой основе',
-                link: '#'
+                link: 'grunt-emal.html',
+                index: 1
             },
             {
                 id: 'primer_2',
-                name: "Грунт-эмаль<br>УР-2К PRO 224",
+                name: "Грунт-эмаль УР-2К ИП 222",
                 image: 'second_grunt_emal.svg',
-                summary: 'Материал на<br> полиуретановой основе'
+                summary: 'Материал на<br> полиуретановой основе',
+                link:'grunt-emal.html',
+                index: 2
             },
             {
                 id: 'primer_3',
-                name: "Грунт-эмаль<br>УР-2К PRO 224",
+                name: "Грунт-эмаль HARDMAX PUR 223",
                 image: 'third_grunt_emal.svg',
                 summary: 'Материал на<br> полиуретановой основе',
-                link: '#'
+                link: 'grunt-emal.html',
+                index: 3
             },
             {
                 id: 'primer_4',
-                name: "Грунт-эмаль<br>УР-2К PRO 224",
-                image: 'img.png',
+                name: "Грунт-эмаль АУ Экспресс",
+                image: 'Грунт-эмаль Алкидно Уретановая Экспресс.png',
                 summary: 'Материал на<br> полиуретановой основе',
-                link: '#'
+                link: 'grunt-emal2.html',
+                index: 4
+            },
+
+            {
+                id: 'primer_5',
+                name: "	ГРУНТ-ЭМАЛЬ 3 в 1 БЫСТРОСОХНУЩАЯ",
+                image: 'Грунт-эмаль 128.10 3 в 1.png',
+                summary: 'Материал на<br> полиуретановой основе',
+                link: 'grunt-emal2.html',
+                index: 5
+            },
+            {
+                id: 'primer_6',
+                name: "ГРУНТ-ЭМАЛЬ 3 в 1 Раскрас",
+                image: 'Грунт-эмаль 3 в 1Т.png',
+                summary: 'Материал на<br> полиуретановой основе',
+                link: 'grunt-emal2.html',
+                index: 6
             }
          
         ],
@@ -2528,6 +2559,7 @@
         products.forEach(product => {
             const card = document.createElement('div');
             card.classList.add('product-card');
+
             card.innerHTML = `
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}" />
@@ -2535,11 +2567,13 @@
                 <div class="product-info-card">
                     <h3 class="product-title">${product.name}</h3>
                     <p class="product-summary">${product.summary}</p>
-                    <a href="${product.link}" class="btn-detail">Подробнее</a>
+                    <a href="${product.link}?index=${product.index}" class="btn-detail">Подробнее</a>
                 </div>
             `;
+
             carousel.appendChild(card);
         });
+
     }
 
 
