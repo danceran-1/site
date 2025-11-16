@@ -253,74 +253,73 @@
 
 
 <section id="cotalog" class="cotalog">
-    <div class="cotalog-container">
-        
-        <div class="cotalog-text"> 
-            <h1>Каталог товаров</h1>
-        </div>
+        <div class="cotalog-container">
+            
+            <div class="cotalog-text"> 
+                <h1>Каталог товаров</h1>
+            </div>
 
-        <div class="category-title-bar">
-            <h2 id="Grunt-emali">Грунт-эмали</h2>
-        </div>
-        
-        <div class="cotalog-text">
-            <div class="carousel-wrapper">
-                <button class="arrow left" onclick="prevSlide('primers')">
-                    <img src="left.svg" alt="Предыдущий" class="arrow-icon">
-                </button>
-                <div class="carousel-viewport">
-                    <div class="photo-carousel" id="primers-carousel"></div>
-                </div>
-                <button class="arrow right" onclick="nextSlide('primers')">
-                    <img src="right.svg" alt="Предыдущий" class="arrow-icon">
-                </button>
+            <div class="category-title-bar">
+                <h2 id="Grunt-emali">Грунт-эмали</h2>
             </div>
             
-            <div class="carousel-dots" id="primers-dots"></div>
-        </div>
-        
-        <div class="category-title-bar">
-            <h2 id="Grunt">Грунтовки</h2>
-        </div>
-
-        
-        <div class="cotalog-text">
-            <div class="carousel-wrapper">
-                <button class="arrow left" onclick="prevSlide('primer-enamel')">
-                  <img src="left.svg" alt="Предыдущий" class="arrow-icon">
-                </button>
-                <div class="carousel-viewport">
-                    <div class="photo-carousel" id="primer-enamel-carousel"></div>
+            <div class="cotalog-text">
+                <div class="carousel-wrapper">
+                    <button class="arrow left" onclick="prevSlide('primers')">
+                        <img src="left.svg" alt="Предыдущий" class="arrow-icon">
+                    </button>
+                    <div class="carousel-viewport">
+                        <div class="photo-carousel" id="primers-carousel"></div>
+                    </div>
+                    <button class="arrow right" onclick="nextSlide('primers')">
+                        <img src="right.svg" alt="Предыдущий" class="arrow-icon">
+                    </button>
                 </div>
-                <button class="arrow right" onclick="nextSlide('primer-enamel')">
-                    <img src="right.svg" alt="Предыдущий" class="arrow-icon">
-                </button>
+                
+                <div class="carousel-dots" id="primers-dots"></div>
             </div>
-            <div class="carousel-dots" id="primer-enamel-dots"></div>
-        </div>
-        
-        <div class="category-title-bar">
-            <h2 id ="Emali">Эмали</h2>
-        </div>
-        
-        <div class="cotalog-text">
-            <div class="carousel-wrapper">
-                <button class="arrow left" onclick="prevSlide('enamel')">
-                    <img src="left.svg" alt="Предыдущий" class="arrow-icon">
-                </button>
-                <div class="carousel-viewport">
-                    <div class="photo-carousel" id="enamel-carousel"></div>
-                </div>
-                <button class="arrow right" onclick="nextSlide('enamel')">
-                   <img src="right.svg" alt="Предыдущий" class="arrow-icon">
-                </button>
+            
+            <div class="category-title-bar">
+                <h2 id="Grunt">Грунтовки</h2>
             </div>
-            <div class="carousel-dots" id="enamel-dots"></div>
-        </div>
-        
-    </div>
-</section>
 
+            
+            <div class="cotalog-text">
+                <div class="carousel-wrapper">
+                    <button class="arrow left" onclick="prevSlide('primer-enamel')">
+                        <img src="left.svg" alt="Предыдущий" class="arrow-icon">
+                    </button>
+                    <div class="carousel-viewport">
+                        <div class="photo-carousel" id="primer-enamel-carousel"></div>
+                    </div>
+                    <button class="arrow right" onclick="nextSlide('primer-enamel')">
+                        <img src="right.svg" alt="Предыдущий" class="arrow-icon">
+                    </button>
+                </div>
+                <div class="carousel-dots" id="primer-enamel-dots"></div>
+            </div>
+            
+            <div class="category-title-bar">
+                <h2 id ="Emali">Эмали</h2>
+            </div>
+            
+            <div class="cotalog-text">
+                <div class="carousel-wrapper">
+                    <button class="arrow left" onclick="prevSlide('enamel')">
+                        <img src="left.svg" alt="Предыдущий" class="arrow-icon">
+                    </button>
+                    <div class="carousel-viewport">
+                        <div class="photo-carousel" id="enamel-carousel"></div>
+                    </div>
+                    <button class="arrow right" onclick="nextSlide('enamel')">
+                        <img src="right.svg" alt="Предыдущий" class="arrow-icon">
+                    </button>
+                </div>
+                <div class="carousel-dots" id="enamel-dots"></div>
+            </div>
+            
+        </div>
+    </section>
 
 <section id="use-company" class="use-company">
         
@@ -468,7 +467,7 @@
             </div>
 
             <div class="coloring-image">
-                <img src="aparat.svg" id ='for-company_block' alt="Колеровочное оборудование">
+                <img src="Гифка Эмаль 2.gif" id ='for-company_block' alt="Колеровочное оборудование">
             </div>
 
         </div>
@@ -1251,7 +1250,6 @@
         
         .photo-carousel {
             display: flex;
-      
             gap: 30px; 
             transition: transform 0.5s ease-in-out;
         }
@@ -1298,7 +1296,7 @@
             background-color: #EEB039;
         }
 
-     
+    
         .product-card {
             flex: 0 0 calc(33.333% - 20px); 
             width: auto;
@@ -1307,15 +1305,13 @@
             flex-direction: column;
             text-align: center;
             border-radius: 15px;
-            
-        
+            background-color: #FEF7E6; 
             border: 2px solid #F6C87C;
             overflow: hidden; 
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .product-card:hover {
-            /* transform: translateY(-5px); <-- УБРАНО, как на макете */
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             transform: translateY(-10px);
         }
@@ -1326,8 +1322,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            
-            /* БЕРЕМ С МАКЕТА */
             background-color: #ffffff; 
             padding: 15px; /* Добавим отступ для банки */
         }
@@ -1340,11 +1334,14 @@
 
         /* --- ИНФО-ЧАСТЬ КАРТОЧКИ (ИЗМЕНЕНО) --- */
         .product-info-card {
-          
             background-color: #FEF7E6;
             padding: 20px;
             text-align: center;
-            
+            /* --- ИЗМЕНЕНИЕ --- */
+            flex-grow: 1; /* растягиваем инфо-блок до низа */
+            display: flex;
+            flex-direction: column;
+            /* --- КОНЕЦ ИЗМЕНЕНИЯ --- */
         }
 
         .product-title {
@@ -1361,7 +1358,35 @@
             color: #000000;
             font-weight: 400;
             margin-bottom: 15px;
+            /* --- ИЗМЕНЕНИЕ --- */
+            flex-grow: 1; /* текст занимает всё свободное пространство */
         }
+        
+        /* --- 
+            НОВЫЕ СТИЛИ ДЛЯ БЛОКА С ИКОНКАМИ 
+        --- */
+        .product-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px; /* Пространство между иконками */
+            flex-grow: 1; /* Заставляет блок занять место summary */
+            min-height: 50px; /* Минимальная высота, чтобы кнопка не "прыгала" */
+            padding: 10px 0;
+            margin-bottom: 15px;
+        }
+
+        .product-icons img {
+            height: 45px; /* Размер иконок (можете поменять) */
+            width: 45px;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+        .product-icons img:hover {
+            transform: scale(1.1);
+        }
+        /* --- КОНЕЦ НОВЫХ СТИЛЕЙ --- */
+
 
         /* --- КНОПКА "ПОДРОБНЕЕ" (ИЗМЕНЕНО) --- */
         .btn-detail {
@@ -1376,12 +1401,12 @@
             font-weight: 600; /* Жирнее, как на макете */
             border-radius: 5px;
             transition: all 0.2s ease;
-            
-            /* БЕРЕМ С МАКЕТА */
             background: #F4BA44; 
             color: #402E00 !important; 
             border: none;
             box-shadow: 0 4px 0 #D69929; /* 3D эффект */
+            /* --- ИЗМЕНЕНИЕ --- */
+            margin-top: auto; /* КНОПКА ВСЕГДА ВНИЗУ! */
         }
 
         .btn-detail:hover {
@@ -1391,9 +1416,8 @@
             opacity: 1; /* Убираем старый hover */
         }
 
-
         /* --- 
-         * АДАПТИВНОСТЬ (HEADER)
+         * АДАПТИВНОСТЬ (HEADER) - СКОПИРОВАНО ИЗ ЗАПРОСА
         --- */
 
         @media (max-width: 1300px) {
@@ -1468,7 +1492,7 @@
         }
 
         /* --- 
-         * АДАПТИВНОСТЬ (CATALOG)
+         * АДАПТИВНОСТЬ (CATALOG) - СКОПИРОВАНО ИЗ ЗАПРОСА
         --- */
 
         @media (max-width: 1024px) {
@@ -2432,16 +2456,15 @@
 </style>
 
 <script>
-        // Данные продуктов
-     
-  
+
     const productsData = {
         primers: [
             {
                 id: 'primer_1',
                 name: "Грунт-эмаль<br>УР-2К PRO 224",
-                image: 'грунт-эмаль 224.png',  
-                summary: 'Материал на<br> полиуретановой основе',
+                image: 'грунт-эмаль 224.png', 	
+                // summary: 'Материал на<br> полиуретановой основе',
+                icons: ['1К.svg', 'МТ.svg'], // ИЗМЕНЕНИЕ: summary заменен на icons
                 link: 'grunt-emal.html',
                 index: 1
             },
@@ -2449,7 +2472,8 @@
                 id: 'primer_2',
                 name: "Грунт-эмаль УР-2К ИП 222",
                 image: 'second_grunt_emal.svg',
-                summary: 'Материал на<br> полиуретановой основе',
+                // summary: 'Материал на<br> полиуретановой основе',
+                icons: ['1К.svg', 'МТ.svg', 'ПГ.svg'], // ИЗМЕНЕНИЕ: 3 иконки
                 link:'grunt-emal.html',
                 index: 2
             },
@@ -2457,7 +2481,8 @@
                 id: 'primer_3',
                 name: "Грунт-эмаль HARDMAX PUR 223",
                 image: 'third_grunt_emal.svg',
-                summary: 'Материал на<br> полиуретановой основе',
+                // summary: 'Материал на<br> полиуретановой основе',
+                icons: ['2К.svg'], // ИЗМЕНЕНИЕ: 1 иконка
                 link: 'grunt-emal.html',
                 index: 3
             },
@@ -2465,14 +2490,13 @@
                 id: 'primer_4',
                 name: "Грунт-эмаль АУ Экспресс",
                 image: 'Грунт-эмаль Алкидно Уретановая Экспресс.png',
-                summary: 'Материал на<br> полиуретановой основе',
+                summary: 'Материал на<br> полиуретановой основе', // Оставил summary для примера
                 link: 'grunt-emal2.html',
                 index: 4
             },
-
             {
                 id: 'primer_5',
-                name: "	ГРУНТ-ЭМАЛЬ 3 в 1 БЫСТРОСОХНУЩАЯ",
+                name: " ГРУНТ-ЭМАЛЬ 3 в 1 БЫСТРОСОХНУЩАЯ",
                 image: 'Грунт-эмаль 128.10 3 в 1.png',
                 summary: 'Материал на<br> полиуретановой основе',
                 link: 'grunt-emal2.html',
@@ -2485,25 +2509,128 @@
                 summary: 'Материал на<br> полиуретановой основе',
                 link: 'grunt-emal2.html',
                 index: 6
+            },
+            {
+                id: 'primer_7',
+                name: "\"УниЭпокс PRO М\" 221",
+                image: 'грунт-эмаль 221.png',
+                summary: 'Материал на<br> полиуретановой основе',
+                link: 'grunt-emal3.html',
+                index: 7
+            },
+            {
+                id: 'primer_8',
+                name: "Грунт-эмаль HARDMAX EPO 226",
+                image: 'грунт-эмаль 226.png',
+                summary: 'Материал на<br> полиуретановой основе',
+                link: 'grunt-emal3.html',
+                index: 8
             }
-         
+        
         ],
         'primer-enamel': [
-            { id: 'pe_1', name: "Грунт-эмаль<br>УР-2К PRO 224", image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'pe_2', name: 'Акриловая грунт-эмаль', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' }
+            // ... (здесь все еще используется summary)
+            { 
+                id: 'primer_1', 
+                name: "Грунтовка УниЭпокс PRO ZN 80 210", 
+                image: 'грунтовка 210.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'grunt.html',
+                index: 1
+            },
+            { 
+                id: 'primer_2', 
+                name: 'Грунтовка "УниЭпокс" 211', 
+                image: 'грунтовка 211.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'grunt.html',
+                index: 2
+            },
+            { 
+                id: 'primer_3', 
+                name: 'Грунтовка "УниЭпокс PRO M" 212', 
+                image: 'грунтовка 212.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'grunt.html',
+                index: 3
+            },
+            { 
+                id: 'primer_4', 
+                name: 'Грунтовка HARDMAX EPO 213', 
+                image: 'грунтовка 213.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'grunt1.html',
+                index: 4
+            },
+            { 
+                id: 'primer_5', 
+                name: 'Грунтовка "MobiHARD ПУ" 216', 
+                image: 'грунтовка 216.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'grunt1.html',
+                index: 5
+            },
+            { 
+                id: 'primer_6', 
+                name: 'ГРУНТОВКА "MobiHARD ПУ Filler" 217', 
+                image: 'грунтовка 217.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'grunt1.html',
+                index: 6
+            },
+            { 
+                id: 'primer_7', 
+                name: 'Грунтовка ГФ-021 спринт 1К', 
+                image: 'грунтовка ГФ-021 СПРИНТ.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'grunt2.html',
+                index: 7
+            },
+            { 
+                id: 'primer_8', 
+                name: 'Грунтовка антикоррозионная "Экспресс-АФТ', 
+                image: 'грунтовка Экспресс АФТ.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'grunt2.html',
+                index: 8
+            }
+            
         ],
         enamel: [
-            { id: 'enamel_1', name: 'Эмаль АК-511', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'enamel_2', name: 'ПФ-115', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' },
-            { id: 'enamel_3', name: 'Фасадная краска', image: 'img.png', summary: 'Дополнителнение к описанию,для раскрытия деталий', link: '#' }
+            // ... (и здесь все еще используется summary)
+            { 
+                id: 'primer_1', 
+                name: 'Эмаль УР-2К PRO 233', 
+                image: 'эмаль 233.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'emal.html',
+                index: 1
+            },
+            { 
+                id: 'primer_2', 
+                name: 'Эмаль HARDMAX PUR 232', 
+                image: 'эмаль 232.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'emal.html',
+                index: 2
+            },
+            { 
+                id: 'primer_3', 
+                name: 'Эмаль "MobiHARD ПУ" 234', 
+                image: 'эмаль 234.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'emal.html',
+                index: 3
+            },
+            { 
+                id: 'primer_4', 
+                name: 'Эмаль алкидно-уретеновая "Экспресс"', 
+                image: 'Эмаль АУ Экспресс.png', 
+                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                link: 'emal1.html',
+                index: 4
+            },
+            
         ]
     };
 
@@ -2521,59 +2648,78 @@
             updateCarouselPosition(category, 0); 
         });
 
+        // Этот код для анимации иконок в контактах я оставил без изменений
         const icons = document.querySelectorAll(".contact-item .icons img, .contact-item .icon");
-        let index = 0;
+        if (icons.length > 0) {
+            let index = 0;
 
-        function animateNext() {
-            const icon = icons[index];
+            function animateNext() {
+                const icon = icons[index];
+                if (!icon) return; // Добавил проверку
 
-            icon.classList.add("bounce");
+                icon.classList.add("bounce");
 
-            // убираем класс после завершения анимации
-            icon.addEventListener("animationend", () => {
-                icon.classList.remove("bounce");
-
-                // переходим к следующей иконке
-                index = (index + 1) % icons.length;
-
-                // запускаем анимацию следующей
-                animateNext();
-            }, { once: true });
+                icon.addEventListener("animationend", () => {
+                    icon.classList.remove("bounce");
+                    index = (index + 1) % icons.length;
+                    animateNext();
+                }, { once: true });
+            }
+            animateNext();
         }
-
-        // стартуем цикл
-        animateNext();
     });
 
     
+    /**
+     * ИЗМЕНЕННАЯ ФУНКЦИЯ
+     * Теперь она решает, что вставить: иконки или текст.
+     */
     function buildCarousel(category) {
         const carousel = document.getElementById(`${category}-carousel`);
         if (!carousel) return;
         
         const products = productsData[category];
         
-
         carousel.innerHTML = ''; 
         
-    
         products.forEach(product => {
             const card = document.createElement('div');
             card.classList.add('product-card');
 
+            // --- НОВАЯ ЛОГИКА ---
+            let infoBlock = '';
+            
+            // 1. Проверяем, есть ли массив icons
+            if (product.icons && product.icons.length > 0) {
+                // Создаем HTML-строку с <img> для каждой иконки
+                const iconImages = product.icons.map(iconSrc => 
+                    `<img src="${iconSrc}" alt="product icon">`
+                ).join('');
+                
+                infoBlock = `<div class="product-icons">${iconImages}</div>`;
+            } 
+            // 2. Если иконок нет, используем summary
+            else if (product.summary) {
+                infoBlock = `<p class="product-summary">${product.summary}</p>`;
+            }
+            // --- КОНЕЦ НОВОЙ ЛОГИКИ ---
+
+            // Собираем карточку с динамическим блоком (infoBlock)
             card.innerHTML = `
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}" />
                 </div>
                 <div class="product-info-card">
                     <h3 class="product-title">${product.name}</h3>
-                    <p class="product-summary">${product.summary}</p>
+                    
+                    ${infoBlock} <!-- Сюда вставляются либо иконки, либо текст -->
+                    
                     <a href="${product.link}?index=${product.index}" class="btn-detail">Подробнее</a>
                 </div>
             `;
 
             carousel.appendChild(card);
         });
-
     }
 
 
@@ -2582,9 +2728,7 @@
         if (!dotsContainer) return;
 
         const totalItems = productsData[category].length;
-    
         const itemsPerView = 3; 
- 
         const totalPages = Math.ceil(totalItems / itemsPerView); 
         
         dotsContainer.innerHTML = '';
@@ -2594,7 +2738,6 @@
             dot.classList.add('dot');
             if (i === 0) dot.classList.add('active');
             
-     
             dot.addEventListener('click', () => showPage(i, category));
             dotsContainer.appendChild(dot);
         }
@@ -2608,18 +2751,14 @@
         const itemsPerView = 3;
         const totalPages = Math.ceil(totalItems / itemsPerView); 
         
-
         let newIndex = index;
         if (newIndex < 0) newIndex = totalPages - 1;
         if (newIndex >= totalPages) newIndex = 0;
         
-     
         currentPages[category] = newIndex;
         
-   
         dots.forEach((dot, i) => dot.classList.toggle('active', i === newIndex));
         
-  
         updateCarouselPosition(category, newIndex);
     }
     
@@ -2627,6 +2766,15 @@
     function updateCarouselPosition(category, pageIndex) {
         const carousel = document.getElementById(`${category}-carousel`);
         if (!carousel) return;
+
+        // На мобильных устройствах скролл, а не transform
+        if (window.innerWidth <= 768) {
+            carousel.style.transform = 'none';
+            // Логика для скролла, если понадобится
+            // const scrollAmount = ...;
+            // carousel.parentElement.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+            return;
+        }
 
         const itemsPerView = 3; // карточки на странице
         const gap = parseInt(getComputedStyle(carousel).gap) || 0;
@@ -2640,8 +2788,6 @@
     }
 
 
-
- 
     function nextSlide(category) {
         showPage(currentPages[category] + 1, category);
     }
@@ -2650,21 +2796,16 @@
         showPage(currentPages[category] - 1, category);
     }
 
-  
-
-
-       
-
-// Плавный скролл для якорных ссылок
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+    // Добавим пересчет при изменении размера окна
+    window.addEventListener('resize', () => {
+        Object.keys(productsData).forEach(category => {
+            // Сбрасываем transform, если экран стал мобильным
+            if (window.innerWidth <= 768) {
+                const carousel = document.getElementById(`${category}-carousel`);
+                if(carousel) carousel.style.transform = 'none';
+            } else {
+                // Восстанавливаем позицию для десктопа
+                updateCarouselPosition(category, currentPages[category]);
             }
         });
     });
