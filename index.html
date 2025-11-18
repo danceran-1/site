@@ -181,9 +181,9 @@
     <!-- tsParticles Core -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display.swap" rel="stylesheet">
 
-     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display.swap" rel="stylesheet">
 </head>
 
 <body>
@@ -214,7 +214,7 @@
                 </li>
 
                 <li><a href="#enamel-dots" class="energy-menu-link">Сферы применения</a></li>
-                <li><a href="#coloring" class="energy-menu-link">Колеровка</a></li>
+                <li><a href="#for_coloring" class="energy-menu-link">Колеровка</a></li>
                 <li><a href="#company-section" class="energy-menu-link">О компании</a></li>
                 <li><a href="#contacts-section" class="energy-menu-link">Контакты</a></li>
             </ul>
@@ -411,7 +411,7 @@
                 </div>
             </div>
 
-            <div class="app-content">
+            <div class="app-content"id='for_coloring'>
                 <h3>Вагоностроение</h3>
                 <p>Защита техники сертифицированными материалами.</p>
             </div>
@@ -467,7 +467,7 @@
             </div>
 
             <div class="coloring-image">
-                <img src="Гифка Эмаль 2.gif" id ='for-company_block' alt="Колеровочное оборудование">
+                <img src="gifka.gif" id ='for-company_block' alt="Колеровочное оборудование">
             </div>
 
         </div>
@@ -581,7 +581,7 @@
             z-index: 1001;
         }
         
-        /* Главный контейнер навигации */
+    
         .energy-nav {
             display: flex;
             align-items: center;
@@ -595,10 +595,8 @@
         }
         
         .energy-logo {
-            /* * Я использую <img>, как в вашем первом HTML.
-             * Стили для <img> немного отличаются от стилей для текста.
-             */
-            width: 200px; /* Примерная ширина, настройте по вашему .svg */
+         
+            width: 200px;
             height: auto;
             transition: transform 0.3s ease;
             position: relative;
@@ -744,11 +742,11 @@
             transform: translateX(0);
         }
         
-        /* Анимации появления li (ваши стили) */
+      
         .energy-menu > li:hover .energy-submenu li:nth-child(1) { transition-delay: 0.1s; }
         .energy-menu > li:hover .energy-submenu li:nth-child(2) { transition-delay: 0.15s; }
         .energy-menu > li:hover .energy-submenu li:nth-child(3) { transition-delay: 0.2s; }
-        /* ... и т.д. ... */
+      
 
         .mobile-menu-toggle {
             display: none; 
@@ -760,185 +758,92 @@
         }
 
     @media (max-width: 1300px) {
-        /* Отключаем стрелку и подменю для пункта "Каталог" */
-        .energy-menu > li.has-submenu > .energy-submenu {
-            display: none !important; /* Полностью скрываем подменю */
+
+        /* ИЗМЕНЕНИЕ: Отключаем плавную прокрутку на мобильных */
+        html {
+            scroll-behavior: auto;
         }
 
-        .energy-menu > li.has-submenu > .energy-menu-link .fas {
-            display: none; /* Убираем стрелку */
+        /* NAVBAR */
+        .energy-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: #FFF2D9 !important;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        body {
+            padding-top: 70px;
+        }
+
+        /* BURGER */
+        .mobile-menu-toggle {
+            display: block !important;
+            position: relative;
+            z-index: 3000;
+            pointer-events: auto !important;
+        }
+
+        /* MENU MOBILE */
+        .energy-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: #FFF2D9 !important;
+            flex-direction: column;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            padding: 10px 0;
+            z-index: 2000;
+        }
+
+        .energy-menu.menu-open {
+            display: flex;
+        }
+
+        .energy-menu > li {
+            width: 100%;
+        }
+
+        .energy-menu-link {
+            padding: 12px 20px;
+            width: 100%;
+            color: #000;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        /* SUBMENU отключаем полностью */
+        .energy-submenu {
+            display: none !important;
+        }
+
+        .has-submenu > a i {
+            display: none;
         }
     }
 
-    @media (max-width: 1300px) {
-            
-            .energy-nav { 
-                height: 70px; 
-                /* Переопределяем padding для планшета/мобильных */
-                padding: 0 20px; 
-                /* * .energy-menu теперь не в потоке,
-                 * поэтому justify-content: space-between нужен,
-                 * чтобы раскинуть лого и гамбургер по краям.
-                 */
-                justify-content: space-between;
-            }
-            
-            body {
-                padding-top: 70px; /* Уменьшаем отступ body */
-            }
-
-            .mobile-menu-toggle {
-                display: block; /* ПОКАЗЫВАЕМ ГАМБУРГЕР */
-            }
-
-            .energy-menu {
-                display: none; /* СКРЫВАЕМ ВАШЕ ДЕСКТОПНОЕ МЕНЮ */
-                
-                /* * Стили для МОБИЛЬНОГО меню (когда JS добавит .menu-open)
-                 */
-                position: absolute;
-                top: 70px; /* Должно соответствовать .energy-nav height */
-                left: 0;
-                width: 100%;
-                background: #FFF2D9; /* ВАШ ЦВЕТ ФОНА */
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-                flex-direction: column; 
-                align-items: flex-start;
-                padding: 10px 0;
-                gap: 0; /* Убираем десктопный gap */
-                
-                /* Отключаем десктопную :hover анимацию */
-                transform: none; 
-            }
-            
-            .energy-menu > li:hover {
-                transform: none; /* Отключаем :hover */
-            }
-            
-            .energy-menu.menu-open {
-                display: flex; /* Показываем меню по клику на гамбургер */
-            }
-
-            .energy-menu > li { 
-                width: 100%;
-                font-family: 'Inter', sans-serif; /* Возвращаем Inter для мобильных */
-            }
-
-            .energy-menu-link { 
-                /* Переопределяем стили для мобильной ссылки */
-                padding: 12px 20px; 
-                font-size: 16px; 
-                font-weight: 500;
-                text-transform: none; /* Убираем uppercase */
-                width: 100%; 
-                justify-content: space-between; /* Иконка стрелки будет справа */
-                box-sizing: border-box;
-                color: #000000; /* ВАШ ЦВЕТ ТЕКСТА */
-            }
-            
-            .energy-menu-link::after {
-                content: none; /* Убираем подчеркивание на мобильных */
-            }
-            
-            .energy-menu-link .fas {
-                transform: rotate(0deg); /* Начальная позиция для JS-анимации */
-            }
-            
-            /* Стили для открытого подменю на мобильных (через JS) */
-            .energy-menu > li.submenu-open > .energy-menu-link .fas {
-                 transform: rotate(180deg);
-            }
-
-            /* --- Подменю (Мобильное/Планшетное) --- */
-            .energy-submenu {
-                position: static; 
-                display: none; /* Полностью управляется JS */
-                opacity: 1; 
-                transform: none; 
-                visibility: visible;
-                min-width: 100%; 
-                padding: 0; 
-                border: none; 
-                box-shadow: none;
-                /* Сделаем фон чуть темнее основного, но в вашей гамме */
-                background: rgba(228, 168, 54, 0.1); 
-                border-radius: 0;
-                transition: none; /* Отключаем десктопную анимацию */
-            }
-            
-            /* Это правило :hover не будет работать, мы его отключаем */
-            .energy-menu > li:hover .energy-submenu {
-                display: none;
-                opacity: 0;
-                transform: scaleY(0) translateY(-10px);
-                visibility: hidden;
-            }
-            
-            /* Вместо этого мы будем использовать класс .submenu-open, который добавит JS */
-            .energy-menu > li.submenu-open .energy-submenu {
-                display: block;
-            }
-
-            .energy-submenu a { 
-                padding-left: 40px; 
-                font-size: 15px;
-                color: #333; /* Черный на светлом фоне */
-            }
-            
-            .energy-submenu a:hover {
-                color: #E4A836; /* Ваш цвет при :hover */
-                background: rgba(0,0,0,0.05);
-                padding-left: 40px; /* Не сдвигаем */
-            }
-            .energy-submenu a::before {
-                content: none; /* Убираем эмодзи */
-            }
-            .energy-submenu li {
-                opacity: 1; /* Отключаем вашу анимацию на мобильных */
-                transform: none;
-            }
+    /* MOBILE SMALL */
+    @media (max-width: 768px) {
+        .energy-nav {
+            height: 60px;
         }
-
-        /* МОБИЛЬНЫЕ (768px и МЕНЬШЕ) */
-        @media (max-width: 768px) {
-           
-            .energy-nav { 
-                height: 60px; 
-            }
-            
-            body {
-                padding-top: 60px; 
-            }
-            
-            .energy-menu {
-                top: 60px; 
-            }
+        body {
+            padding-top: 60px;
         }
-
-        @media (max-width: 1300px) {
-            .energy-nav {
-                position: fixed; 
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 999;
-            }
-
-         
-            body {
-                padding-top: 70px; 
-            }
+        .energy-menu {
+            top: 60px;
         }
+    }
 
-      
-        @media (max-width: 768px) {
-            .energy-nav {
-                height: 60px; 
-            }
-            body {
-                padding-top: 60px; 
-            }
-        }
 
         /* =================================================================
          2. СТИЛИ HERO И CONTENT-WRAPPER (СОХРАНЕННАЯ ЛОГИКА)
@@ -1434,7 +1339,10 @@
                 top: 70px; 
                 left: 0;
                 width: 100%;
-                background: #FFF2D9; 
+
+                z-index: 2000 !important;
+                background: #FFF2D9 !important;
+
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
                 flex-direction: column; 
                 align-items: flex-start;
@@ -2024,9 +1932,7 @@
                 font-size: 18px;
                 line-height: 1.4;
             }
-            .coloring-image{
-                display: none;
-            }
+            
    
 
             .coloring-features {
@@ -2038,6 +1944,25 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 8px;              /* меньше расстояние между иконкой и текстом */
+            }
+            .temp {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto; /* 1. title, 2. features, 3. image */
+            }
+
+            .coloring-title {
+                grid-row: 1;
+            }
+
+            .coloring-features {
+                grid-row: 2;
+            }
+
+            .coloring-image {
+                grid-row: 3;
+                justify-self: center;
+                align-self: center;
+                max-width: 420px;
             }
         }
 
@@ -2084,6 +2009,25 @@
 
             .coloring-features .icon {
                 margin-bottom: 4px;      
+            }
+            .temp {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto; /* 1. title, 2. features, 3. image */
+            }
+
+            .coloring-title {
+                grid-row: 1;
+            }
+
+            .coloring-features {
+                grid-row: 2;
+            }
+
+            .coloring-image {
+                grid-row: 3;
+                justify-self: center;
+                align-self: center;
+                max-width: 420px;
             }
 
             
@@ -2463,8 +2407,7 @@
                 id: 'primer_1',
                 name: "Грунт-эмаль<br>УР-2К PRO 224",
                 image: 'грунт-эмаль 224.png', 	
-                // summary: 'Материал на<br> полиуретановой основе',
-                icons: ['1К.svg', 'МТ.svg'], // ИЗМЕНЕНИЕ: summary заменен на icons
+                icons: ['2К.svg', 'ПУ.svg','МТ-ПГ.svg'], 
                 link: 'grunt-emal.html',
                 index: 1
             },
@@ -2472,8 +2415,7 @@
                 id: 'primer_2',
                 name: "Грунт-эмаль УР-2К ИП 222",
                 image: 'second_grunt_emal.svg',
-                // summary: 'Материал на<br> полиуретановой основе',
-                icons: ['1К.svg', 'МТ.svg', 'ПГ.svg'], // ИЗМЕНЕНИЕ: 3 иконки
+                icons: ['2К.svg', 'ПУ.svg', 'ПГ.svg'],
                 link:'grunt-emal.html',
                 index: 2
             },
@@ -2481,8 +2423,7 @@
                 id: 'primer_3',
                 name: "Грунт-эмаль HARDMAX PUR 223",
                 image: 'third_grunt_emal.svg',
-                // summary: 'Материал на<br> полиуретановой основе',
-                icons: ['2К.svg'], // ИЗМЕНЕНИЕ: 1 иконка
+                icons: ['2К.svg','ПУ.svg','ПМ, ГЛ.svg'], 
                 link: 'grunt-emal.html',
                 index: 3
             },
@@ -2490,7 +2431,7 @@
                 id: 'primer_4',
                 name: "Грунт-эмаль АУ Экспресс",
                 image: 'Грунт-эмаль Алкидно Уретановая Экспресс.png',
-                summary: 'Материал на<br> полиуретановой основе', // Оставил summary для примера
+                icons: ['1К.svg','МТ.svg'], 
                 link: 'grunt-emal2.html',
                 index: 4
             },
@@ -2498,7 +2439,7 @@
                 id: 'primer_5',
                 name: " ГРУНТ-ЭМАЛЬ 3 в 1 БЫСТРОСОХНУЩАЯ",
                 image: 'Грунт-эмаль 128.10 3 в 1.png',
-                summary: 'Материал на<br> полиуретановой основе',
+                icons: ['1К.svg','МТ.svg'], 
                 link: 'grunt-emal2.html',
                 index: 5
             },
@@ -2506,7 +2447,7 @@
                 id: 'primer_6',
                 name: "ГРУНТ-ЭМАЛЬ 3 в 1 Раскрас",
                 image: 'Грунт-эмаль 3 в 1Т.png',
-                summary: 'Материал на<br> полиуретановой основе',
+                icons: ['1К.svg','ПМ.svg'], 
                 link: 'grunt-emal2.html',
                 index: 6
             },
@@ -2514,7 +2455,7 @@
                 id: 'primer_7',
                 name: "\"УниЭпокс PRO М\" 221",
                 image: 'грунт-эмаль 221.png',
-                summary: 'Материал на<br> полиуретановой основе',
+                icons: ['2К.svg','ЭП.svg','ПГ.svg'], 
                 link: 'grunt-emal3.html',
                 index: 7
             },
@@ -2522,19 +2463,19 @@
                 id: 'primer_8',
                 name: "Грунт-эмаль HARDMAX EPO 226",
                 image: 'грунт-эмаль 226.png',
-                summary: 'Материал на<br> полиуретановой основе',
+                icons: ['2К.svg','ПУ.svg'], 
                 link: 'grunt-emal3.html',
                 index: 8
             }
         
         ],
         'primer-enamel': [
-            // ... (здесь все еще используется summary)
+        
             { 
                 id: 'primer_1', 
                 name: "Грунтовка УниЭпокс PRO ZN 80 210", 
                 image: 'грунтовка 210.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['2К.svg','ЭП.svg'], 
                 link: 'grunt.html',
                 index: 1
             },
@@ -2542,7 +2483,7 @@
                 id: 'primer_2', 
                 name: 'Грунтовка "УниЭпокс" 211', 
                 image: 'грунтовка 211.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['2К.svg','ЭП.svg'], 
                 link: 'grunt.html',
                 index: 2
             },
@@ -2550,7 +2491,7 @@
                 id: 'primer_3', 
                 name: 'Грунтовка "УниЭпокс PRO M" 212', 
                 image: 'грунтовка 212.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['2К.svg','ЭП.svg'], 
                 link: 'grunt.html',
                 index: 3
             },
@@ -2558,7 +2499,7 @@
                 id: 'primer_4', 
                 name: 'Грунтовка HARDMAX EPO 213', 
                 image: 'грунтовка 213.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['2К.svg','ЭП.svg'], 
                 link: 'grunt1.html',
                 index: 4
             },
@@ -2566,7 +2507,7 @@
                 id: 'primer_5', 
                 name: 'Грунтовка "MobiHARD ПУ" 216', 
                 image: 'грунтовка 216.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['2К.svg','ПУ.svg'], 
                 link: 'grunt1.html',
                 index: 5
             },
@@ -2574,15 +2515,15 @@
                 id: 'primer_6', 
                 name: 'ГРУНТОВКА "MobiHARD ПУ Filler" 217', 
                 image: 'грунтовка 217.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['2К.svg','ПУ.svg'], 
                 link: 'grunt1.html',
                 index: 6
             },
             { 
                 id: 'primer_7', 
-                name: 'Грунтовка ГФ-021 спринт 1К', 
+                name: 'Грунтовка ГФ-021 спринт', 
                 image: 'грунтовка ГФ-021 СПРИНТ.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['1К.svg'], 
                 link: 'grunt2.html',
                 index: 7
             },
@@ -2590,19 +2531,19 @@
                 id: 'primer_8', 
                 name: 'Грунтовка антикоррозионная "Экспресс-АФТ', 
                 image: 'грунтовка Экспресс АФТ.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['1К.svg'], 
                 link: 'grunt2.html',
                 index: 8
             }
             
         ],
         enamel: [
-            // ... (и здесь все еще используется summary)
+         
             { 
                 id: 'primer_1', 
                 name: 'Эмаль УР-2К PRO 233', 
                 image: 'эмаль 233.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['2К.svg','ПУ.svg','МТ-ПГ.svg'], 
                 link: 'emal.html',
                 index: 1
             },
@@ -2610,7 +2551,7 @@
                 id: 'primer_2', 
                 name: 'Эмаль HARDMAX PUR 232', 
                 image: 'эмаль 232.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['2К.svg','ПУ.svg','ПМ, ГЛ.svg'], 
                 link: 'emal.html',
                 index: 2
             },
@@ -2618,7 +2559,7 @@
                 id: 'primer_3', 
                 name: 'Эмаль "MobiHARD ПУ" 234', 
                 image: 'эмаль 234.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['2К.svg','ПУ.svg','ВГ.svg'],  
                 link: 'emal.html',
                 index: 3
             },
@@ -2626,7 +2567,7 @@
                 id: 'primer_4', 
                 name: 'Эмаль алкидно-уретеновая "Экспресс"', 
                 image: 'Эмаль АУ Экспресс.png', 
-                summary: 'Дополнителнение к описанию,для раскрытия деталий', 
+                icons: ['1К.svg','ГЛ.svg'],  
                 link: 'emal1.html',
                 index: 4
             },
@@ -2670,10 +2611,7 @@
     });
 
     
-    /**
-     * ИЗМЕНЕННАЯ ФУНКЦИЯ
-     * Теперь она решает, что вставить: иконки или текст.
-     */
+  
     function buildCarousel(category) {
         const carousel = document.getElementById(`${category}-carousel`);
         if (!carousel) return;
@@ -2686,25 +2624,23 @@
             const card = document.createElement('div');
             card.classList.add('product-card');
 
-            // --- НОВАЯ ЛОГИКА ---
+          
             let infoBlock = '';
             
-            // 1. Проверяем, есть ли массив icons
+      
             if (product.icons && product.icons.length > 0) {
-                // Создаем HTML-строку с <img> для каждой иконки
+               
                 const iconImages = product.icons.map(iconSrc => 
                     `<img src="${iconSrc}" alt="product icon">`
                 ).join('');
                 
                 infoBlock = `<div class="product-icons">${iconImages}</div>`;
             } 
-            // 2. Если иконок нет, используем summary
+       
             else if (product.summary) {
                 infoBlock = `<p class="product-summary">${product.summary}</p>`;
             }
-            // --- КОНЕЦ НОВОЙ ЛОГИКИ ---
-
-            // Собираем карточку с динамическим блоком (infoBlock)
+         
             card.innerHTML = `
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}" />
@@ -2721,6 +2657,7 @@
             carousel.appendChild(card);
         });
     }
+
 
 
     function createDots(category) {
@@ -2762,7 +2699,7 @@
         updateCarouselPosition(category, newIndex);
     }
     
-    // Функция для сдвига карусели с помощью CSS transform
+   
     function updateCarouselPosition(category, pageIndex) {
         const carousel = document.getElementById(`${category}-carousel`);
         if (!carousel) return;
@@ -2770,9 +2707,7 @@
         // На мобильных устройствах скролл, а не transform
         if (window.innerWidth <= 768) {
             carousel.style.transform = 'none';
-            // Логика для скролла, если понадобится
-            // const scrollAmount = ...;
-            // carousel.parentElement.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+          
             return;
         }
 
@@ -2829,8 +2764,8 @@
                 }
             });
         }, {
-            threshold: 0.05, // Срабатывает когда всего 5% элемента видно
-            rootMargin: '0px 0px -50px 0px' // Срабатывает на 50px раньше
+            threshold: 0.05,
+            rootMargin: '0px 0px -50px 0px' 
         });
 
         sections.forEach(section => {
@@ -2838,77 +2773,99 @@
         });
     });
 
+ 
     document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const menu = document.querySelector('.energy-menu');
-    const submenuLinks = document.querySelectorAll('.energy-menu > li');
-    
-    // Новая функция проверки для меню - 1024px
-    const isMobileMenuEnabled = () => window.innerWidth <= 1024;
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const menu = document.querySelector('.energy-menu');
+        const topLevelItems = document.querySelectorAll('.energy-menu > li'); // <li> верхнего уровня
+        
+        const isMobileMenuEnabled = () => window.innerWidth <= 1300;
 
-    // --- Логика открытия/закрытия главного меню (Гамбургер) ---
-    menuToggle.addEventListener('click', () => {
-        if (isMobileMenuEnabled()) {
-            menu.classList.toggle('menu-open');
-            
-            // Меняем иконку Гамбургера на Крестик
-            const icon = menuToggle.querySelector('.fas');
-            if (menu.classList.contains('menu-open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+        // --- 1. Логика Гамбургера ---
+        menuToggle.addEventListener('click', () => {
+            if (isMobileMenuEnabled()) {
+                menu.classList.toggle('menu-open');
+                const icon = menuToggle.querySelector('.fas');
+                if (menu.classList.contains('menu-open')) {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
             }
-        }
-    });
+        });
 
-    // --- Логика открытия/закрытия подменю (только на мобильных) ---
-    submenuLinks.forEach(li => {
-        const link = li.querySelector('.energy-menu-link');
-        const submenu = li.querySelector('.energy-submenu');
-
-        // Проверяем, есть ли подменю
-        if (submenu) {
-            li.classList.add('has-submenu'); 
-            
+        // --- 2. ЕДИНАЯ Логика для ВСЕХ ссылок в меню ---
+        document.querySelectorAll('.energy-menu a').forEach(link => {
             link.addEventListener('click', (e) => {
-                // Активируем логику только когда меню показывается как мобильное (до 1024px)
-                if (isMobileMenuEnabled()) {
-                    
-                    e.preventDefault(); // Предотвращаем переход
-                    
-                    // Закрываем другие подменю
-                    submenuLinks.forEach(otherLi => {
-                        if (otherLi !== li) {
-                            otherLi.classList.remove('submenu-open');
-                        }
-                    });
+                
+               
+                if (!isMobileMenuEnabled()) {
+                    return; 
+                }
 
-                    // Переключаем текущее
-                    li.classList.toggle('submenu-open');
+                const parentLi = link.closest('li'); // Находим родительский <li>
+                const hasSubmenu = parentLi.classList.contains('has-submenu');
+                const isTopLevelLink = link.classList.contains('energy-menu-link');
+
+             
+                if (!isTopLevelLink) {
+                  
+                    menu.classList.remove('menu-open');
+                    menuToggle.querySelector('.fas').classList.replace('fa-times', 'fa-bars');
+                    topLevelItems.forEach(li => li.classList.remove('submenu-open'));
+                    return; 
+                }
+
+              
+                if (isTopLevelLink) {
+                    
+                    if (!hasSubmenu) {
+                        
+                        menu.classList.remove('menu-open');
+                        menuToggle.querySelector('.fas').classList.replace('fa-times', 'fa-bars');
+                        topLevelItems.forEach(li => li.classList.remove('submenu-open'));
+                        return; 
+                    }
+                    
+                
+                    if (hasSubmenu) {
+                        
+                        menu.classList.remove('menu-open');
+                        menuToggle.querySelector('.fas').classList.replace('fa-times', 'fa-bars');
+                        topLevelItems.forEach(li => li.classList.remove('submenu-open'));
+                        return;
+                    }
                 }
             });
-        }
+        });
+
+        // --- 3. Логика закрытия при ресайзе ---
+        window.addEventListener('resize', () => {
+            if (!isMobileMenuEnabled() && menu.classList.contains('menu-open')) {
+                menu.classList.remove('menu-open');
+                menuToggle.querySelector('.fas').classList.replace('fa-times', 'fa-bars');
+                topLevelItems.forEach(li => {
+                    li.classList.remove('submenu-open');
+                });
+            }
+        });
     });
 
-    // --- Закрытие меню при изменении размера экрана (с мобильного на десктоп) ---
-    window.addEventListener('resize', () => {
-        // Условие: если экран стал БОЛЬШЕ 1024px И меню открыто
-        if (!isMobileMenuEnabled() && menu.classList.contains('menu-open')) {
-            menu.classList.remove('menu-open');
-            // Возвращаем иконку Гамбургера
-            menuToggle.querySelector('.fas').classList.remove('fa-times');
-            menuToggle.querySelector('.fas').classList.add('fa-bars');
-            
-            // Скрываем все мобильные подменю
-            document.querySelectorAll('.energy-menu > li').forEach(li => {
-                li.classList.remove('submenu-open');
-            });
-        }
-    });
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('scroll', function() {
+            const hero = document.getElementById('hero');
+            const heroBottom = hero.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
 
+            if (heroBottom < windowHeight * 0.8) {
+                hero.classList.add('scrolled');
+            } else {
+                hero.classList.remove('scrolled');
+            }
+        });
+    })
+
+  
 </script>
 
 
