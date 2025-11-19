@@ -965,78 +965,7 @@
          3. АДАПТИВНОСТЬ
         ================================================================= */
 
-        /* НОУТБУКИ (1280px – 1440px) - Финальная версия с исправлением высоты */
-    @media (min-width: 1280px) and (max-width: 1440px) {
         
-        /* 1. ИСПРАВЛЕНИЕ: Задаем минимальную высоту, чтобы скрыть следующий блок */
-        .hero {
-            min-height: 100vh; /* Минимальная высота равна высоте экрана */
-            padding-bottom: 0; /* Убираем лишний нижний отступ, чтобы не было скролла */
-            /* Сохраняем остальные свойства по умолчанию */
-        }
-
-        /* Контейнер: Чуть шире, чтобы вместить увеличенные банки, но все еще центрируем */
-        .content-wrapper {
-            max-width: 1300px; 
-            padding-left: 20px;
-            padding-right: 20px;
-            margin: 0 auto;
-        }
-
-        /* Главный блок: Центрируем, уменьшаем зазор */
-        .hero-main {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center; /* Группируем по центру */
-            align-items: center;
-            gap: 40px; 
-            padding-top: 60px;
-            width: 100%;
-        }
-
-        /* Текст: Немного уступает место, но сохраняет читаемость */
-        .hero-content {
-            flex: 0 1 55%; 
-            min-width: 480px; 
-            text-align: left;
-            z-index: 20;
-        }
-
-        .hero h1 {
-            font-size: 40px;
-            line-height: 1.2;
-            margin-bottom: 30px;
-            max-width: 100%;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            max-width: 100%;
-            line-height: 1.4;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-        }
-
-        /* БАНКИ: Теперь они больше и заметнее! */
-        .bins {
-            flex: 0 0 45%;
-            max-width: 500px; 
-            min-width: 380px; 
-            position: relative;
-            aspect-ratio: 500 / 700;
-            z-index: 10;
-            margin-right: 0; 
-        }
-
-        .bins img:nth-child(1) { width: 105%; right: 0%; top: 35%; }
-        .bins img:nth-child(2) { width: 70%; right: -5%; top: 12%; }
-        .bins img:nth-child(3) { width: 55%; right: 25%; top: 7%; }
-    }
 
         /* АСИММЕТРИЧНЫЙ ДИЗАЙН (Только на ОЧЕНЬ больших экранах) */
         @media (min-width: 1440px) {
@@ -1047,10 +976,10 @@
             }
         }
 
-        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (992px и меньше) */
-        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (992px и меньше) */
-    @media (max-width: 992px) {
-        /* ... Ваш существующий код для 992px ... */
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+    @media (max-width: 1024px) {
+        /* ... Ваш существующий код для 1024px ... */
         
         /* АКТИВИРУЕМ МОБИЛЬНОЕ МЕНЮ ЗДЕСЬ */
         body { padding-top: 70px; } /* Переносим сюда */
@@ -1105,7 +1034,7 @@
         .energy-menu > li.submenu-open > .energy-menu-link .fas { transform: rotate(180deg); }
 
 
-        /* ... Ваш существующий код для 992px ... */
+        /* ... Ваш существующий код для 1024px ... */
     }
 
         /* МОБИЛЬНЫЕ (768px и меньше) */
@@ -1487,7 +1416,7 @@
          * АДАПТИВНОСТЬ (CATALOG) - СКОПИРОВАНО ИЗ ЗАПРОСА
         --- */
 
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             .cotalog { padding: 60px 0 40px; }
             .cotalog-text h1 { font-size: 36px; }
             .category-title-bar h2 { font-size: 28px; }
@@ -1727,8 +1656,8 @@
             }
         }
 
-        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (992px и меньше) */
-        @media (max-width: 992px) {
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+        @media (max-width: 1024px) {
             .content-wrapper { padding-left: 20px; padding-right: 20px; max-width: 100%; }
             .hero-main { flex-direction: column; padding-top: 60px; }
             .hero-content { order: 2; text-align: center; max-width: 600px; flex-basis: auto; }
@@ -1937,8 +1866,8 @@
 
        
 
-        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (992px и меньше) */
-        @media (max-width: 992px) {
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
+        @media (max-width: 1024px) {
             .temp {
                 grid-template-columns: 1fr; /* одна колонка */
                 grid-template-rows: auto auto auto;
@@ -2235,7 +2164,7 @@
 
 
     /* --- Adaptive --- */
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
     .company-section .container {
         flex-direction: column;
         align-items: center;
@@ -2399,8 +2328,8 @@
 
         /* --- АДАПТИВНОСТЬ --- */
 
-        /* Средние экраны (до 992px) */
-        @media (max-width: 992px) {
+        /* Средние экраны (до 1024px) */
+        @media (max-width: 1024px) {
             .contact-item {
                 font-size: 18px;
             }
