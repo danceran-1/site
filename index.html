@@ -229,7 +229,7 @@
             
             <div class="hero-content">
                 <h1>
-                    ООО “Ария-ЛКМ” - эксперт в мире
+                    ООО “Ария-ЛКМ” - эксперт <span class="nowrap">в мире</span>
                     <span class="break-desktop"> лакокрасочных материалов</span>
                 </h1>
 
@@ -851,11 +851,6 @@
             top: 60px;
         }
     }
-        @media (min-width: 1200px) and (max-width: 1600px) {
-    html {
-        font-size: 90%;
-    }
-}
 
 
         /* =================================================================
@@ -918,9 +913,9 @@
             margin-top: 0;
         }
         .nowrap {
-            white-space: nowrap;
-        }
-                
+    white-space: nowrap;
+}
+        
         .btn-gold { 
             display: inline-flex; 
             align-items: center; 
@@ -970,219 +965,7 @@
          3. АДАПТИВНОСТЬ
         ================================================================= */
 
-        /* АСИММЕТРИЧНЫЙ ДИЗАЙН (Только на ОЧЕНЬ больших экранах) */
-        @media (min-width: 1600px) {
-            .content-wrapper {
-                max-width: 1800px;
-                padding-left: 350px;
-            }
-        }
-
-        /* Ноутбуки 1280–1440px */
-        @media (min-width: 1280px) and (max-width: 1440px) {
-            .content-wrapper {
-                max-width: 1300px; /* фиксируем контейнер */
-                margin: 0 auto; /* центрируем */
-                padding-left: 60px; /* добавим немного слева */
-                padding-right: 60px; /* добавим немного справа */
-            }
-
-            .hero-main {
-                justify-content: center; /* центрируем весь блок по горизонтали */
-                align-items: flex-start;
-                gap: 40px; /* увеличим промежуток между текстом и банками */
-                padding-top: 60px;
-            }
-
-            .hero-content {
-                flex: 1 1 65%; /* тексту даем больше пространства */
-                min-width: 450px; /* минимум ширины увеличен */
-            }
-
-            .bins {
-                flex: 1 1 35%; /* уменьшаем пространство для банок */
-                min-width: 300px;
-                position: relative;
-                aspect-ratio: 500 / 700;
-            }
-
-            /* Подправляем позиции банок */
-            .bins img:nth-child(1) { width: 95%; right: 10%; top: 35%; }
-            .bins img:nth-child(2) { width: 60%; right: 5%; top: 12%; }
-            .bins img:nth-child(3) { width: 45%; right: 35%; top: 7%; }
-
-            /* Текст */
-            .hero h1 {
-                font-size: 44px;
-                line-height: 1.2;
-                max-width: 100%;
-            }
-
-            .hero p {
-                font-size: 26px;
-                margin-bottom: 50px;
-                max-width: 100%;
-            }
-
-            .hero-actions {
-                flex-direction: row;
-                gap: 20px;
-                margin-top: 0;
-            }
-
-            .btn-gold {
-                font-size: 18px;
-                padding: 14px 28px;
-            }
-            .hero-main {
-        width: 75%; /* уменьшаем ширину всего блока */
-        margin: 0 auto; /* центрируем по горизонтали */
-        justify-content: space-between; /* банки и текст распределяются равномерно */
-        gap: 40px; /* немного отступа между текстом и банками */
-    }
-
-    .hero-content {
-        flex: 1 1 65%; /* тексту больше места */
-        min-width: 450px;
-    }
-
-    .bins {
-        flex: 1 1 30%; /* уменьшаем блок с банками, чтобы не «выпирали» вправо */
-        min-width: 300px;
-    }
-
-    /* Подправим позиции банок для гармонии */
-    .bins img:nth-child(1) { width: 95%; right: 5%; top: 35%; }
-    .bins img:nth-child(2) { width: 60%; right: 0; top: 12%; }
-    .bins img:nth-child(3) { width: 45%; right: 30%; top: 7%; }
-
-        }
-
-
-
-
-        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
-        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
-    @media (max-width: 1024px) {
-        /* ... Ваш существующий код для 1024px ... */
-        
-        /* АКТИВИРУЕМ МОБИЛЬНОЕ МЕНЮ ЗДЕСЬ */
-        body { padding-top: 70px; } /* Переносим сюда */
-        .energy-nav { 
-            height: 70px; 
-            padding: 0 20px; 
-            justify-content: space-between; 
-        }
-        .mobile-menu-toggle { display: block; } 
-
-        .energy-menu {
-            display: none; 
-            position: absolute;
-            top: 70px; /* Должен соответствовать высоте .energy-nav */
-            left: 0;
-            width: 100%;
-            background: #FFF2D9; 
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            flex-direction: column; 
-            align-items: flex-start;
-            padding: 10px 0;
-            gap: 0; 
-            transform: none; 
-            z-index: 1000;
-        }
-        .energy-menu > li:hover { transform: none; }
-        .energy-menu.menu-open { display: flex; }
-        .energy-menu > li { width: 100%; font-family: 'Inter', sans-serif; }
-        .energy-menu-link { 
-            padding: 12px 20px; 
-            font-size: 16px; 
-            font-weight: 500;
-            text-transform: none; 
-            width: 100%; 
-            justify-content: space-between; 
-            box-sizing: border-box;
-            color: #000000; 
-        }
-        .energy-menu-link::after { content: none; }
-        
-        /* Новое правило для открытия подменю (через JS-класс) */
-        .energy-submenu {
-            position: static; 
-            display: none; 
-            /* ... остальные стили ... */
-        }
-        .energy-menu > li.submenu-open .energy-submenu { 
-            display: flex; 
-            flex-direction: column;
-        }
-        .energy-submenu a { padding-left: 40px; font-size: 15px; color: #333; }
-        .energy-menu > li.submenu-open > .energy-menu-link .fas { transform: rotate(180deg); }
-
-        .bins {
-                display: none;
-            }
-
-        /* ... Ваш существующий код для 1024px ... */
-    }
-
-        /* МОБИЛЬНЫЕ (768px и меньше) */
-        @media (max-width: 768px) {
-            .energy-header { position: static; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
-            .body { padding-top: 60px; }
-            .hero { 
-                min-height: auto; 
-                padding-bottom: 100px; 
-            }
-            .energy-nav { height: 60px; padding: 10px 20px; }
-            
-            .mobile-menu-toggle { display: block; }
-            
-            .energy-menu {
-                display: none; 
-                position: absolute;
-                top: 60px; 
-                left: 0;
-                width: 100%;
-                background: #FFF2D9;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-                flex-direction: column; 
-                align-items: flex-start;
-                padding: 10px 0;
-                z-index: 1000;
-            }
-            
-            .energy-menu.menu-open { display: flex; }
-            .energy-menu > li { width: 100%; }
-            .energy-menu-link { padding: 10px 20px; font-size: 16px; font-weight: 500; text-transform: none; }
-            .energy-menu-link::after { content: none; }
-            
-            .energy-submenu {
-                position: static; 
-                display: none; 
-                opacity: 1; transform: none; visibility: visible;
-                min-width: 100%; padding: 0; border: none; box-shadow: none;
-                background: rgba(0, 0, 0, 0.85);
-                flex-direction: column;
-            }
-            .energy-submenu a { padding-left: 40px; font-size: 14px; }
-
-            .hero h1 { font-size: 30px; }
-            .hero p { font-size: 16px; margin-bottom: 20px; }
-            .hero-actions { flex-direction: column; gap: 15px; padding-top: 0; }
-            .btn-gold { width: 100%; }
-            .hero-actions .btn-gold:first-child { margin-right: 0; }
-        }
-
-        @media (max-width: 768px) {
-            .bins {
-                display: none;
-            }
-        }
-
-        /* НОУТБУКИ (1280px – 1440px) */
-        /* НОУТБУКИ (1280px – 1440px) */
-    /* НОУТБУКИ (1280px – 1440px) - Максимально увеличенные банки, с центрированием */
-    /* НОУТБУКИ (1280px – 1440px) - Финальная версия с исправлением высоты */
+        /* НОУТБУКИ (1280px – 1440px) - Финальная версия с исправлением высоты */
     @media (min-width: 1280px) and (max-width: 1440px) {
         
         /* 1. ИСПРАВЛЕНИЕ: Задаем минимальную высоту, чтобы скрыть следующий блок */
@@ -1255,6 +1038,129 @@
         .bins img:nth-child(3) { width: 55%; right: 25%; top: 7%; }
     }
 
+        /* АСИММЕТРИЧНЫЙ ДИЗАЙН (Только на ОЧЕНЬ больших экранах) */
+        @media (min-width: 1440px) {
+            .content-wrapper {
+                max-width: 2000px; 
+                padding-left: 350px; 
+                padding-right: 40px;
+            }
+        }
+
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (992px и меньше) */
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (992px и меньше) */
+    @media (max-width: 992px) {
+        /* ... Ваш существующий код для 992px ... */
+        
+        /* АКТИВИРУЕМ МОБИЛЬНОЕ МЕНЮ ЗДЕСЬ */
+        body { padding-top: 70px; } /* Переносим сюда */
+        .energy-nav { 
+            height: 70px; 
+            padding: 0 20px; 
+            justify-content: space-between; 
+        }
+        .mobile-menu-toggle { display: block; } 
+
+        .energy-menu {
+            display: none; 
+            position: absolute;
+            top: 70px; /* Должен соответствовать высоте .energy-nav */
+            left: 0;
+            width: 100%;
+            background: #FFF2D9; 
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            flex-direction: column; 
+            align-items: flex-start;
+            padding: 10px 0;
+            gap: 0; 
+            transform: none; 
+            z-index: 1000;
+        }
+        .energy-menu > li:hover { transform: none; }
+        .energy-menu.menu-open { display: flex; }
+        .energy-menu > li { width: 100%; font-family: 'Inter', sans-serif; }
+        .energy-menu-link { 
+            padding: 12px 20px; 
+            font-size: 16px; 
+            font-weight: 500;
+            text-transform: none; 
+            width: 100%; 
+            justify-content: space-between; 
+            box-sizing: border-box;
+            color: #000000; 
+        }
+        .energy-menu-link::after { content: none; }
+        
+        /* Новое правило для открытия подменю (через JS-класс) */
+        .energy-submenu {
+            position: static; 
+            display: none; 
+            /* ... остальные стили ... */
+        }
+        .energy-menu > li.submenu-open .energy-submenu { 
+            display: flex; 
+            flex-direction: column;
+        }
+        .energy-submenu a { padding-left: 40px; font-size: 15px; color: #333; }
+        .energy-menu > li.submenu-open > .energy-menu-link .fas { transform: rotate(180deg); }
+
+
+        /* ... Ваш существующий код для 992px ... */
+    }
+
+        /* МОБИЛЬНЫЕ (768px и меньше) */
+        @media (max-width: 768px) {
+            .energy-header { position: static; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+            .body { padding-top: 60px; }
+            .hero { 
+                min-height: auto; 
+                padding-bottom: 100px; 
+            }
+            .energy-nav { height: 60px; padding: 10px 20px; }
+            
+            .mobile-menu-toggle { display: block; }
+            
+            .energy-menu {
+                display: none; 
+                position: absolute;
+                top: 60px; 
+                left: 0;
+                width: 100%;
+                background: #FFF2D9;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                flex-direction: column; 
+                align-items: flex-start;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+            
+            .energy-menu.menu-open { display: flex; }
+            .energy-menu > li { width: 100%; }
+            .energy-menu-link { padding: 10px 20px; font-size: 16px; font-weight: 500; text-transform: none; }
+            .energy-menu-link::after { content: none; }
+            
+            .energy-submenu {
+                position: static; 
+                display: none; 
+                opacity: 1; transform: none; visibility: visible;
+                min-width: 100%; padding: 0; border: none; box-shadow: none;
+                background: rgba(0, 0, 0, 0.85);
+                flex-direction: column;
+            }
+            .energy-submenu a { padding-left: 40px; font-size: 14px; }
+
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 16px; margin-bottom: 20px; }
+            .hero-actions { flex-direction: column; gap: 15px; padding-top: 0; }
+            .btn-gold { width: 100%; }
+            .hero-actions .btn-gold:first-child { margin-right: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .bins {
+                display: none;
+            }
+        }
 
     .cotalog {
             width: 100%;
@@ -1581,7 +1487,7 @@
          * АДАПТИВНОСТЬ (CATALOG) - СКОПИРОВАНО ИЗ ЗАПРОСА
         --- */
 
-        @media (max-width: 1024px) {
+        @media (max-width: 992px) {
             .cotalog { padding: 60px 0 40px; }
             .cotalog-text h1 { font-size: 36px; }
             .category-title-bar h2 { font-size: 28px; }
@@ -1821,8 +1727,8 @@
             }
         }
 
-        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
-        @media (max-width: 1024px) {
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (992px и меньше) */
+        @media (max-width: 992px) {
             .content-wrapper { padding-left: 20px; padding-right: 20px; max-width: 100%; }
             .hero-main { flex-direction: column; padding-top: 60px; }
             .hero-content { order: 2; text-align: center; max-width: 600px; flex-basis: auto; }
@@ -2031,8 +1937,8 @@
 
        
 
-        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
-        @media (max-width: 1024px) {
+        /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (992px и меньше) */
+        @media (max-width: 992px) {
             .temp {
                 grid-template-columns: 1fr; /* одна колонка */
                 grid-template-rows: auto auto auto;
@@ -2329,7 +2235,7 @@
 
 
     /* --- Adaptive --- */
-        @media (max-width: 1024px) {
+        @media (max-width: 992px) {
     .company-section .container {
         flex-direction: column;
         align-items: center;
@@ -2493,8 +2399,8 @@
 
         /* --- АДАПТИВНОСТЬ --- */
 
-        /* Средние экраны (до 1024px) */
-        @media (max-width: 1024px) {
+        /* Средние экраны (до 992px) */
+        @media (max-width: 992px) {
             .contact-item {
                 font-size: 18px;
             }
