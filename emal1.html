@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Грунтовки</title>
+    <link rel="icon" href="Ария лого знак.ico" type="image/x-icon">
     <style>
         /* --- Общие стили --- */
         body {
@@ -453,6 +454,68 @@
         opacity: 0;
     }
 
+
+    .our_conntact{
+        position: relative;
+        display: flex;
+        font-size: 16px;
+        flex-direction: row; 
+        justify-content: center;
+        gap: 20px;
+        font-weight: 700;
+        overflow: hidden;
+        z-index: 10;
+        padding-bottom: 0px;
+    }
+   .contact-highlight {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 30px;
+        background: linear-gradient(90deg, #ffffff 0%, #eec55c 25%, #eec55c 75%, #ffffff 100%);
+        
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+        min-width: 280px;
+        justify-content: center;
+    }
+
+    .contact-icon {
+        font-size: 32px;
+        width: 40px;
+        text-align: center;
+    }
+
+    .contact-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-label {
+        font-size: 14px;
+        color: #504b4b;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .contact-value {
+        font-size: 22px;
+        font-weight: 800;
+        color: black;
+        letter-spacing: 0.5px;
+    }
+    
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
@@ -523,11 +586,23 @@
             <button class="modal-close">&times;</button>
             <h2>Прайс-лист</h2>
             <p>
-                Чтобы получить актуальный прайс-лист, свяжитесь с нашим отделом продаж
-                или оставьте запрос на электронную почту.
+                Для предоставления актуальной цены, свяжитесь с нашим отделом продаж по телефону или отправьте запрос на электронную почту
             </p>
-
-            <a href="mailto:info@company.com" class="modal-btn">Написать нам</a>
+            
+            <div class="contact-highlight">
+                <div class="contact-item">
+                    <div class="contact-content">
+                      
+                        <div class="contact-value">+7 (910) 750-00-13</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-content">
+                  
+                        <div class="contact-value">akz@aria-lkm.ru</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
