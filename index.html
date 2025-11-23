@@ -215,7 +215,7 @@
                 </li>
 
                 <li><a href="#enamel-dots" class="energy-menu-link">Сферы применения</a></li>
-                <li><a href="#for_coloring" class="energy-menu-link">Колеровка</a></li>
+                <li><a href="#coloring" class="energy-menu-link">Колеровка</a></li>
                 <li><a href="#company-section" class="energy-menu-link">О компании</a></li>
                 <li><a href="#contacts-section" class="energy-menu-link">Контакты</a></li>
             </ul>
@@ -240,8 +240,8 @@
 
 
                 <div class="hero-actions"> 
-                    <a href="tel:+79107500013" class="btn-gold">
-                        <i class="fas fa-phone"></i> +7 (910) 750-00-13
+                    <a href="tel:+79304630031" class="btn-gold">
+                        <i class="fas fa-phone"></i> +7 930 463 0031
                     </a>
                     <a href="mailto:akz@aria-lkm.ru" class="btn-gold">
                         <i class="fas fa-envelope"></i> akz@aria-lkm.ru
@@ -541,7 +541,7 @@
                         <img src="eyyy.svg" alt="whatsapp">
                         <img src="Vector (1).svg" alt="telegram">
                     </span>
-                    <span class="text">+7 (910) 750-00-13</span>
+                    <span class="text">+7 930 463 0031</span>
                 </div>
                 
                
@@ -765,7 +765,7 @@
             z-index: 1002;
         }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1024px) {
 
         /* ИЗМЕНЕНИЕ: Отключаем плавную прокрутку на мобильных */
         html {
@@ -1496,75 +1496,16 @@
          * АДАПТИВНОСТЬ (HEADER) - СКОПИРОВАНО ИЗ ЗАПРОСА
         --- */
 
-        @media (max-width: 1300px) {
-            .energy-nav { 
-                height: 70px; 
-                padding: 0 20px; 
-                justify-content: space-between;
-            }
+        @media (max-width: 1024px) {
+            
             body { padding-top: 70px; }
             .mobile-menu-toggle { display: block; }
-            .energy-menu {
-                display: none; 
-                position: absolute;
-                top: 70px; 
-                left: 0;
-                width: 100%;
-
-                z-index: 2000 !important;
-                background: #FFF2D9 !important;
-
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-                flex-direction: column; 
-                align-items: flex-start;
-                padding: 10px 0;
-                gap: 0; 
-                transform: none; 
-            }
-            .energy-menu > li:hover { transform: none; }
-            .energy-menu.menu-open { display: flex; }
-            .energy-menu > li { width: 100%; font-family: 'Inter', sans-serif; }
-            .energy-menu-link { 
-                padding: 12px 20px; 
-                font-size: 16px; 
-                font-weight: 500;
-                text-transform: none; 
-                width: 100%; 
-                justify-content: space-between; 
-                box-sizing: border-box;
-                color: #000000; 
-            }
-            .energy-menu-link::after { content: none; }
-            .energy-menu-link .fas { transform: rotate(0deg); }
-            .energy-menu > li.submenu-open > .energy-menu-link .fas { transform: rotate(180deg); }
-            .energy-submenu {
-                position: static; 
-                display: none; 
-                opacity: 1; 
-                transform: none; 
-                visibility: visible;
-                min-width: 100%; 
-                padding: 0; 
-                border: none; 
-                box-shadow: none;
-                background: rgba(228, 168, 54, 0.1); 
-                border-radius: 0;
-                transition: none; 
-            }
-            .energy-menu > li:hover .energy-submenu {
-                display: none; opacity: 0; transform: scaleY(0) translateY(-10px); visibility: hidden;
-            }
-            .energy-menu > li.submenu-open .energy-submenu { display: block; }
-            .energy-submenu a { padding-left: 40px; font-size: 15px; color: #333; }
-            .energy-submenu a:hover { color: #E4A836; background: rgba(0,0,0,0.05); padding-left: 40px; }
-            .energy-submenu a::before { content: none; }
-            .energy-submenu li { opacity: 1; transform: none; }
+            
         }
 
         @media (max-width: 768px) {
-            .energy-nav { height: 60px; }
+        
             body { padding-top: 60px; }
-            .energy-menu { top: 60px; }
             .dot{
                 display: none;
             }
@@ -1817,10 +1758,7 @@
         /* ПЛАНШЕТЫ/УМЕНЬШЕННЫЙ ДЕСКТОП (1024px и меньше) */
         @media (max-width: 1024px) {
             .content-wrapper { padding-left: 20px; padding-right: 20px; max-width: 100%; }
-            .hero-main { flex-direction: column; padding-top: 60px; }
-            .hero-content { order: 2; text-align: center; max-width: 600px; flex-basis: auto; }
-            .hero h1, .hero p { text-align: center; }
-            .hero-actions { justify-content: center; }
+           
             
             /* Секция применения: карточки остаются фиксированной ширины, но переносятся */
             .applications-grid {
@@ -1853,11 +1791,10 @@
 
         /* МОБИЛЬНЫЕ (768px и меньше) */
         @media (max-width: 768px) {
-            .energy-header { position: static; height: auto; }
+           
             body { padding-top: 0; }
-            .mobile-menu-toggle { display: block; }
+          
             
-            .hero-actions { flex-direction: column; gap: 15px; }
             .btn-gold { width: 100%; }
             .hero-actions .btn-gold:first-child { margin-right: 0; }
             
@@ -2013,14 +1950,6 @@
          4. АДАПТИВНОСТЬ
         ================================================================= */
 
-        /* АСИММЕТРИЧНЫЙ ДИЗАЙН СБРОС (для Hero) */
-        @media (min-width: 1440px) {
-            .hero .content-wrapper { 
-                max-width: 2000px; 
-                padding-left: 350px; 
-                padding-right: 40px;
-            }
-        }
 
        
 
