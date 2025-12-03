@@ -2758,31 +2758,33 @@
             const card = document.createElement('div');
             card.classList.add('product-card');
 
-          
+        
             let infoBlock = '';
             
-      
+    
             if (product.icons && product.icons.length > 0) {
-               
+                
+                // Здесь тоже можно добавить loading="lazy" для иконок, 
+                // так как они не критичны для первого экрана
                 const iconImages = product.icons.map(iconSrc => 
-                    `<img src="${iconSrc}" alt="product icon">`
+                    `<img src="${iconSrc}" alt="product icon" loading="lazy">` 
                 ).join('');
                 
                 infoBlock = `<div class="product-icons">${iconImages}</div>`;
             } 
-       
+        
             else if (product.summary) {
                 infoBlock = `<p class="product-summary">${product.summary}</p>`;
             }
-         
+        
             card.innerHTML = `
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}" />
-                </div>
+                    <img src="${product.image}" alt="${product.name}" loading="lazy" />
+                    </div>
                 <div class="product-info-card">
                     <h3 class="product-title">${product.name}</h3>
                     
-                    ${infoBlock} <!-- Сюда вставляются либо иконки, либо текст -->
+                    ${infoBlock} 
                     
                     <a href="${product.link}?index=${product.index}" class="btn-detail">Подробнее</a>
                 </div>
