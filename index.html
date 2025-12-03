@@ -185,6 +185,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display.swap" rel="stylesheet">
     <link rel="icon" href="Ария лого знак.ico" type="image/x-icon">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display.swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display.swap" rel="stylesheet">
+
     <meta name="description" content="Официальный представитель ООО Завод «Краски КВИЛ». Профессиональные решения для защиты и декора.">
     
     <meta property="og:title" content="ООО “Ария-ЛКМ” - эксперт в мире лакокрасочных материалов">
@@ -193,6 +199,10 @@
     <meta property="og:url" content="https://emali.ru/index.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Aria-lkm">
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js" defer></script>
 
 </head>
 
@@ -283,13 +293,13 @@
             <div class="cotalog-text">
                 <div class="carousel-wrapper">
                     <button class="arrow left" onclick="prevSlide('primers')">
-                        <img src="left.svg" alt="Предыдущий" class="arrow-icon">
+                        <img src="left.svg" alt="Предыдущий" class="arrow-icon" loading="lazy">
                     </button>
                     <div class="carousel-viewport">
                         <div class="photo-carousel" id="primers-carousel"></div>
                     </div>
                     <button class="arrow right" onclick="nextSlide('primers')">
-                        <img src="right.svg" alt="Предыдущий" class="arrow-icon">
+                        <img src="right.svg" alt="Предыдущий" class="arrow-icon" loading="lazy">
                     </button>
                 </div>
                 
@@ -304,13 +314,13 @@
             <div class="cotalog-text">
                 <div class="carousel-wrapper">
                     <button class="arrow left" onclick="prevSlide('primer-enamel')">
-                        <img src="left.svg" alt="Предыдущий" class="arrow-icon">
+                        <img src="left.svg" alt="Предыдущий" class="arrow-icon" loading="lazy">
                     </button>
                     <div class="carousel-viewport">
                         <div class="photo-carousel" id="primer-enamel-carousel"></div>
                     </div>
                     <button class="arrow right" onclick="nextSlide('primer-enamel')">
-                        <img src="right.svg" alt="Предыдущий" class="arrow-icon">
+                        <img src="right.svg" alt="Предыдущий" class="arrow-icon" loading="lazy">
                     </button>
                 </div>
                 <div class="carousel-dots" id="primer-enamel-dots"></div>
@@ -323,13 +333,13 @@
             <div class="cotalog-text">
                 <div class="carousel-wrapper">
                     <button class="arrow left" onclick="prevSlide('enamel')">
-                        <img src="left.svg" alt="Предыдущий" class="arrow-icon">
+                        <img src="left.svg" alt="Предыдущий" class="arrow-icon" loading="lazy">
                     </button>
                     <div class="carousel-viewport">
                         <div class="photo-carousel" id="enamel-carousel"></div>
                     </div>
                     <button class="arrow right" onclick="nextSlide('enamel')">
-                        <img src="right.svg" alt="Предыдущий" class="arrow-icon">
+                        <img src="right.svg" alt="Предыдущий" class="arrow-icon" loading="lazy">
                     </button>
                 </div>
                 <div class="carousel-dots" id="enamel-dots"></div>
@@ -352,7 +362,7 @@
                 <div class="application-card">
                     <div class="app-image-frame">
                         <div class="app-image">
-                            <img src="first_red.svg" alt="Автомобили">
+                            <img src="first_red.svg" alt="Автомобили" loading="lazy">
                         </div>
                     </div>
 
@@ -365,7 +375,7 @@
                 <div class="application-card">
                     <div class="app-image-frame">
                         <div class="app-image">
-                            <img src="second_white.svg" alt="Нефтехранилища">
+                            <img src="second_white.svg" alt="Нефтехранилища" loading="lazy">
                         </div>
                     </div>
                     <div class="app-content">
@@ -380,7 +390,7 @@
                 <div class="application-card">
                     <div class="app-image-frame">
                         <div class="app-image">
-                            <img src="metall.svg" alt="Металлоконструкции">
+                            <img src="metall.svg" alt="Металлоконструкции" loading="lazy">
                         </div>
                     </div>
 
@@ -398,7 +408,7 @@
         <div class="application-card">
             <div class="app-image-frame">
                 <div class="app-image">
-                    <img src="tractor.svg" alt="Металлоконструкции">
+                    <img src="tractor.svg" alt="Металлоконструкции" loading="lazy">
                 </div>
             </div>
 
@@ -411,7 +421,7 @@
         <div class="application-card">
             <div class="app-image-frame">
                 <div class="app-image">
-                    <img src="byr.svg" alt="Металлоконструкции">
+                    <img src="byr.svg" alt="Металлоконструкции" loading="lazy">
                 </div>
             </div>
 
@@ -424,7 +434,7 @@
         <div class="application-card">
             <div class="app-image-frame">
                 <div class="app-image">
-                    <img src="train.svg" alt="Металлоконструкции">
+                    <img src="train.svg" alt="Металлоконструкции" loading="lazy">
                 </div>
             </div>
 
@@ -484,7 +494,7 @@
             </div>
 
             <div class="coloring-image">
-                <img src="correct_gif.gif" id ='for-company_block' alt="Колеровочное оборудование">
+                <img src="correct_gif.gif" id ='for-company_block' alt="Колеровочное оборудование" loading="lazy">
             </div>
 
         </div>
@@ -506,7 +516,7 @@
             </div>
 
             <div class="image-block">
-                <img src="full_backet.svg" alt="Краска" />
+                <img src="full_backet.svg" alt="Краска" loading="lazy">
             </div>
         </div>
     </div>
@@ -519,15 +529,15 @@
             
                 <div class="contact-item address-item">
                    
-                    <img src="healthicons_geo-location.svg" alt="marker" class="icon">
+                    <img src="healthicons_geo-location.svg" alt="marker" class="icon" loading="lazy">
                     <span class="text">Офис: г. Белгород, Губкина 45 А</span>
                 </div>
 
                 <div class="contact-item">
                  
                     <span class="icons">
-                        <img src="eyyy.svg" alt="whatsapp">
-                        <img src="Vector (1).svg" alt="telegram">
+                        <img src="eyyy.svg" alt="whatsapp" loading="lazy">
+                        <img src="Vector (1).svg" alt="telegram" loading="lazy">
                     </span>
                     <span class="text">+7 930 463 0031</span>
                 </div>
@@ -536,7 +546,7 @@
             <div class="column-right">
         
                 <div class="contact-item">
-                    <img src="clarity_email-solid.svg" alt="mail" class="icon">
+                    <img src="clarity_email-solid.svg" alt="mail" class="icon" loading="lazy">
                     <span class="text">akz@aria-lkm.ru</span>
                 </div>
                 
@@ -546,7 +556,7 @@
                
                 <div class="contact-item">
                  
-                    <img src="ri_time-fill.svg" alt="clock" class="icon">
+                    <img src="ri_time-fill.svg" alt="clock" class="icon" loading="lazy">
                     <span class="text">Пн - Пт, с 9:00 - до 18:00</span>
                 </div>
             </div>
